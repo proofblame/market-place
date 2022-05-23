@@ -1,0 +1,19 @@
+.cards {}
+
+.wrapper {
+  composes: mb-5 from global;
+}
+
+.title {
+  composes: display-6 from global;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  composes: d-flex flex-wrap from global;
+}
+
+.item {
+  list-style-type: none;
+}

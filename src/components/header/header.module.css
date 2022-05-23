@@ -1,0 +1,31 @@
+.nav {
+  composes: navbar navbar-expand-lg navbar-dark bg-primary mb-3 fixed-top from global;
+}
+
+.container {
+  composes: from container from global;
+}
+
+.logo {
+  composes: navbar-brand from global;
+}
+
+.list {
+  composes: navbar-nav from global;
+}
+
+.item {
+  composes: nav-item from global;
+}
+
+.link {
+  composes: nav-link text-light from global;
+}
+
+.listInline {
+  composes: list-inline m-0 text-light from global;
+}
+
+.itemInline {
+  composes: list-inline-item from global;
+}

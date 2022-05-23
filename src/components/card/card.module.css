@@ -1,0 +1,29 @@
+.card {
+  width: 100%;
+  max-width: 18rem;
+  composes: card p-2 m-2 from global;
+}
+
+.img {
+  composes: card-img-top from global;
+}
+
+.body {
+  composes: card-body from global;
+}
+
+.title {
+  composes: card-title from global;
+}
+
+.subtitle {
+  composes: card-text from global;
+}
+
+.price {
+  composes: fw-bold from global;
+}
+
+.button {
+  composes: btn btn-primary from global;
+}
