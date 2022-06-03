@@ -12,6 +12,9 @@
 
 .list {
   composes: navbar-nav from global;
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
 }
 
 .item {

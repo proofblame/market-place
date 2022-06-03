@@ -1,0 +1,72 @@
+.signup {}
+
+.container {
+  composes: container pt-5 from global;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  composes: h2 from global;
+  margin-bottom: 25px;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.fieldset {
+  composes: mb-3 from global;
+}
+
+.label {
+  composes: form-label from global;
+}
+
+.input {
+  composes: form-control from global;
+}
+
+.inputValid {
+  composes: form-control is-valid from global;
+}
+
+.inputError {
+  composes: form-control is-invalid from global;
+}
+
+.checkboxGroup {
+  composes: mb-3 form-check from global;
+}
+
+.caption {
+  composes: form-text from global;
+}
+
+.captionError {
+  display: block;
+  composes: invalid-feedback from global;
+}
+
+.checkboxLabel {
+  composes: form-check-label from global;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.checkbox {
+  composes: form-check-input from global;
+}
+
+.checkboxError {
+  composes: form-check-input is-invalid from global;
+}
+
+.politics {}
+
+.button {
+  composes: btn btn-primary from global;
+}

@@ -32,6 +32,11 @@ const Header = () => {
               Войти
             </NavLink>
           </li>
+          <li className={style.item}>
+            <NavLink to='/signup' className={style.link}>
+              Регистрация
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
