@@ -1,0 +1,5 @@
+@import '../../vendors/style-settings/variables.scss';
+.container {
+  max-width: $maxWidth + px;
+  margin: 0 auto;
+}

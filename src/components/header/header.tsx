@@ -1,46 +1,36 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import style from './header.module.css'
-import { useSelector } from '../../services/hooks'
-
+import { Link } from "react-router-dom";
+import style from "./header.module.scss";
+import logo from "../../images/logo-icon.svg";
+import cart from "../../images/cart-icon.svg";
+import menu from "../../images/menu-icon.svg";
+import Container from "../container/container";
 const Header = () => {
-  const { email, name, phone, title } = useSelector(store => store.common)
   return (
-    <nav className={style.nav}>
-      <div className={style.container}>
-        <Link to='/' className={style.logo}>
-          {title}
-        </Link>
-        <ul className={style.listInline}>
-          <li className={style.itemInline}>{name}</li>
-          <li className={style.itemInline}>{phone}</li>
-          <li className={style.itemInline}>{email}</li>
-        </ul>
-        <ul className={style.list}>
-          <li className={style.item}>
-            <NavLink to='/' className={style.link}>
-              Главная
-            </NavLink>
-          </li>
-          <li className={style.item}>
-            <NavLink to='/cart' className={style.link}>
-              Корзина
-            </NavLink>
-          </li>
-          <li className={style.item}>
-            <NavLink to='/account' className={style.link}>
-              Войти
-            </NavLink>
-          </li>
-          <li className={style.item}>
-            <NavLink to='/signup' className={style.link}>
-              Регистрация
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  )
-}
+    <header className={style.header}>
+      <Container>
+        <div className={style.headerWrapper}>
+          <Link to={"/"} className={style.logo}>
+            <img
+              className={style.logoImg}
+              src={logo}
+              alt="RaccoonIT TG Market"
+            />
+            <p className={style.logoTitle}>
+              <span className={style.logoBrand}>RaccoonIT</span>
+              <span className={style.logoCaption}>TG Market</span>
+            </p>
+          </Link>
+          <div className={style.rightColumn}>
+            <Link to={"/cart"} className={style.cart}>
+              <img className={style.cartImg} src={cart} alt="Корзина" />
+              <span className={style.cartCount}>1</span>
+            </Link>
+            <img className={style.menu} src={menu} alt="Меню" />
+          </div>
+        </div>
+      </Container>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

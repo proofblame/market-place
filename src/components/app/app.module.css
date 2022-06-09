@@ -1,4 +1,0 @@
-.container {
-  composes: container from global;
-  padding-top: 4rem;
-}
