@@ -4,6 +4,10 @@ $fontFamily: 'Montserrat', sans-serif;
 
 $mainColor: #f4f4f4;
 $background: #131313;
+$percentColor: rgba(244, 244, 244, 0.8);
+$percentBG: #c366ce;
+$costColor: #ff004d;
+$buttonColor: #c366ce;
 
 // Cart settings
 $cartCounterColor: #fff;
@@ -23,86 +27,28 @@ $reasonsListSize: 1479px;
 %fonts {
   font-family: $fontFamily;
   font-style: normal;
+  letter-spacing: 0.05em;
 }
 
-// H1
-%fz-72 {
-  @include adaptive(font-size, 72, 24);
-  @include adaptive(line-height, 81, 27);
+%fz-48 {
+  @include adaptive(font-size, 48, 48);
+  @include adaptive(line-height, 59, 59);
 }
-
-// H2
-%fz-64 {
-  @include adaptive(font-size, 64, 24);
-  @include adaptive(line-height, 72, 27);
+%fz-32 {
+  @include adaptive(font-size, 32, 32);
+  @include adaptive(line-height, 39, 39);
 }
-
-%fz-64-36 {
-  @include adaptive(font-size, 64, 36);
-  @include adaptive(line-height, 72, 45);
+%fz-27 {
+  @include adaptive(font-size, 27, 27);
+  @include adaptive(line-height, 33, 33);
 }
-
-%fz-24-38 {
-  @include adaptive(font-size, 24, 14);
-  @include adaptive(line-height, 38, 21);
+%fz-20 {
+  @include adaptive(font-size, 20, 20);
+  @include adaptive(line-height, 24, 24);
 }
-
-%fz-24-14 {
-  @include adaptive(font-size, 24, 14);
-  @include adaptive(line-height, 24, 14);
-}
-
-// H3, buttons
-%fz-24-30 {
-  @include adaptive(font-size, 24, 12);
-  @include adaptive(line-height, 30, 15);
-}
-
-%fz-24-30-14-17 {
-  @include adaptive(font-size, 24, 14);
-  @include adaptive(line-height, 30, 17);
-}
-
-%fz-24-38 {
-  @include adaptive(font-size, 24, 14);
-  @include adaptive(line-height, 38, 22);
-}
-
-%fz-24-29 {
-  @include adaptive(font-size, 24, 12);
-  @include adaptive(line-height, 29, 15);
-}
-
-%fz-24-24 {
-  @include adaptive(font-size, 24, 14);
-  @include adaptive(line-height, 24, 14);
-}
-
-%fz-18-23 {
-  @include adaptive(font-size, 18, 12);
-  @include adaptive(line-height, 23, 16);
-}
-
-%fz-18-14 {
-  @include adaptive(font-size, 18, 14);
-  @include adaptive(line-height, 22, 17);
-}
-
-%fz-18-12 {
-  @include adaptive(font-size, 18, 12);
-  @include adaptive(line-height, 23, 16);
-}
-
-%fz-18-22-12-15 {
-  %fz-18-12 {
-    @include adaptive(font-size, 18, 12);
-    @include adaptive(line-height, 22, 15);
-  }
-}
-
-%fz-18-8 {
-  @include adaptive(font-size, 18, 8);
-  @include adaptive(line-height, 22, 10);
+%fz-16 {
+  @include adaptive(font-size, 16, 16);
+  @include adaptive(line-height, 20, 20);
 }
 
 %fz-8 {

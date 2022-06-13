@@ -28,9 +28,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        {/* <Route path='/' element={<Main />} /> */}
+        <Route path="/" element={<Main />} />
         {/* <Route path='/' element={<Main />} /> */}
         {/* <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
