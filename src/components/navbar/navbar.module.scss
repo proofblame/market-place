@@ -1,17 +1,54 @@
 @import '../../vendors/style-settings/variables.scss';
-.navbar {
+.overlay {
   @extend %fonts;
-  padding-top: 49px;
+  padding-top: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $background;
+  z-index: 1;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  &.active {
+    transform: translateX(0);
+  }
 }
 .nav {
-  @extend %flex;
-  flex-direction: column;
+  display: flex;
   justify-content: flex-end;
+  padding-top: 20px;
+  width: 100%;
+  // transition: all 0.5s ease-in-out;
+  // transform: translateX(100%);
+  // &.active {
+  //   transform: translateX(0);
+  //   overflow-y: auto;
+  //   scrollbar-width: thin;
+  //   scrollbar-color: #f4f4f4 #0e131d;
+  //   &::-webkit-scrollbar {
+  //     width: 8px;
+  //   }
+  //   &::-webkit-scrollbar-track {
+  //     background: #0e131d;
+  //   }
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: #f4f4f4;
+  //     border-radius: 20px;
+  //     border: 2px solid #0e131d;
+  //   }
+  // }
 }
 .list {
   list-style-type: none;
+  text-align: right;
 }
 .item {
+  margin-bottom: 20px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 .link {
   display: inline-block;

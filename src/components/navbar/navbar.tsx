@@ -3,11 +3,11 @@ import style from "./navbar.module.scss";
 import { NavLink } from "react-router-dom";
 import Container from "../container/container";
 
-const Navbar = () => {
+const Navbar = ({ nav }: any) => {
   return (
-    <section className={style.navbar}>
+    <section className={`${style.overlay} ${nav && `${style.active}`}`}>
       <Container>
-        <nav className={style.nav}>
+        <nav className={`${style.nav} ${nav && `${style.active}`}`}>
           <ul className={style.list}>
             <li className={style.item}>
               <NavLink to={"/"} className={style.link}>
