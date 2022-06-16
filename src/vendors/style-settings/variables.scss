@@ -34,24 +34,24 @@ $reasonsListSize: 1479px;
 }
 
 %fz-48 {
-  @include adaptive(font-size, 48, 48);
-  @include adaptive(line-height, 59, 59);
+  @include adaptive(font-size, 48, 24);
+  @include adaptive(line-height, 59, 29);
 }
 %fz-32 {
-  @include adaptive(font-size, 32, 32);
-  @include adaptive(line-height, 39, 39);
+  @include adaptive(font-size, 32, 16);
+  @include adaptive(line-height, 39, 20);
 }
 %fz-27 {
-  @include adaptive(font-size, 27, 27);
-  @include adaptive(line-height, 33, 33);
+  @include adaptive(font-size, 27, 10);
+  @include adaptive(line-height, 33, 12);
 }
 %fz-20 {
-  @include adaptive(font-size, 20, 20);
-  @include adaptive(line-height, 24, 24);
+  @include adaptive(font-size, 20, 10);
+  @include adaptive(line-height, 24, 12);
 }
 %fz-16 {
-  @include adaptive(font-size, 16, 16);
-  @include adaptive(line-height, 20, 20);
+  @include adaptive(font-size, 16, 6);
+  @include adaptive(line-height, 20, 7);
 }
 
 %fz-8 {
