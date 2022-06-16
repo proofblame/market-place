@@ -7,6 +7,8 @@ import Cart from "../../pages/cart/cart";
 import Account from "../../pages/account/account";
 import { SignUp } from "../../pages/auth/index";
 import Navbar from "../navbar/navbar";
+import api from "../../utils/api";
+import { TUser } from "../../services/types/telegram-data";
 
 declare global {
   interface Window {
@@ -15,10 +17,20 @@ declare global {
 }
 
 const tg = window.Telegram.WebApp;
+let dataTG = {
+  first_name: tg.initDataUnsafe.user?.first_name,
+  last_name: tg.initDataUnsafe.user?.last_name,
+  username: tg.initDataUnsafe.user?.username,
+  language_code: tg.initDataUnsafe.user?.language_code,
+  query_id: tg.initDataUnsafe.query_id,
+  hash: tg.initDataUnsafe.hash,
+  auth_date: tg.initDataUnsafe.auth_date,
+  id: tg.initDataUnsafe.user?.id,
+};
 
 const App = () => {
   const [nav, setNav] = useState(false);
-  const [data, setData] = useState("123");
+  const [data, setData] = useState<TUser>();
   const handleNav = () => {
     if (nav) {
       setNav(false);
@@ -27,7 +39,19 @@ const App = () => {
     }
   };
   const clickButton = () => {
+    // setData({
+    //   first_name: tg.initDataUnsafe.user?.first_name,
+    //   last_name: tg.initDataUnsafe.user?.last_name,
+    //   username: tg.initDataUnsafe.user?.username,
+    //   language_code: tg.initDataUnsafe.user?.language_code,
+    //   query_id: tg.initDataUnsafe.query_id,
+    //   hash: tg.initDataUnsafe.hash,
+    //   auth_date: tg.initDataUnsafe.auth_date,
+    //   id: tg.initDataUnsafe.user?.id,
+    // });
     tg.sendData("123");
+    api.sentData(dataTG);
+    console.log(data);
     tg.MainButton.text = "Данные отправлены";
     setTimeout(() => {
       tg.close();
@@ -41,8 +65,12 @@ const App = () => {
     tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
     tg.MainButton.show();
     tg.MainButton.onClick(clickButton);
-    setData(tg.initDataUnsafe?.user);
-  });
+
+    setData(dataTG);
+    console.log(tg.initDataUnsafe);
+    console.log(dataTG);
+    console.log(data);
+  }, []);
 
   return (
     <>

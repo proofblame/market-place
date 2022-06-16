@@ -15,16 +15,16 @@
   margin-bottom: 40px;
 
   &Title {
-    @extend %fz-48;
+    @extend %fz-37;
     font-weight: 700;
   }
   &Subtitle {
-    @extend %fz-20;
+    @extend %fz-16;
     font-weight: 500;
   }
 }
 .description {
-  @extend %fz-20;
+  @extend %fz-16;
   color: $mainColor;
   opacity: 0.8;
   max-width: 768px;
@@ -33,7 +33,7 @@
 .category {
   max-width: 768px;
   &Title {
-    @extend %fz-32;
+    @extend %fz-30;
     font-weight: 700;
     color: $mainColor;
     margin-bottom: 30px;
@@ -45,7 +45,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 20px;
-  @include adaptive(column-gap, 20, 5);
+  @include adaptive(column-gap, 9, 5);
 }
 .item {
   margin-bottom: 20px;
@@ -57,11 +57,11 @@
   box-shadow: 0px 10px 54px rgba(0, 0, 0, 0.5);
   // border-radius: 26px;
   // max-width: 242px;
-  @include adaptive(width, 242, 90);
-  @include adaptive(border-radius, 26, 10);
-  padding-bottom: 5px;
+  @include adaptive(width, 164, 90);
+  @include adaptive(border-radius, 16, 10);
+  @include adaptive(padding-bottom, 9, 5);
   height: 100%;
-  max-height: 422px;
+  max-height: 286px;
 
   &Header {
     position: relative;
@@ -69,36 +69,36 @@
   &Img {
     // max-width: 242px;
     // max-height: 242px;
-    @include adaptive(width, 242, 90);
-    @include adaptive(height, 242, 90);
-    @include adaptive(border-radius, 26, 10);
+    @include adaptive(width, 164, 90);
+    @include adaptive(height, 164, 90);
+    @include adaptive(border-radius, 16, 10);
     // border-radius: 26px;
     box-shadow: 0px 10px 54px rgba(0, 0, 0, 0.5);
-    @include adaptive(margin-bottom, 14, 5);
+    @include adaptive(margin-bottom, 10, 5);
     // margin-bottom: 14px;
   }
   &Percent {
-    @extend %fz-20;
+    @extend %fz-15;
     font-weight: 700;
     color: $percentColor;
     background: $percentBG;
-    border-radius: 26px;
-    padding: 4px 12px;
+    border-radius: 18px;
+    // padding: 2px 8px;
     position: absolute;
     // left: 16px;
     // bottom: 16px;
     @include adaptive(left, 16, 5);
     @include adaptive(bottom, 16, 5);
-    @include adaptivePadding(padding, 4, 12, 1, 5);
+    @include adaptivePadding(padding, 2, 8, 1, 5);
   }
   &Footer {
     // padding: 0 16px;
-    @include adaptivePadding(padding, 0, 16, 0, 5);
+    @include adaptivePadding(padding, 0, 10, 0, 2);
     margin-top: 0;
   }
   &Title {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-10;
     // margin-bottom: 12px;
     @include adaptive(margin-bottom, 12, 5);
   }
@@ -106,16 +106,16 @@
     @extend %flex;
     justify-content: flex-start;
     // margin-bottom: 12px;
-    @include adaptive(margin-bottom, 12, 5);
+    @include adaptive(margin-bottom, 9, 6);
     &Cost {
-      @extend %fz-27;
+      @extend %fz-18;
       font-weight: 700;
       color: $costColor;
       // margin-right: 16px;
-      @include adaptive(margin-right, 16, 5);
+      @include adaptive(margin-right, 10, 5);
     }
     &Discount {
-      @extend %fz-16;
+      @extend %fz-10;
       font-weight: 600;
       text-decoration: line-through;
       opacity: 0.7;
@@ -132,9 +132,9 @@
   text-align: center;
   // font-size: 20px;
   line-height: 100%;
-  @include adaptivePadding(padding, 17, 25, 6, 10);
-  @include adaptive(font-size, 20, 7);
-  @include adaptive(border-radius, 8, 3);
+  @include adaptivePadding(padding, 10, 17, 5, 10);
+  @include adaptive(font-size, 13, 7);
+  @include adaptive(border-radius, 6, 3);
   // border-radius: 8px;
   border: none;
   // padding: 17px 25px;
@@ -152,8 +152,8 @@
   border: none;
   // width: 40px;
   // height: 40px;
-  @include adaptive(width, 40, 15);
-  @include adaptive(height, 40, 15);
+  @include adaptive(width, 24, 12);
+  @include adaptive(height, 24, 12);
   cursor: pointer;
   &.active {
     mask-image: url('../../images/like-icon-active.svg');
@@ -163,11 +163,11 @@
   @extend .card;
   cursor: pointer;
   @extend %fonts;
-  @extend %fz-20;
+  @extend %fz-16;
   font-weight: 500;
   height: 100%;
   // min-height: 157px;
-  @include adaptive(height, 422, 157);
+  @include adaptive(height, 286, 157);
   padding: 0 18px;
   // color: $mainColor;
   // opacity: 0.8;
@@ -186,12 +186,12 @@
 }
 .slider {
   // margin-bottom: 40px;
-  @include adaptive(margin-bottom, 40, 30);
+  @include adaptive(margin-bottom, 30, 20);
   &List {
     list-style-type: none;
     @extend %flex;
     // max-width: 56px;
-    @include adaptive(width, 56, 25);
+    @include adaptive(width, 50, 25);
     margin: 0 auto;
   }
   &Item {
@@ -203,8 +203,8 @@
       left: 0;
       // width: 12px;
       // height: 12px;
-      @include adaptive(width, 12, 5);
-      @include adaptive(height, 12, 5);
+      @include adaptive(width, 10, 5);
+      @include adaptive(height, 10, 5);
       background-color: $mainColor;
       opacity: 0.1;
       border-radius: 50%;

@@ -1,27 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./main.module.scss";
 import Container from "../../components/container/container";
 import banner from "../../images/banner.png";
 import cardImg from "../../images/card-image.jpg";
 
 const Main = ({ data }: any) => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const ref = useRef<any>(null);
+  const [width, setWidth] = useState({
+    offsetWidth: 0,
+    clientWidth: 0,
+    // offsetWidth: window.innerWidth,
+    // clientWidth: document.body.clientWidth,
+  });
   const [scroll, setScroll] = useState(window.innerWidth);
   const { id, isBot, first_name, last_name, username, language_code } =
     data || {};
+
   useEffect(() => {
+    setWidth({
+      // ...width,
+      clientWidth: ref.current.clientWidth,
+      offsetWidth: ref.current.offsetWidth,
+    });
     window.addEventListener("resize", () => {
       let screenWidth = window.innerWidth;
-      setWidth(screenWidth);
+      let windowWidth = document.body.clientWidth;
+      // console.log(ref.current?.offsetWidth, ref.current?.clientWidth);
+      // console.log(ref.offsetWidth);
+      // const scrollbarWidth = box.offsetWidth - box.clientWidth;
+
+      setWidth({
+        // ...width,
+        clientWidth: ref.current.clientWidth,
+        offsetWidth: ref.current.offsetWidth,
+      });
     });
-  }, [width]);
+  }, [width.clientWidth, width.offsetWidth, ref]);
   return (
-    <section className={style.main}>
+    <section className={style.main} ref={ref}>
       <div className={style.mainWrapper}>
         <section className={style.banner}>
           <Container>
-            <h1 className={style.bannerTitle}>{width} px</h1>
-            <p className={style.bannerSubtitle}>Магазин от RaccoonIT</p>
+            <h1 className={style.bannerTitle}>{width.offsetWidth} px</h1>
+            <p className={style.bannerSubtitle}>{width.clientWidth} px</p>
           </Container>
         </section>
         <Container>
