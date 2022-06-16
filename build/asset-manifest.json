@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a27272f9.css",
-    "main.js": "/static/js/main.a1b59431.js",
+    "main.js": "/static/js/main.99a92a88.js",
     "static/media/card-image.jpg": "/static/media/card-image.1b3f5271d2ae74c5b740.jpg",
     "static/media/banner.png": "/static/media/banner.40ba2b1479e792b26dec.png",
     "static/media/montserrat-v18-latin_cyrillic-700.woff": "/static/media/montserrat-v18-latin_cyrillic-700.302252f8724c318c368d.woff",
@@ -20,10 +20,10 @@
     "static/media/like-icon.svg": "/static/media/like-icon.e0dc8149b6a852f06ad8.svg",
     "static/media/menu-icon.svg": "/static/media/menu-icon.52090d374c6bd64b3865902c35205b82.svg",
     "main.a27272f9.css.map": "/static/css/main.a27272f9.css.map",
-    "main.a1b59431.js.map": "/static/js/main.a1b59431.js.map"
+    "main.99a92a88.js.map": "/static/js/main.99a92a88.js.map"
   },
   "entrypoints": [
     "static/css/main.a27272f9.css",
-    "static/js/main.a1b59431.js"
+    "static/js/main.99a92a88.js"
   ]
 }

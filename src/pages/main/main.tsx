@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./main.module.scss";
 import Container from "../../components/container/container";
 import banner from "../../images/banner.png";
 import cardImg from "../../images/card-image.jpg";
 
 const Main = ({ data }: any) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [scroll, setScroll] = useState(window.innerWidth);
   const { id, isBot, first_name, last_name, username, language_code } =
     data || {};
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      let screenWidth = window.innerWidth;
+      setWidth(screenWidth);
+    });
+  }, [width]);
   return (
     <section className={style.main}>
       <div className={style.mainWrapper}>
         <section className={style.banner}>
           <Container>
-            <h1 className={style.bannerTitle}>TG Market</h1>
+            <h1 className={style.bannerTitle}>{width} px</h1>
             <p className={style.bannerSubtitle}>Магазин от RaccoonIT</p>
           </Container>
         </section>
