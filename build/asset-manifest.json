@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a27272f9.css",
-    "main.js": "/static/js/main.a1b59431.js",
+    "main.css": "/static/css/main.58a74d93.css",
+    "main.js": "/static/js/main.6648c136.js",
     "static/media/card-image.jpg": "/static/media/card-image.1b3f5271d2ae74c5b740.jpg",
     "static/media/banner.png": "/static/media/banner.40ba2b1479e792b26dec.png",
     "static/media/montserrat-v18-latin_cyrillic-700.woff": "/static/media/montserrat-v18-latin_cyrillic-700.302252f8724c318c368d.woff",
@@ -12,18 +12,18 @@
     "static/media/montserrat-v18-latin_cyrillic-600.woff2": "/static/media/montserrat-v18-latin_cyrillic-600.eed234baab88dab532bf.woff2",
     "static/media/montserrat-v18-latin_cyrillic-500.woff2": "/static/media/montserrat-v18-latin_cyrillic-500.c2bbf96131933f2a6a90.woff2",
     "static/media/montserrat-v18-latin_cyrillic-regular.woff2": "/static/media/montserrat-v18-latin_cyrillic-regular.57960c9028c57ecd5006.woff2",
-    "static/media/logo-icon.svg": "/static/media/logo-icon.9227f68442cdced0c13ccb8683e968af.svg",
-    "static/media/cart-icon.svg": "/static/media/cart-icon.e950beaa9b70a6a204752cd62913ee04.svg",
+    "static/media/logo-icon.svg": "/static/media/logo-icon.2a847fa76b31b82b1b997596fbfb6097.svg",
+    "static/media/cart-icon.svg": "/static/media/cart-icon.6facd6bcd548e4e6fda4f298f1388ca0.svg",
     "index.html": "/index.html",
-    "static/media/telegram-icon.svg": "/static/media/telegram-icon.79d168c49d58977d92a0.svg",
-    "static/media/like-icon-active.svg": "/static/media/like-icon-active.2de8299bfbb45111ffc5.svg",
-    "static/media/like-icon.svg": "/static/media/like-icon.e0dc8149b6a852f06ad8.svg",
-    "static/media/menu-icon.svg": "/static/media/menu-icon.52090d374c6bd64b3865902c35205b82.svg",
-    "main.a27272f9.css.map": "/static/css/main.a27272f9.css.map",
-    "main.a1b59431.js.map": "/static/js/main.a1b59431.js.map"
+    "static/media/telegram-icon.svg": "/static/media/telegram-icon.a852c38a337da1d817b6.svg",
+    "static/media/like-icon-active.svg": "/static/media/like-icon-active.6c620e5bfe744c1feaaa.svg",
+    "static/media/like-icon.svg": "/static/media/like-icon.bfec95b60bded74f2e43.svg",
+    "static/media/menu-icon.svg": "/static/media/menu-icon.8f72cf36a07a5c95dc57848c6130df4a.svg",
+    "main.58a74d93.css.map": "/static/css/main.58a74d93.css.map",
+    "main.6648c136.js.map": "/static/js/main.6648c136.js.map"
   },
   "entrypoints": [
-    "static/css/main.a27272f9.css",
-    "static/js/main.a1b59431.js"
+    "static/css/main.58a74d93.css",
+    "static/js/main.6648c136.js"
   ]
 }
