@@ -1,9 +1,10 @@
 /* 
 version 0.0.1
 */
-@import url("./vendors/style-settings/normalize.css");
-@import url("./vendors/style-settings/reset.css");
-@import url("./vendors/style-settings/fonts.css");
+@import './vendors/style-settings/variables.scss';
+@import './vendors/style-settings/normalize.scss';
+@import './vendors/style-settings/reset.scss';
+@import './vendors/style-settings/fonts.scss';
 
 html {
   background-color: #090909;
@@ -20,4 +21,7 @@ html::-webkit-scrollbar-thumb {
   background-color: #f4f4f4;
   border-radius: 20px;
   border: 2px solid #0e131d;
+}
+body {
+  @extend %fonts;
 }

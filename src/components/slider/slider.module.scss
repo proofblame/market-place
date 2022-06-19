@@ -1,0 +1,27 @@
+@import '../../vendors/style-settings/variables.scss';
+.slider {
+  @include adaptive(margin-bottom, 30, 20);
+  &List {
+    list-style-type: none;
+    @extend %flex;
+    @include adaptive(width, 50, 25);
+    margin: 0 auto;
+  }
+  &Item {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include adaptive(width, 10, 5);
+      @include adaptive(height, 10, 5);
+      background-color: $mainColor;
+      opacity: 0.1;
+      border-radius: 50%;
+    }
+    &.active::before {
+      opacity: 0.3;
+    }
+  }
+}

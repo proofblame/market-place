@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./app.module.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "../header/header";
-import Main from "../../pages/main/main";
-import Cart from "../../pages/cart/cart";
-import Account from "../../pages/account/account";
-import { SignUp } from "../../pages/auth/index";
+import { Main, Card } from "../../pages";
 import Navbar from "../navbar/navbar";
 import api from "../../utils/api";
 import { TUser } from "../../services/types/telegram-data";
@@ -39,16 +36,6 @@ const App = () => {
     }
   };
   const clickButton = () => {
-    // setData({
-    //   first_name: tg.initDataUnsafe.user?.first_name,
-    //   last_name: tg.initDataUnsafe.user?.last_name,
-    //   username: tg.initDataUnsafe.user?.username,
-    //   language_code: tg.initDataUnsafe.user?.language_code,
-    //   query_id: tg.initDataUnsafe.query_id,
-    //   hash: tg.initDataUnsafe.hash,
-    //   auth_date: tg.initDataUnsafe.auth_date,
-    //   id: tg.initDataUnsafe.user?.id,
-    // });
     tg.sendData("123");
     api.sentData(dataTG);
     console.log(data);
@@ -74,15 +61,17 @@ const App = () => {
 
   return (
     <>
-      <Header onNav={handleNav} />
-      <Navbar nav={nav} />
-      <Routes>
-        <Route path="/" element={<Main data={data} />} />
-        {/* <Route path='/' element={<Main />} /> */}
-        {/* <Route path='/cart' element={<Cart />} />
+      <Header onNav={handleNav} nav={nav} />
+
+      <div className={style.wrapper}>
+        <Routes>
+          <Route path="/" element={<Main data={data} />} />
+          <Route path="/card" element={<Card />} />
+          {/* <Route path='/cart' element={<Cart />} />
           <Route path='/account' element={<Account />} />
           <Route path='/signup' element={<SignUp />} /> */}
-      </Routes>
+        </Routes>
+      </div>
     </>
   );
 };

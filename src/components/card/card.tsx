@@ -1,21 +1,31 @@
-import React from 'react'
-import laptop from '../../images/laptop.webp'
-import style from './card.module.css'
-import { useSelector } from '../../services/hooks'
+import style from "./card.module.scss";
+import cardImg from "../../images/card-image.jpg";
 
 const Card = () => {
-  const { title, subtitle, price } = useSelector(store => store.card)
   return (
-    <div className={style.card}>
-      <img className={style.img} src={laptop} alt="Laptop" />
-      <div className={style.body}>
-        <h5 className={style.title}>{title}</h5>
-        <p className={style.subtitle}>{subtitle}</p>
-        <p className={style.price}>{price} &#x20BD;</p>
-        <button className={style.button}>В корзину</button>
-      </div>
-    </div>
-  )
-}
+    <article className={style.card}>
+      <header className={style.cardHeader}>
+        <img src={cardImg} alt="cardImg" className={style.cardImg} />
+        <span className={style.cardPercent}>12%</span>
+      </header>
+      <footer className={style.cardFooter}>
+        <p className={style.cardTitle}>
+          Товар супер мега поможет вам что-то т...
+        </p>
+        <div className={style.cardPrice}>
+          <span className={style.cardPriceCost}>499 &#x20bd;</span>
+          <span className={style.cardPriceDiscount}>699 &#x20bd;</span>
+        </div>
+        <div className={style.buttons}>
+          <button className={`${style.cartButton} ${style.active}`}>
+            В корзине
+          </button>
+          <button
+            className={`${style.favoriteButton} ${style.active}`}></button>
+        </div>
+      </footer>
+    </article>
+  );
+};
 
-export default Card
+export default Card;

@@ -1,0 +1,14 @@
+@import '../../vendors/style-settings/variables.scss';
+@import '../card/card.module.scss';
+
+.moreButton {
+  @extend .card;
+  cursor: pointer;
+  @extend %fonts;
+  @extend %fz-16;
+  font-weight: 500;
+  height: 100%;
+  @include adaptive(height, 286, 157);
+  padding: 0 18px;
+  border: none;
+}
