@@ -6,6 +6,7 @@ import { Main, Card } from "../../pages";
 import Navbar from "../navbar/navbar";
 import api from "../../utils/api";
 import { TUser } from "../../services/types/telegram-data";
+import Scrolltotop from "../scroll-to-top/scroll-to-top";
 
 declare global {
   interface Window {
@@ -61,6 +62,7 @@ const App = () => {
 
   return (
     <>
+      <Scrolltotop />
       <Header onNav={handleNav} nav={nav} />
 
       <div className={style.wrapper}>

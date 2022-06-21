@@ -23,7 +23,16 @@
     #{$value}-left: calc(#{$rightLeftMB + px} + #{$addSizeRightLeft} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
   }
 }
+@mixin adaptiveSize($value, $widthPC, $heightPC, $widthMB, $heightMB) {
+  #{$value}: #{$widthPC + px} #{$heightPC + px};
 
+  @media screen and (max-width: #{$breakPoint + px}) {
+    $addSizeWidth: $widthPC - $widthMB;
+    $addSizeHeight: $heightPC - $heightMB;
+    $maxWidth: $maxWidth - $minWidth;
+    #{$value}: calc(#{$widthMB + px} + #{$addSizeWidth} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+  }
+}
 $maxWidth: 560;
 $minWidth: 320;
 $breakPoint: $maxWidth;

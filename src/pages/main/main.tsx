@@ -4,6 +4,7 @@ import Container from "../../components/container/container";
 import Card from "../../components/card/card";
 import MoreButton from "../../components/more-button/more-button";
 import Slider from "../../components/slider/slider";
+import { Link } from "react-router-dom";
 
 export const Main = ({ data }: any) => {
   const ref = useRef<any>(null);
@@ -48,13 +49,19 @@ export const Main = ({ data }: any) => {
             <h2 className={style.categoryTitle}>Категория</h2>
             <ul className={style.list}>
               <li className={style.item}>
-                <Card />
+                <Link to={"/card"}>
+                  <Card />
+                </Link>
               </li>
               <li className={style.item}>
-                <Card />
+                <Link to={"/card"}>
+                  <Card />
+                </Link>
               </li>
               <li className={style.item}>
-                <Card />
+                <Link to={"/card"}>
+                  <Card />
+                </Link>
               </li>
             </ul>
           </section>
@@ -63,10 +70,14 @@ export const Main = ({ data }: any) => {
             <h2 className={style.categoryTitle}>Категория</h2>
             <ul className={style.list}>
               <li className={style.item}>
-                <Card />
+                <Link to={"/card"}>
+                  <Card />
+                </Link>
               </li>
               <li className={style.item}>
-                <Card />
+                <Link to={"/card"}>
+                  <Card />
+                </Link>
               </li>
               <li className={style.item}>
                 <MoreButton />
