@@ -1,0 +1,108 @@
+@import '../../vendors/style-settings/variables.scss';
+* {
+  outline: 1px solid red;
+}
+.section {
+  position: relative;
+  @extend %fonts;
+  color: $mainColor;
+}
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+
+  &Wrapper {
+    @extend %flex;
+  }
+  &RightColumn {
+    @extend %flex;
+    column-gap: 10px;
+  }
+}
+.image {
+  &Group {
+    width: 100%;
+    max-width: $maxWidth + px;
+    margin: 0 auto;
+    position: relative;
+  }
+  &List {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.dots {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  @extend %flex;
+  max-width: 25px;
+  margin: 0 auto;
+  column-gap: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  background: $background;
+  opacity: 0.1;
+  &.active {
+    opacity: 0.3;
+  }
+}
+.cardBody {
+  padding-top: 10px;
+}
+.title {
+  font-weight: 700;
+  @extend %fz-16;
+}
+
+.price {
+  &Block {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  &Wrapper {
+    @extend %flex;
+  }
+  &Previous {
+    font-weight: 600;
+    @extend %fz-10;
+    color: $themeColor;
+    text-decoration: line-through;
+  }
+  &Current {
+    padding-top: 10px;
+  }
+}
+.stars {
+  &Number {
+    margin-bottom: 4px;
+  }
+  &Count {
+    font-weight: 500;
+    opacity: 0.8;
+    @extend %fz-10;
+  }
+}
+.tabs {
+  padding: 20px 0;
+  &Header {
+    margin-bottom: 15px;
+    font-weight: 700;
+    @extend %fz-16;
+  }
+  &Input {
+  }
+  &Label {
+    margin-right: 20px;
+  }
+}

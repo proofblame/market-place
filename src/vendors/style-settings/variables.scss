@@ -3,19 +3,15 @@
 $fontFamily: 'Montserrat', sans-serif;
 
 $mainColor: #f4f4f4;
-$themeColor: #c366ce;
+$themeColor: #5670b6;
 $background: #131313;
-$percentColor: rgba(244, 244, 244, 0.8);
-$percentBG: #c366ce;
-$costColor: #ff004d;
 
 // Button settings
-$buttonColor: #c366ce;
-$buttonColorActive: #00a224;
+$buttonActiveColor: #494949;
 
 // Cart settings
-$cartCounterColor: #fff;
-$cartBGColor: #00a224;
+// $cartCounterColor: #fff;
+// $cartBGColor: #00a224;
 
 // Navbar settings
 
@@ -23,7 +19,7 @@ $cartBGColor: #00a224;
 // $linkColor: #ffffff;
 // $linkActiveColor: rgba(255, 255, 255, 0.8);
 
-$_425: 424.98px;
+$_320: 319.98px;
 $_768: 767.98px;
 $_1024: 1023.98px;
 $reasonsListSize: 1479px;
@@ -34,62 +30,13 @@ $reasonsListSize: 1479px;
   letter-spacing: 0.05em;
 }
 
-%fz-54 {
-  @include adaptive(font-size, 54, 32);
-  @include adaptive(line-height, 66, 39);
-}
-%fz-37 {
-  @include adaptive(font-size, 37, 24);
-  @include adaptive(line-height, 45, 29);
-}
-%fz-34 {
-  @include adaptive(font-size, 34, 20);
-  @include adaptive(line-height, 41, 25);
-}
-%fz-30 {
-  @include adaptive(font-size, 30, 16);
-  @include adaptive(line-height, 37, 20);
-}
-%fz-30-24 {
-  @include adaptive(font-size, 30, 24);
-  @include adaptive(line-height, 37, 29);
-}
-%fz-27 {
-  @include adaptive(font-size, 27, 10);
-  @include adaptive(line-height, 33, 12);
-}
-%fz-24 {
-  @include adaptive(font-size, 24, 16);
-  @include adaptive(line-height, 24, 20);
-}
-%fz-18 {
-  @include adaptive(font-size, 18, 10);
-  @include adaptive(line-height, 22, 12);
-}
 %fz-16 {
-  @include adaptive(font-size, 16, 10);
-  @include adaptive(line-height, 20, 12);
-}
-%fz-15 {
-  @include adaptive(font-size, 15, 8);
-  @include adaptive(line-height, 18, 10);
+  @include adaptive(font-size, 16, 16);
+  @include adaptive(line-height, 20, 20);
 }
 %fz-10 {
-  @include adaptive(font-size, 10, 6);
-  @include adaptive(line-height, 12, 7);
-}
-
-%fz-8 {
-  font-size: 8px;
-  line-height: 10px;
-}
-%fz-6 {
-  font-size: 6px;
-  line-height: 7px;
-}
-%fz-5 {
-  font-size: 5px;
-  line-height: 6px;
+  @include adaptive(font-size, 10, 10);
+  @include adaptive(line-height, 12, 12);
 }
 
 %flex {

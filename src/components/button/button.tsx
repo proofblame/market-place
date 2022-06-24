@@ -10,6 +10,9 @@ const Button = ({ type, className }: any) => {
       {type === "back" && (
         <button className={`${style.back} ${className}`}></button>
       )}
+      {type === "share" && (
+        <button className={`${style.share} ${className}`}></button>
+      )}
       {type === "addToCard" && (
         <button className={`${style.addToCard} ${className}`}>В корзину</button>
       )}
