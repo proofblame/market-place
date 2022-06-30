@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./product-card.module.scss";
 import cardImg from "./images/card-img.jpg";
-import Button from "../button/button";
+import { Button } from "../index";
 
 export const ProductCard = () => {
   return (
@@ -19,7 +19,7 @@ export const ProductCard = () => {
           <span className={style.costCurrent}>499 &#x20bd;</span>
           <span className={style.costPrevious}>1000 &#x20bd;</span>
         </div>
-        <Button type={"addToCart"} />
+        <Button type={"addToCart"} className={style.addToCartButton} />
       </div>
     </li>
   );

@@ -1,0 +1,8 @@
+@import '../../vendors/style-settings/variables.scss';
+.productCards {
+  list-style-type: none;
+  @extend %flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}

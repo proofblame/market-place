@@ -1,0 +1,91 @@
+@import '../../vendors/style-settings/variables.scss';
+%sectionBottom {
+  margin-bottom: 30px;
+}
+
+.main {
+  padding-top: 50px;
+  @extend %fonts;
+  color: $mainColor;
+
+  &Wrapper {
+  }
+}
+.banner {
+  background-image: url('./images/main-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  @extend %sectionBottom;
+  &Title {
+    font-weight: 700;
+    @extend %fz-24;
+  }
+  &SubTitle {
+    font-weight: 500;
+    @extend %fz-10;
+  }
+}
+.category {
+  @extend %sectionBottom;
+
+  &Title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    @extend %fz-16;
+  }
+  &List {
+    @extend %flex;
+    column-gap: 10px;
+    margin-bottom: 10px;
+  }
+  &Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &Img {
+    width: 66px;
+    height: 66px;
+    padding: 17px 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: $background;
+    margin-bottom: 5px;
+  }
+  &Caption {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.8;
+  }
+}
+.promo {
+  @extend %sectionBottom;
+}
+.products {
+  @extend %sectionBottom;
+  &Header {
+    @extend %flex;
+    margin-bottom: 20px;
+  }
+  &Title {
+    font-weight: 700;
+    @extend %fz-16;
+  }
+  &Link {
+    @extend %fz-10;
+    opacity: 0.8;
+  }
+  &Body {
+  }
+  &Slider {
+  }
+  &Cards {
+    margin-bottom: 10px;
+  }
+}
