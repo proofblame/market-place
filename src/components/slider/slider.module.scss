@@ -1,0 +1,26 @@
+@import '../../vendors/style-settings/variables.scss';
+.dots {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  @extend %flex;
+  max-width: 25px;
+  margin: 0 auto;
+  column-gap: 5px;
+}
+.dot {
+  width: 5px;
+  height: 5px;
+
+  opacity: 0.1;
+  border-radius: 50%;
+  &.active {
+    opacity: 0.3;
+  }
+  &.light {
+    background: $background;
+  }
+  &.dark {
+    background: $mainColor;
+  }
+}

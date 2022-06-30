@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./button.module.scss";
 
-const Button = ({ type, className, text, onClick, active }: any) => {
+export const Button = ({ type, className, text, onClick, active }: any) => {
   return (
     <>
       {type === "favorite" && (
@@ -44,8 +44,21 @@ const Button = ({ type, className, text, onClick, active }: any) => {
           +
         </button>
       )}
+      {type === "basket" && (
+        <button
+          onClick={onClick}
+          className={`${style.basket} ${className}`}></button>
+      )}
+      {type === "search" && (
+        <button
+          onClick={onClick}
+          className={`${style.search} ${className}`}></button>
+      )}
+      {type === "account" && (
+        <button
+          onClick={onClick}
+          className={`${style.account} ${className}`}></button>
+      )}
     </>
   );
 };
-
-export default Button;

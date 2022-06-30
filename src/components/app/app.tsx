@@ -1,20 +1,22 @@
 import React from "react";
-import style from "./app.module.css";
 import { Routes, Route } from "react-router-dom";
-import { Card } from "../../pages";
-import Scrolltotop from "../scroll-to-top/scroll-to-top";
+// Импорт стилей
+import style from "./app.module.css";
+// Импорт страниц
+import { Card, Main } from "../../pages";
+// Ипорт компонентов
+import { ScrollToTop } from "../index";
 
-const App = () => {
+export const App = () => {
   return (
     <>
-      <Scrolltotop />
+      <ScrollToTop />
       <div className={style.wrapper}>
         <Routes>
-          <Route path="/" element={<Card />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/card" element={<Card />} />
         </Routes>
       </div>
     </>
   );
 };
-
-export default App;

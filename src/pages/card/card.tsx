@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import Button from "../../components/button/button";
-import Container from "../../components/container/container";
 import style from "./card.module.scss";
 import cardImg from "./images/card-img.png";
 import starsImg from "./images/stars.png";
 import ownerDefault from "./images/owner-default.svg";
 import { Link } from "react-router-dom";
-import { ProductCard } from "../../components/product-card/product-card";
+import {
+  Slider,
+  Container,
+  Button,
+  ProductCards,
+} from "../../components/index";
 
 export const Card = () => {
   const [checked, setChecked] = useState("1");
@@ -129,7 +132,9 @@ export const Card = () => {
     <section className={style.section}>
       <nav className={style.nav}>
         <Container className={style.navWrapper}>
-          <Button type={"back"} />
+          <Link to={"/"}>
+            <Button type={"back"} />
+          </Link>
           <div className={style.navRightColumn}>
             <Button type={"favorite"} />
             <Button type={"share"} />
@@ -142,11 +147,7 @@ export const Card = () => {
             <img src={cardImg} alt="" className={style.image} />
           </li>
         </ul>
-        <ul className={style.dots}>
-          <li className={style.dot}></li>
-          <li className={`${style.dot} ${style.active}`}></li>
-          <li className={style.dot}></li>
-        </ul>
+        <Slider color={"light"} className={style.dots} />
       </div>
       <Container>
         <h1 className={style.title}>
@@ -328,12 +329,7 @@ export const Card = () => {
           Смотреть остальные отзывы...
         </Link>
         <p className={style.promo}>Промо товары</p>
-        <ul className={style.cardsList}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </ul>
+        <ProductCards className={style.productsCards} />
         <div className={style.footer}>
           <Container>
             <div className={style.addToCartWrapper}>
