@@ -1,7 +1,14 @@
 import React from "react";
-import style from "./feedbacks.modules.scss";
-import { Container } from "../../components/index";
+import style from "./feedbacks.module.scss";
+import { Header, FeedbackList } from "../../components";
 
 export const Feedbacks = () => {
-  return <Container></Container>;
+  return (
+    <>
+      <Header />
+      <section className={style.feedbacks}>
+        <FeedbackList />
+      </section>
+    </>
+  );
 };

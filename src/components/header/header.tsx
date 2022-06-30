@@ -1,23 +1,23 @@
 import React from "react";
-import { Container, Button } from "../index";
+import { Link, useLocation } from "react-router-dom";
+import { Container, Button, Logo } from "../";
 import style from "./header.module.scss";
-import logo from "./images/logo-icon.svg";
 
 export const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <section className={style.header}>
       <Container>
         <div className={style.wrapper}>
           <div className={style.logo}>
-            <img
-              className={style.logoImg}
-              src={logo}
-              alt="RaccoonIT TG Market"
-            />
-            <p className={style.logoCaption}>
-              <span>RaccoonIT</span>
-              <span className={style.logoSubCaption}>TG Market</span>
-            </p>
+            {pathname === "/" ? (
+              <Logo />
+            ) : (
+              <Link to={"/card"}>
+                <Button type="back" />
+              </Link>
+            )}
           </div>
           <nav className={style.nav}>
             <Button type={"basket"} />
