@@ -1,0 +1,22 @@
+@import '../../vendors/style-settings/variables.scss';
+%sectionBottom {
+  margin-bottom: 30px;
+}
+.products {
+  @extend %sectionBottom;
+  &Header {
+    @extend %flex;
+    margin-bottom: 20px;
+  }
+  &Title {
+    font-weight: 700;
+    @extend %fz-16;
+  }
+  &Link {
+    @extend %fz-10;
+    opacity: 0.8;
+  }
+  &Cards {
+    margin-bottom: 10px;
+  }
+}

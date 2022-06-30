@@ -6,6 +6,9 @@ import { ProductCard } from "./product-card/product-card";
 import { ProductCards } from "./product-cards/product-cards";
 import { ScrollToTop } from "./scroll-to-top/scroll-to-top";
 import { Slider } from "./slider/slider";
+import { CategoryProducts } from "./category-products/category-products";
+import { FeedbackList } from "./feedback-list/feedback-list";
+import { Feedback } from "./feedback/feedback";
 
 export {
   App,
@@ -16,4 +19,7 @@ export {
   ProductCards,
   ScrollToTop,
   Slider,
+  CategoryProducts,
+  FeedbackList,
+  Feedback,
 };

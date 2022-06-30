@@ -1,0 +1,81 @@
+@import '../../vendors/style-settings/variables.scss';
+.feedback {
+  &List {
+    list-style-type: none;
+  }
+  &Item {
+    padding: 30px 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: $background;
+    margin: 0 auto 10px;
+    max-width: 560px;
+  }
+  &Header {
+    @extend %flex;
+  }
+  &Data {
+    @extend %flex;
+    column-gap: 10px;
+  }
+  &Rating {
+    max-width: 108px;
+  }
+  &Date {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+  }
+  &Owner {
+    padding: 15px 0 20px;
+    @extend %flex;
+    justify-content: flex-start;
+    column-gap: 7px;
+    &Avatar {
+      max-width: 30px;
+    }
+    &Name {
+      font-weight: 500;
+      @extend %fz-16;
+    }
+  }
+  &Body {
+    margin-bottom: 25px;
+    &List {
+      list-style-type: none;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      row-gap: 10px;
+    }
+    &Item {
+      font-weight: 500;
+      @extend %fz-12;
+    }
+    &Title {
+      margin-bottom: 5px;
+    }
+    &Text {
+      opacity: 0.5;
+    }
+  }
+  &Footer {
+    @extend %flex;
+    justify-content: flex-end;
+    column-gap: 35px;
+  }
+}
+.rating {
+  &Button {
+    @extend %flex;
+    column-gap: 5px;
+  }
+  &Counter {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+    }
+  }
+}

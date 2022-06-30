@@ -7,6 +7,7 @@ import {
   Container,
   Slider,
   ProductCards,
+  CategoryProducts,
 } from "../../components/index";
 import { Link } from "react-router-dom";
 
@@ -101,34 +102,9 @@ export const Main = () => {
               <img src={promo} alt="Promo" />
             </Container>
           </section>
-          <section className={style.products}>
-            <Container>
-              <div className={style.productsHeader}>
-                <h2 className={style.productsTitle}>Товары</h2>
-                <span className={style.productsLink}>Все</span>
-              </div>
-              <div className={style.productsBody}>
-                <Link to={"/card"}>
-                  <ProductCards className={style.productsCards} />
-                </Link>
-                <Slider color={"dark"} className={style.productsSlider} />
-              </div>
-            </Container>
-          </section>
-          <section className={style.products}>
-            <Container>
-              <div className={style.productsHeader}>
-                <h2 className={style.productsTitle}>Товары</h2>
-                <span className={style.productsLink}>Все</span>
-              </div>
-              <div className={style.productsBody}>
-                <Link to={"/card"}>
-                  <ProductCards className={style.productsCards} />
-                </Link>
-                <Slider color={"dark"} className={style.productsSlider} />
-              </div>
-            </Container>
-          </section>
+          <CategoryProducts title={"Новинки"} />
+          <CategoryProducts title={"Скидки"} />
+          <CategoryProducts title={"Товары"} />
         </div>
       </section>
     </>

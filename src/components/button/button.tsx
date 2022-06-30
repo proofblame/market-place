@@ -59,6 +59,11 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
           onClick={onClick}
           className={`${style.account} ${className}`}></button>
       )}
+      {type === "showMore" && (
+        <button
+          onClick={onClick}
+          className={`${style.showMore} ${className}`}>{text}</button>
+      )}
     </>
   );
 };
