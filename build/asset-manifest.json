@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.de7466da.css",
-    "main.js": "/static/js/main.bd5d9d3d.js",
+    "main.css": "/static/css/main.879b20bb.css",
+    "main.js": "/static/js/main.650b1fc7.js",
     "static/media/main-image.png": "/static/media/main-image.7bc7071b90f753549e82.png",
     "static/media/card-img.png": "/static/media/card-img.02dfc282a236181fc40d.png",
+    "static/media/brand-image.png": "/static/media/brand-image.1f3ffccd814c77649b9d.png",
     "static/media/montserrat-v18-latin_cyrillic-700.woff": "/static/media/montserrat-v18-latin_cyrillic-700.302252f8724c318c368d.woff",
     "static/media/montserrat-v18-latin_cyrillic-600.woff": "/static/media/montserrat-v18-latin_cyrillic-600.2d77a224754279fd2eb2.woff",
     "static/media/montserrat-v18-latin_cyrillic-500.woff": "/static/media/montserrat-v18-latin_cyrillic-500.04c0609c41996743a201.woff",
@@ -14,25 +15,25 @@
     "static/media/montserrat-v18-latin_cyrillic-500.woff2": "/static/media/montserrat-v18-latin_cyrillic-500.c2bbf96131933f2a6a90.woff2",
     "static/media/montserrat-v18-latin_cyrillic-regular.woff2": "/static/media/montserrat-v18-latin_cyrillic-regular.57960c9028c57ecd5006.woff2",
     "static/media/like-icon.svg": "/static/media/like-icon.4eedb2d7e938ff026218.svg",
-    "static/media/logo-icon.svg": "/static/media/logo-icon.9227f68442cdced0c13ccb8683e968af.svg",
+    "static/media/logo-icon.svg": "/static/media/logo-icon.2a847fa76b31b82b1b997596fbfb6097.svg",
     "static/media/share-icon.svg": "/static/media/share-icon.223e15dc063824cd4040.svg",
     "static/media/search-icon.svg": "/static/media/search-icon.41ede6ddc576c0e0295c.svg",
     "static/media/favorite-active-icon.svg": "/static/media/favorite-active-icon.5488b5b023ff80817703.svg",
     "index.html": "/index.html",
-    "static/media/category-box-icon.svg": "/static/media/category-box-icon.809db566ef114ead5b4bae523d0cd9e7.svg",
+    "static/media/category-box-icon.svg": "/static/media/category-box-icon.d99cd31105c9dc6393cfd80ee8fdd4e0.svg",
     "static/media/complaint-icon.svg": "/static/media/complaint-icon.05da20a2b1c080b11e48.svg",
-    "static/media/telegram-icon.svg": "/static/media/telegram-icon.79d168c49d58977d92a0.svg",
+    "static/media/telegram-icon.svg": "/static/media/telegram-icon.a852c38a337da1d817b6.svg",
     "static/media/favorite-card-icon.svg": "/static/media/favorite-card-icon.6bd29022b9caaab6de64.svg",
     "static/media/favorite-icon.svg": "/static/media/favorite-icon.b26c5190095010404296.svg",
     "static/media/back-icon.svg": "/static/media/back-icon.bfedf1c001e941f84676.svg",
-    "static/media/basket-icon.svg": "/static/media/basket-icon.e34589099cc6f0810d6a.svg",
+    "static/media/basket-icon.svg": "/static/media/basket-icon.e7c70a6f3aaa75265cc6.svg",
     "static/media/account-icon.svg": "/static/media/account-icon.075460b00e26f10d8dce.svg",
     "static/media/owner-default.svg": "/static/media/owner-default.49cab3404f48b8bebe1e0a22ac286ea0.svg",
-    "main.de7466da.css.map": "/static/css/main.de7466da.css.map",
-    "main.bd5d9d3d.js.map": "/static/js/main.bd5d9d3d.js.map"
+    "main.879b20bb.css.map": "/static/css/main.879b20bb.css.map",
+    "main.650b1fc7.js.map": "/static/js/main.650b1fc7.js.map"
   },
   "entrypoints": [
-    "static/css/main.de7466da.css",
-    "static/js/main.bd5d9d3d.js"
+    "static/css/main.879b20bb.css",
+    "static/js/main.650b1fc7.js"
   ]
 }
