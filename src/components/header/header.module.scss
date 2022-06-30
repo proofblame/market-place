@@ -13,38 +13,7 @@
 .wrapper {
   @extend %flex;
 }
-.logo {
-  @extend %fonts;
-  @extend %flex;
-  column-gap: 4px;
-  color: $mainColor;
-  &Img {
-    width: 25px;
-    height: 25px;
-  }
-  &Caption {
-    @extend %fz-8;
-    @extend %flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  &SubCaption {
-    @extend %fz-6;
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: -10px;
-      width: 8px;
-      height: 6px;
-      background-image: url('./images/telegram-icon.svg');
-      background-position: center;
-      background-size: contain;
-    }
-  }
-}
+
 .nav {
   @extend %flex;
   column-gap: 10px;

@@ -1,0 +1,6 @@
+@import '../../vendors/style-settings/variables.scss';
+.feedbacks {
+  padding-top: 70px;
+  @extend %fonts;
+  color: $mainColor;
+}

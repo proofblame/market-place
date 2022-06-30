@@ -9,7 +9,7 @@ import {
   Button,
   CategoryProducts,
   FeedbackList,
-} from "../../components/index";
+} from "../../components";
 
 export const Card = () => {
   const [checked, setChecked] = useState("1");

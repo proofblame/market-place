@@ -9,6 +9,7 @@ import { Slider } from "./slider/slider";
 import { CategoryProducts } from "./category-products/category-products";
 import { FeedbackList } from "./feedback-list/feedback-list";
 import { Feedback } from "./feedback/feedback";
+import { Logo } from "./logo/logo";
 
 export {
   App,
@@ -22,4 +23,5 @@ export {
   CategoryProducts,
   FeedbackList,
   Feedback,
+  Logo,
 };

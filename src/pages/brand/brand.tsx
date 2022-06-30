@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import style from "./brand.module.scss";
-import {
-  Button,
-  CategoryProducts,
-  Container,
-  Header,
-} from "../../components/index";
+import { Button, CategoryProducts, Container, Header } from "../../components";
 
 export const Brand = () => {
   const [show, setShow] = useState({
