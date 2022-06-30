@@ -1,0 +1,70 @@
+@import '../../vendors/style-settings/variables.scss';
+.card {
+  width: 100%;
+  max-width: 142px;
+  padding-bottom: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  background-color: $background;
+  &Header {
+    position: relative;
+  }
+  &Body {
+    max-width: 122px;
+    margin: 0 auto;
+    padding-top: 8px;
+  }
+  &Img {
+    width: 100%;
+    height: 100%;
+    max-width: 142px;
+    max-height: 142px;
+    object-fit: cover;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  &Title {
+    font-weight: 500;
+    @extend %fz-12;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+  &DiscountPercent {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-weight: 700;
+    @extend %fz-8;
+    background-color: $themeColor;
+    padding: 1px 5px;
+    opacity: 0.8;
+    border-radius: 10px;
+    @extend %flex;
+    justify-content: center;
+  }
+}
+.cost {
+  @extend %flex;
+  justify-content: flex-start;
+  column-gap: 8px;
+  margin-bottom: 10px;
+  &Current {
+    font-weight: 700;
+    @extend %fz-12;
+    color: #ff004d;
+  }
+  &Previous {
+    font-weight: 600;
+    @extend %fz-10;
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+}
+.favoriteButton {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+}

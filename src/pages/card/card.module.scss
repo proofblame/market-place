@@ -1,16 +1,18 @@
 @import '../../vendors/style-settings/variables.scss';
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 .section {
   position: relative;
   @extend %fonts;
   color: $mainColor;
+  padding-bottom: 100px;
 }
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   padding-top: 10px;
 
@@ -53,14 +55,15 @@
   height: 5px;
   background: $background;
   opacity: 0.1;
+  border-radius: 50%;
   &.active {
     opacity: 0.3;
   }
 }
 .cardBody {
-  padding-top: 10px;
 }
 .title {
+  padding-top: 10px;
   font-weight: 700;
   @extend %fz-16;
 }
@@ -81,6 +84,8 @@
   }
   &Current {
     padding-top: 10px;
+    font-weight: 700;
+    @extend %fz-32;
   }
 }
 .stars {
@@ -95,14 +100,218 @@
 }
 .tabs {
   padding: 20px 0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: $background;
+  max-width: 560px;
+  margin: 0 auto 30px;
   &Header {
     margin-bottom: 15px;
     font-weight: 700;
     @extend %fz-16;
   }
   &Input {
+    display: none;
   }
   &Label {
     margin-right: 20px;
+    font-weight: 700;
+    opacity: 0.5;
+    cursor: pointer;
+    &.active {
+      opacity: 1;
+    }
+  }
+  &Content {
+    font-weight: 500;
+    @extend %fz-12;
+    opacity: 0.8;
+  }
+}
+.owner {
+  padding: 18px 0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: $background;
+  max-width: 560px;
+  margin: 0 auto 30px;
+
+  &Status {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.8;
+    margin-bottom: 5px;
+  }
+  &Name {
+    font-weight: 700;
+    @extend %fz-16;
+  }
+}
+.reviews {
+  padding: 18px 0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: $background;
+  max-width: 560px;
+  margin: 0 auto 10px;
+  &Header {
+    font-weight: 700;
+    @extend %fz-12;
+    @extend %flex;
+    margin-bottom: 12px;
+  }
+  &Title {
+    @extend %flex;
+    column-gap: 5px;
+  }
+  &Counter {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+  }
+  &Stars {
+    @extend %flex;
+    column-gap: 5px;
+    &Counter {
+      font-weight: 500;
+      @extend %fz-10;
+      opacity: 0.8;
+    }
+  }
+  &Caption {
+    font-weight: 500;
+    @extend %fz-12;
+    opacity: 0.5;
+  }
+}
+.review {
+  &List {
+    list-style-type: none;
+  }
+  &Item {
+    padding: 30px 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: $background;
+    margin: 0 auto 10px;
+    max-width: 560px;
+  }
+  &Header {
+    @extend %flex;
+  }
+  &Data {
+    @extend %flex;
+    column-gap: 10px;
+  }
+  &Rating {
+    max-width: 108px;
+  }
+  &Date {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+  }
+  &Owner {
+    padding: 15px 0 20px;
+    @extend %flex;
+    justify-content: flex-start;
+    column-gap: 7px;
+    &Avatar {
+      max-width: 30px;
+    }
+    &Name {
+      font-weight: 500;
+      @extend %fz-16;
+    }
+  }
+  &Body {
+    margin-bottom: 25px;
+    &List {
+      list-style-type: none;
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      row-gap: 10px;
+    }
+    &Item {
+      font-weight: 500;
+      @extend %fz-12;
+    }
+    &Title {
+      margin-bottom: 5px;
+    }
+    &Text {
+      opacity: 0.5;
+    }
+  }
+  &Footer {
+    @extend %flex;
+    justify-content: flex-end;
+    column-gap: 35px;
+  }
+}
+.rating {
+  &Button {
+    @extend %flex;
+    column-gap: 5px;
+  }
+  &Counter {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+.link {
+  font-weight: 500;
+  @extend %fz-12;
+  color: $themeColor;
+  padding: 20px 0 30px;
+  display: block;
+  text-align: center;
+}
+.promo {
+  @extend %fz-16;
+  color: $mainColor;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.cardsList {
+  list-style-type: none;
+  @extend %flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+.footer {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: $background;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  @extend %flex;
+  justify-content: center;
+}
+.addToCart {
+  &Wrapper {
+    @extend %flex;
+    column-gap: 15px;
+  }
+  &Counter {
+    @extend %flex;
+    column-gap: 15px;
+    flex: 1 0 50%;
+  }
+  &Sum {
+    font-weight: 500;
+    @extend %fz-16;
+  }
+  &Button {
+    height: 42px;
+    &Decrement {
+    }
+    &Increment {
+    }
   }
 }

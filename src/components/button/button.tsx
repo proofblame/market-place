@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./button.module.scss";
 
-const Button = ({ type, className }: any) => {
+const Button = ({ type, className, text, onClick, active }: any) => {
   return (
     <>
       {type === "favorite" && (
@@ -13,8 +13,36 @@ const Button = ({ type, className }: any) => {
       {type === "share" && (
         <button className={`${style.share} ${className}`}></button>
       )}
-      {type === "addToCard" && (
-        <button className={`${style.addToCard} ${className}`}>В корзину</button>
+      {type === "complaint" && (
+        <button className={`${style.complaint} ${className}`}></button>
+      )}
+      {type === "like" && (
+        <button
+          onClick={onClick}
+          className={`${style.like} ${active && style.active}`}></button>
+      )}
+      {type === "dislike" && (
+        <button
+          onClick={onClick}
+          className={`${style.dislike} ${active && style.active}`}></button>
+      )}
+      {type === "favoriteCard" && (
+        <button className={`${style.favoriteCard} ${className}`}></button>
+      )}
+      {type === "addToCart" && (
+        <button onClick={onClick} className={`${style.addToCart} ${className}`}>
+          {text || "В корзину"}
+        </button>
+      )}
+      {type === "decrement" && (
+        <button onClick={onClick} className={`${style.decrement} ${className}`}>
+          -
+        </button>
+      )}
+      {type === "increment" && (
+        <button onClick={onClick} className={`${style.increment} ${className}`}>
+          +
+        </button>
       )}
     </>
   );

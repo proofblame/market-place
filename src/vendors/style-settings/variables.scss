@@ -30,13 +30,25 @@ $reasonsListSize: 1479px;
   letter-spacing: 0.05em;
 }
 
+%fz-32 {
+  @include adaptive(font-size, 32, 32);
+  @include adaptive(line-height, 39, 39);
+}
 %fz-16 {
   @include adaptive(font-size, 16, 16);
   @include adaptive(line-height, 20, 20);
 }
+%fz-12 {
+  @include adaptive(font-size, 12, 12);
+  @include adaptive(line-height, 15, 15);
+}
 %fz-10 {
   @include adaptive(font-size, 10, 10);
   @include adaptive(line-height, 12, 12);
+}
+%fz-8 {
+  @include adaptive(font-size, 8, 8);
+  @include adaptive(line-height, 10, 10);
 }
 
 %flex {
