@@ -1,17 +1,19 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 // Импорт стилей
 import style from "./app.module.css";
 // Импорт страниц
 import { Card, Main, Brand, Feedbacks } from "../../pages";
 // Ипорт компонентов
-import { ScrollToTop } from "../index";
+import { ScrollToTop, Header } from "../index";
 
 export const App = () => {
+  const { pathname } = useLocation();
   return (
     <>
       <ScrollToTop />
       <div className={style.wrapper}>
+        {pathname !== "/card" && <Header />}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/card" element={<Card />} />

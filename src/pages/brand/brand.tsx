@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./brand.module.scss";
-import { Button, CategoryProducts, Container, Header } from "../../components";
+import { Button, CategoryProducts, Container } from "../../components";
 
 export const Brand = () => {
   const [show, setShow] = useState({
@@ -15,7 +15,6 @@ export const Brand = () => {
   };
   return (
     <>
-      <Header />
       <section className={style.brand}>
         <div className={style.brandWrapper}>
           <section className={style.banner}>

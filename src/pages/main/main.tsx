@@ -2,12 +2,11 @@ import React from "react";
 import style from "./main.module.scss";
 import categoryImg from "./images/category-box-icon.svg";
 import promo from "./images/promo.png";
-import { Header, Container, Slider, CategoryProducts } from "../../components";
+import { Container, Slider, CategoryProducts } from "../../components";
 
 export const Main = () => {
   return (
     <>
-      <Header />
       <section className={style.main}>
         <div className={style.mainWrapper}>
           <section className={style.banner}>
