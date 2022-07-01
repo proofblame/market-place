@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./button.module.scss";
 
 export const Button = ({ type, className, text, onClick, active }: any) => {
@@ -55,14 +56,16 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
           className={`${style.search} ${className}`}></button>
       )}
       {type === "account" && (
-        <button
-          onClick={onClick}
-          className={`${style.account} ${className}`}></button>
+        <Link to={"/favorites"} className={`${style.account} ${className}`}>
+          <button
+            onClick={onClick}
+            className={`${style.account} ${className}`}></button>
+        </Link>
       )}
       {type === "showMore" && (
-        <button
-          onClick={onClick}
-          className={`${style.showMore} ${className}`}>{text}</button>
+        <button onClick={onClick} className={`${style.showMore} ${className}`}>
+          {text}
+        </button>
       )}
     </>
   );

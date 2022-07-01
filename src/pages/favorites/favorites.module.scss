@@ -1,0 +1,55 @@
+@import '../../vendors/style-settings/variables.scss';
+.favorites {
+  padding-top: 65px;
+  position: relative;
+  &Filter {
+    position: relative;
+    padding-right: 7px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      background-image: url('../../images/arrow-icon.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 5px;
+      height: 5px;
+    }
+  }
+}
+.popup {
+  @extend %fonts;
+  color: $mainColor;
+  font-weight: 500;
+  opacity: 0.8;
+  @extend %fz-10;
+
+  &Title {
+    text-align: center;
+    padding: 30px 0;
+  }
+  &Buttons {
+    @extend %flex;
+  }
+  &Button {
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+    color: $mainColor;
+    @extend %fz-10;
+    &No {
+      border-radius: 0px 0px 0px 8px;
+      background-color: $background;
+      opacity: 0.5;
+    }
+    &Yes {
+      background-color: $themeColor;
+      box-shadow: 0px 3.31111px 16.5556px rgba(0, 0, 0, 0.5);
+      border-radius: 0px 0px 8px 0px;
+    }
+  }
+}
