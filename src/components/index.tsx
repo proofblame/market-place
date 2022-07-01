@@ -10,7 +10,7 @@ import { CategoryProducts } from "./category-products/category-products";
 import { FeedbackList } from "./feedback-list/feedback-list";
 import { Feedback } from "./feedback/feedback";
 import { Logo } from "./logo/logo";
-
+import { Modal } from "./modal/modal";
 export {
   App,
   Button,
@@ -24,4 +24,5 @@ export {
   FeedbackList,
   Feedback,
   Logo,
+  Modal,
 };

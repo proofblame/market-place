@@ -3,6 +3,8 @@
   margin-bottom: 30px;
 }
 .products {
+  @extend %fonts;
+  color: $mainColor;
   @extend %sectionBottom;
   &Header {
     @extend %flex;
@@ -15,6 +17,11 @@
   &Link {
     @extend %fz-10;
     opacity: 0.8;
+    border: none;
+    background: none;
+    color: inherit;
+    // margin: 0;
+    // padding: 0;
   }
   &Cards {
     margin-bottom: 10px;

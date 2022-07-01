@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 // Импорт стилей
 import style from "./app.module.css";
 // Импорт страниц
-import { Card, Main, Brand, Feedbacks } from "../../pages";
+import { Card, Main, Brand, Feedbacks, Favorites } from "../../pages";
 // Ипорт компонентов
 import { ScrollToTop, Header } from "../index";
 
@@ -19,6 +19,7 @@ export const App = () => {
           <Route path="/card" element={<Card />} />
           <Route path="/brand" element={<Brand />} />
           <Route path="/feedbacks" element={<Feedbacks />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
     </>
