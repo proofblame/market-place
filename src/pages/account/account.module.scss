@@ -1,0 +1,86 @@
+@import '../../vendors/style-settings/variables.scss';
+.account {
+  padding-top: 50px;
+  @extend %fonts;
+  color: $mainColor;
+  &Title {
+    padding: 15px 0;
+  }
+}
+.data {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 48px;
+
+  &Img {
+    width: 50px;
+    height: 50px;
+  }
+  &Info {
+  }
+  &Name {
+    font-weight: 500;
+    @extend %fz-16;
+    margin-bottom: 5px;
+  }
+  &Id {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.5;
+  }
+}
+%itemIcon {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+.nav {
+  &List {
+    font-weight: 500;
+    @extend %fz-16;
+    list-style-type: none;
+  }
+  &Item {
+    margin-bottom: 30px;
+    opacity: 0.5;
+    position: relative;
+    padding-left: 45px;
+    &::before {
+      @extend %itemIcon;
+    }
+    &.adress::before {
+      background-image: url('./images/adress-icon.svg');
+    }
+    &.favorites::before {
+      background-image: url('./images/favorite-icon.svg');
+    }
+    &.support::before {
+      background-image: url('./images/support-icon.svg');
+    }
+    &.historyView::before {
+      background-image: url('./images/history-view-icon.svg');
+    }
+    &.historyOrders::before {
+      background-image: url('./images/history-orders-icon.svg');
+    }
+    &.active {
+      opacity: 1;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &Link {
+  }
+}
