@@ -9,7 +9,9 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         <button className={`${style.favorite} ${className}`}></button>
       )}
       {type === "back" && (
-        <button className={`${style.back} ${className}`}></button>
+        <button
+          onClick={onClick}
+          className={`${style.back} ${className}`}></button>
       )}
       {type === "share" && (
         <button className={`${style.share} ${className}`}></button>
@@ -56,7 +58,7 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
           className={`${style.search} ${className}`}></button>
       )}
       {type === "account" && (
-        <Link to={"/favorites"} className={`${style.account} ${className}`}>
+        <Link to={"/account"} className={`${style.account} ${className}`}>
           <button
             onClick={onClick}
             className={`${style.account} ${className}`}></button>

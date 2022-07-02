@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Container, Button, Logo } from "../";
 import style from "./header.module.scss";
 
 export const Header = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <section className={style.header}>
@@ -14,9 +15,7 @@ export const Header = () => {
             {pathname === "/" ? (
               <Logo />
             ) : (
-              <Link to={"/card"}>
-                <Button type="back" />
-              </Link>
+              <Button type="back" onClick={() => navigate(-1)} />
             )}
           </div>
           <nav className={style.nav}>
