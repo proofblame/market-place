@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import style from "./brand.module.scss";
-import { Button, CategoryProducts, Container } from "../../components";
+import {
+  Button,
+  CategoryProducts,
+  Container,
+  ProductsHeader,
+} from "../../components";
 
 export const Brand = () => {
   const [show, setShow] = useState({
@@ -40,10 +45,16 @@ export const Brand = () => {
                 text={show.text}
                 onClick={showDescription}></Button>
             </section>
-            <CategoryProducts />
-            <CategoryProducts />
-            <CategoryProducts />
           </Container>
+          <CategoryProducts>
+            <ProductsHeader title={"Новинки"} />
+          </CategoryProducts>
+          <CategoryProducts>
+            <ProductsHeader title={"Скидки"} />
+          </CategoryProducts>
+          <CategoryProducts>
+            <ProductsHeader title={"Товары"} />
+          </CategoryProducts>
         </div>
       </section>
     </>

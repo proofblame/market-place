@@ -2,7 +2,12 @@ import React from "react";
 import style from "./main.module.scss";
 import categoryImg from "./images/category-box-icon.svg";
 import promo from "./images/promo.png";
-import { Container, Slider, CategoryProducts } from "../../components";
+import {
+  Container,
+  Slider,
+  CategoryProducts,
+  ProductsHeader,
+} from "../../components";
 
 export const Main = () => {
   return (
@@ -94,9 +99,15 @@ export const Main = () => {
               <img src={promo} alt="Promo" />
             </Container>
           </section>
-          <CategoryProducts title={"Новинки"} />
-          <CategoryProducts title={"Скидки"} />
-          <CategoryProducts title={"Товары"} />
+          <CategoryProducts>
+            <ProductsHeader title={"Новинки"} />
+          </CategoryProducts>
+          <CategoryProducts>
+            <ProductsHeader title={"Скидки"} />
+          </CategoryProducts>
+          <CategoryProducts>
+            <ProductsHeader title={"Товары"} />
+          </CategoryProducts>
         </div>
       </section>
     </>

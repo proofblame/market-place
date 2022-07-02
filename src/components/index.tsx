@@ -11,6 +11,9 @@ import { FeedbackList } from "./feedback-list/feedback-list";
 import { Feedback } from "./feedback/feedback";
 import { Logo } from "./logo/logo";
 import { Modal } from "./modal/modal";
+import { ConfirmPopup } from "./confirm-popup/confirm-popup";
+import { ProductsHeader } from "./products-header/products-header";
+
 export {
   App,
   Button,
@@ -25,4 +28,6 @@ export {
   Feedback,
   Logo,
   Modal,
+  ConfirmPopup,
+  ProductsHeader,
 };

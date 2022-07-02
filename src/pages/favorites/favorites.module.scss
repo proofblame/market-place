@@ -1,5 +1,7 @@
 @import '../../vendors/style-settings/variables.scss';
 .favorites {
+  @extend %fonts;
+  color: $mainColor;
   padding-top: 65px;
   position: relative;
   &Filter {
@@ -19,37 +21,51 @@
       height: 5px;
     }
   }
-}
-.popup {
-  @extend %fonts;
-  color: $mainColor;
-  font-weight: 500;
-  opacity: 0.8;
-  @extend %fz-10;
-
-  &Title {
+  &Text {
+    font-weight: 700;
+    @extend %fz-16;
     text-align: center;
-    padding: 30px 0;
+    margin-bottom: 10px;
   }
-  &Buttons {
-    @extend %flex;
+  &Subtext {
+    font-weight: 500;
+    @extend %fz-12;
+    opacity: 0.5;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &Button {
+    height: 30px;
+    width: 100%;
+    max-width: 122px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+.filter {
+  &List {
+    @extend %fonts;
+    color: $mainColor;
+    width: 230px;
+    list-style-type: none;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+    margin: 0;
+  }
+  &Item {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.8;
   }
   &Button {
     border: none;
-    width: 100%;
-    height: 50px;
-    font-weight: 500;
-    color: $mainColor;
-    @extend %fz-10;
-    &No {
-      border-radius: 0px 0px 0px 8px;
-      background-color: $background;
-      opacity: 0.5;
-    }
-    &Yes {
-      background-color: $themeColor;
-      box-shadow: 0px 3.31111px 16.5556px rgba(0, 0, 0, 0.5);
-      border-radius: 0px 0px 8px 0px;
-    }
+    background: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
   }
 }

@@ -9,6 +9,7 @@ import {
   Button,
   CategoryProducts,
   FeedbackList,
+  ProductsHeader,
 } from "../../components";
 
 export const Card = () => {
@@ -163,7 +164,9 @@ export const Card = () => {
         </Container>
       </section>
       <FeedbackList />
-      <CategoryProducts title={"Промо товары"} />
+      <CategoryProducts>
+        <ProductsHeader title={"Промо товары"} />
+      </CategoryProducts>
       <div className={style.footer}>
         <Container>
           <div className={style.addToCartWrapper}>

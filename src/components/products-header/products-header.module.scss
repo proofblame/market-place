@@ -1,0 +1,21 @@
+@import '../../vendors/style-settings/variables.scss';
+.products {
+  &Header {
+    @extend %fonts;
+    color: $mainColor;
+    @extend %flex;
+    margin-bottom: 20px;
+  }
+  &Title {
+    font-weight: 700;
+    @extend %fz-16;
+  }
+  &Link {
+    @extend %fz-10;
+    opacity: 0.8;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}

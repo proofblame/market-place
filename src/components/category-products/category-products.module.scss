@@ -3,26 +3,10 @@
   margin-bottom: 30px;
 }
 .products {
+  @extend %sectionBottom;
   @extend %fonts;
   color: $mainColor;
-  @extend %sectionBottom;
-  &Header {
-    @extend %flex;
-    margin-bottom: 20px;
-  }
-  &Title {
-    font-weight: 700;
-    @extend %fz-16;
-  }
-  &Link {
-    @extend %fz-10;
-    opacity: 0.8;
-    border: none;
-    background: none;
-    color: inherit;
-    // margin: 0;
-    // padding: 0;
-  }
+
   &Cards {
     margin-bottom: 10px;
   }
