@@ -5,19 +5,19 @@ import ReactDOM from "react-dom";
 const modalRoot = document.getElementById("modals") as HTMLElement;
 
 export const Modal = ({ modal, children, toggleModal }: any) => {
-  // useEffect(() => {
-  //   const handleEscapePress = (e: KeyboardEvent) => {
-  //     if (e.key === "Escape") {
-  //       toggleModal();
-  //     }
-  //   };
-
-  //   document.addEventListener("keydown", handleEscapePress);
-
-  //   return () => {
-  //     document.removeEventListener("keydown", handleEscapePress);
-  //   };
-  // }, [modal, toggleModal]);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body!.style.overflow = modal ? "hidden" : "auto";
+    // const handleEscapePress = (e: KeyboardEvent) => {
+    //   if (e.key === "Escape") {
+    //     toggleModal();
+    //   }
+    // };
+    // document.addEventListener("keydown", handleEscapePress);
+    // return () => {
+    //   document.removeEventListener("keydown", handleEscapePress);
+    // };
+  }, [modal]);
 
   return ReactDOM.createPortal(
     modal && (

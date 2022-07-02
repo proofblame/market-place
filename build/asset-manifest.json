@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.879b20bb.css",
-    "main.js": "/static/js/main.650b1fc7.js",
+    "main.css": "/static/css/main.89e439fd.css",
+    "main.js": "/static/js/main.6bb81013.js",
     "static/media/main-image.png": "/static/media/main-image.7bc7071b90f753549e82.png",
     "static/media/card-img.png": "/static/media/card-img.02dfc282a236181fc40d.png",
     "static/media/brand-image.png": "/static/media/brand-image.1f3ffccd814c77649b9d.png",
@@ -28,12 +28,13 @@
     "static/media/back-icon.svg": "/static/media/back-icon.bfedf1c001e941f84676.svg",
     "static/media/basket-icon.svg": "/static/media/basket-icon.e7c70a6f3aaa75265cc6.svg",
     "static/media/account-icon.svg": "/static/media/account-icon.075460b00e26f10d8dce.svg",
+    "static/media/arrow-icon.svg": "/static/media/arrow-icon.9a534c615514d95a241e.svg",
     "static/media/owner-default.svg": "/static/media/owner-default.49cab3404f48b8bebe1e0a22ac286ea0.svg",
-    "main.879b20bb.css.map": "/static/css/main.879b20bb.css.map",
-    "main.650b1fc7.js.map": "/static/js/main.650b1fc7.js.map"
+    "main.89e439fd.css.map": "/static/css/main.89e439fd.css.map",
+    "main.6bb81013.js.map": "/static/js/main.6bb81013.js.map"
   },
   "entrypoints": [
-    "static/css/main.879b20bb.css",
-    "static/js/main.650b1fc7.js"
+    "static/css/main.89e439fd.css",
+    "static/js/main.6bb81013.js"
   ]
 }
