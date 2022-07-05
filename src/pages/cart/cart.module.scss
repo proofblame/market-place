@@ -66,6 +66,13 @@
     }
     &Point {
       composes: cartAdressPoint;
+      &::before {
+        opacity: 0.5;
+        border: 1px solid #f4f4f4;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        background-image: none;
+        border-radius: 50%;
+      }
     }
     &Button {
       composes: cartAdressButton;
@@ -84,6 +91,8 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   @extend %flex;
+  height: 100px;
+  margin-bottom: 20px;
   &ImgGroup {
     position: relative;
   }
@@ -92,17 +101,6 @@
     border-radius: 10px;
     width: 100px;
     height: 100px;
-  }
-  &FavoriteButton {
-    background: $background;
-    border: 1px solid #f4f4f4;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
   }
   &DiscountPercent {
     font-weight: 700;
@@ -141,10 +139,12 @@
   &Content {
     &Group {
       padding: 10px;
+      box-sizing: border-box;
     }
     &Header {
       @extend %flex;
       align-items: flex-start;
+      margin-bottom: 10px;
     }
     &Buttons {
       display: flex;
@@ -153,8 +153,9 @@
       row-gap: 12px;
     }
     &Button {
-      width: 10px;
-      height: 10px;
+      width: 10px !important;
+      height: 10px !important;
+      background-color: $themeColor;
     }
     &Footer {
       @extend %flex;
@@ -163,22 +164,24 @@
       font-weight: 500;
       @extend %fz-10;
       opacity: 0.5;
+      width: 100%;
     }
     &Counter {
       @extend %flex;
       column-gap: 7px;
+      width: 100%;
     }
     &ButtonDecrement {
-      width: 23px;
-      height: 23px;
+      width: 23px !important;
+      height: 23px !important;
       font-weight: 500;
       @extend %fz-8;
       background-color: $background;
       box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
     }
     &ButtonIncrement {
-      width: 23px;
-      height: 23px;
+      width: 23px !important;
+      height: 23px !important;
       font-weight: 500;
       @extend %fz-8;
       background-color: $themeColor;
@@ -188,5 +191,91 @@
       font-weight: 500;
       @extend %fz-8;
     }
+  }
+}
+.total {
+  background: $background;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  &Title {
+    font-weight: 700;
+    @extend %fz-16;
+    margin-bottom: 10px;
+  }
+  &List {
+    list-style-type: none;
+  }
+  &Item {
+    @extend %flex;
+    margin-bottom: 5px;
+    &.border {
+      padding-top: 15px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        border-image-source: linear-gradient(
+          270deg,
+          rgba(244, 244, 244, 0) 0%,
+          rgba(244, 244, 244, 0.5) 51.04%,
+          rgba(244, 244, 244, 0) 100%
+        );
+        background: linear-gradient(
+          270deg,
+          rgba(244, 244, 244, 0) 0%,
+          rgba(244, 244, 244, 0.5) 51.04%,
+          rgba(244, 244, 244, 0) 100%
+        );
+      }
+    }
+  }
+  &Count {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.8;
+    &Cost {
+      font-weight: 700;
+      @extend %fz-10;
+    }
+  }
+  &Sale {
+    font-weight: 500;
+    @extend %fz-10;
+    opacity: 0.8;
+    &Cost {
+      font-weight: 700;
+      @extend %fz-10;
+      color: #ff004d;
+    }
+  }
+  &Price {
+    font-weight: 700;
+    @extend %fz-10;
+    &Cost {
+      font-weight: 700;
+      @extend %fz-10;
+      color: #ff004d;
+    }
+  }
+}
+.footer {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: $background;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  @extend %flex;
+  justify-content: center;
+  &Button {
+    height: 42px;
+    font-weight: 500;
+    @extend %fz-16;
   }
 }

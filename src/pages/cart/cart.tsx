@@ -1,6 +1,11 @@
 import React from "react";
 import style from "./cart.module.scss";
-import { Button, Container, ProductsHeader } from "../../components";
+import {
+  Button,
+  Container,
+  MainButton,
+  ProductsHeader,
+} from "../../components";
 import cardImg from "./images/card-img.jpg";
 
 export const Cart = () => {
@@ -43,10 +48,7 @@ export const Cart = () => {
           <section className={style.card}>
             <div className={style.cardImgGroup}>
               <img className={style.cardImg} src={cardImg} alt="" />
-              <Button
-                type={"favoriteCard"}
-                className={style.cardFavoriteButton}
-              />
+              <Button type={"select"} />
               <span className={style.cardDiscountPercent}>12%</span>
             </div>
             <div className={style.cardContentGroup}>
@@ -67,10 +69,7 @@ export const Cart = () => {
                     type={"favoriteCard"}
                     className={style.cardContentButton}
                   />
-                  <Button
-                    type={"favoriteCard"}
-                    className={style.cardContentButton}
-                  />
+                  <Button type={"delete"} />
                 </div>
               </div>
               <div className={style.cardContentFooter}>
@@ -80,7 +79,7 @@ export const Cart = () => {
                     type={"decrement"}
                     className={style.cardContentButtonDecrement}
                   />
-                  <p className={style.cardContentSum}>1</p>
+                  <p className={style.cardContentSum}>99+</p>
                   <Button
                     type={"increment"}
                     className={style.cardContentButtonIncrement}
@@ -90,6 +89,33 @@ export const Cart = () => {
             </div>
           </section>
         </Container>
+        <section className={style.total}>
+          <Container>
+            <p className={style.totalTitle}>Ваша корзина</p>
+            <ul className={style.totalList}>
+              <li className={style.totalItem}>
+                <p className={style.totalCount}>Товаров (99)</p>
+                <p className={style.totalCountCost}>999 999 млн &#x20bd;</p>
+              </li>
+              <li className={style.totalItem}>
+                <p className={style.totalSale}>Скидка</p>
+                <p className={style.totalSaleCost}>- 499 &#x20bd;</p>
+              </li>
+              <li className={`${style.totalItem} ${style.border}`}>
+                <p className={style.totalPrice}>Общая стоимость</p>
+                <p className={style.totalPriceCost}>2299 &#x20bd;</p>
+              </li>
+            </ul>
+          </Container>
+        </section>
+        <section className={style.footer}>
+          <Container>
+            <Button
+              text={"Перейти к оформлению"}
+              type={"mainButton"}
+              className={style.footerButton}></Button>
+          </Container>
+        </section>
       </section>
     </>
   );

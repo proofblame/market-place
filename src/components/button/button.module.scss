@@ -89,31 +89,35 @@
   }
 }
 .favoriteCard {
-  background-image: url('./images/favorite-card-icon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  mask-image: url('./images/favorite-card-icon.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
   @include adaptive(width, 22, 22);
   @include adaptive(height, 22, 22);
-  background-color: transparent;
+
+  background-color: $themeColor;
   border: none;
   cursor: pointer;
+  &.active {
+    mask-image: url('./images/favorite-active-icon.svg');
+  }
 }
 
-.addToCart {
+.mainButton {
   color: $mainColor;
   background-color: $themeColor;
   font-weight: 500;
   text-align: center;
   border: none;
   cursor: pointer;
-  @extend %fz-10;
   width: 100%;
   border-radius: 3px;
 
   &.active {
   }
 }
+
 .decrement {
   color: $mainColor;
   background-color: $background;
@@ -188,4 +192,27 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
+}
+.delete {
+  background-image: url('./images/delete-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @include adaptive(width, 10, 10);
+  @include adaptive(height, 10, 10);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.select {
+  background: $background;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
 }

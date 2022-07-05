@@ -125,7 +125,6 @@
     @extend %fz-16;
   }
 }
-
 .footer {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   background-color: $background;
@@ -136,8 +135,6 @@
   padding: 10px 0;
   @extend %flex;
   justify-content: center;
-}
-.addToCart {
   &Wrapper {
     @extend %flex;
     column-gap: 15px;
@@ -153,6 +150,12 @@
   }
   &Button {
     height: 42px;
+    font-weight: 500;
+    @extend %fz-16;
+    &.active {
+      @extend %fz-12;
+      padding: 0 30px;
+    }
     &Decrement {
     }
     &Increment {

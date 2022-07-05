@@ -70,5 +70,6 @@
   right: 11px;
 }
 .addToCartButton {
+  @extend %fz-10;
   height: 30px;
 }
