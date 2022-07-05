@@ -21,7 +21,7 @@ export const ProductCard = () => {
             <span className={style.costCurrent}>499 &#x20bd;</span>
             <span className={style.costPrevious}>1000 &#x20bd;</span>
           </div>
-          <Button type={"addToCart"} className={style.addToCartButton} />
+          <Button type={"mainButton"} className={style.addToCartButton} />
         </div>
       </li>
     </Link>

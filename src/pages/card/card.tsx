@@ -10,50 +10,51 @@ import {
   CategoryProducts,
   FeedbackList,
   ProductsHeader,
+  MainButton,
 } from "../../components";
 
 export const Card = () => {
   const [checked, setChecked] = useState("1");
-  const [addToCart, setAddToCard] = useState({
-    open: false,
-    count: 0,
-  });
-  const decrementCount = () => {
-    if (addToCart.count === 1) {
-      setAddToCard({
-        ...addToCart,
-        open: false,
-      });
-    } else {
-      setAddToCard({
-        ...addToCart,
-        count: addToCart.count - 1,
-      });
-    }
-  };
-  const incrementCount = () => {
-    setAddToCard({
-      ...addToCart,
-      count: addToCart.count + 1,
-    });
-  };
-
-  const addToCartMain = () => {
-    if (addToCart.count === 0) {
-      setAddToCard({
-        count: addToCart.count + 1,
-        open: true,
-      });
-    } else {
-      setAddToCard({
-        ...addToCart,
-        open: true,
-      });
-    }
-  };
   const changeRadioInput = (e: any) => {
     const { value } = e.target;
     setChecked(value);
+  };
+  const [mainButton, setMainButton] = useState({
+    open: false,
+    count: 0,
+  });
+  const onDecrement = () => {
+    if (mainButton.count === 1) {
+      setMainButton({
+        ...mainButton,
+        open: false,
+      });
+    } else {
+      setMainButton({
+        ...mainButton,
+        count: mainButton.count - 1,
+      });
+    }
+  };
+  const onIncrement = () => {
+    setMainButton({
+      ...mainButton,
+      count: mainButton.count + 1,
+    });
+  };
+
+  const onClickMainButton = () => {
+    if (mainButton.count === 0) {
+      setMainButton({
+        count: mainButton.count + 1,
+        open: true,
+      });
+    } else {
+      setMainButton({
+        ...mainButton,
+        open: true,
+      });
+    }
   };
   return (
     <section className={style.section}>
@@ -167,27 +168,28 @@ export const Card = () => {
       <CategoryProducts>
         <ProductsHeader title={"Промо товары"} />
       </CategoryProducts>
+      {/* <MainButton /> */}
       <div className={style.footer}>
         <Container>
-          <div className={style.addToCartWrapper}>
+          <div className={style.footerWrapper}>
             <Button
-              type={"addToCart"}
-              text={addToCart.open && "Перейти в корзину"}
-              className={style.addToCartButton}
-              onClick={addToCartMain}
+              type={"mainButton"}
+              text={mainButton.open && "Перейти в корзину"}
+              className={`${style.footerButton} ${mainButton.open && style.active}`}
+              onClick={onClickMainButton}
             />
-            {addToCart.open && (
-              <div className={style.addToCartCounter}>
+            {mainButton.open && (
+              <div className={style.footerCounter}>
                 <Button
                   type={"decrement"}
-                  className={style.addToCartButtonDecrement}
-                  onClick={decrementCount}
+                  className={style.footerButtonDecrement}
+                  onClick={onDecrement}
                 />
-                <p className={style.addToCartSum}>{addToCart.count}</p>
+                <p className={style.footerSum}>{mainButton.count}</p>
                 <Button
                   type={"increment"}
-                  className={style.addToCartButtonIncrement}
-                  onClick={incrementCount}
+                  className={style.footerButtonIncrement}
+                  onClick={onIncrement}
                 />
               </div>
             )}

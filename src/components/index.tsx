@@ -13,6 +13,7 @@ import { Logo } from "./logo/logo";
 import { Modal } from "./modal/modal";
 import { ConfirmPopup } from "./confirm-popup/confirm-popup";
 import { ProductsHeader } from "./products-header/products-header";
+import { MainButton } from "./main-button/main-button";
 
 export {
   App,
@@ -30,4 +31,5 @@ export {
   Modal,
   ConfirmPopup,
   ProductsHeader,
+  MainButton,
 };

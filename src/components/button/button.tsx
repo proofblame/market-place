@@ -32,8 +32,10 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === "favoriteCard" && (
         <button className={`${style.favoriteCard} ${className}`}></button>
       )}
-      {type === "addToCart" && (
-        <button onClick={onClick} className={`${style.addToCart} ${className}`}>
+      {type === "mainButton" && (
+        <button
+          onClick={onClick}
+          className={`${style.mainButton} ${className}`}>
           {text || "В корзину"}
         </button>
       )}
@@ -48,9 +50,11 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         </button>
       )}
       {type === "basket" && (
-        <button
-          onClick={onClick}
-          className={`${style.basket} ${className}`}></button>
+        <Link to={"/cart"} className={`${style.basket} ${className}`}>
+          <button
+            onClick={onClick}
+            className={`${style.basket} ${className}`}></button>
+        </Link>
       )}
       {type === "search" && (
         <button
@@ -66,6 +70,16 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       )}
       {type === "showMore" && (
         <button onClick={onClick} className={`${style.showMore} ${className}`}>
+          {text}
+        </button>
+      )}
+      {type === "delete" && (
+        <button onClick={onClick} className={`${style.delete} ${className}`}>
+          {text}
+        </button>
+      )}
+      {type === "select" && (
+        <button onClick={onClick} className={`${style.select} ${className}`}>
           {text}
         </button>
       )}
