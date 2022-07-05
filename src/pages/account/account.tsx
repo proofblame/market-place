@@ -38,7 +38,7 @@ export const Account = () => {
             </Link>
           </li>
           <li className={`${style.navItem} ${style.historyOrders}`}>
-            <Link to={"/"} className={style.navLink}>
+            <Link to={"/orderlist"} className={style.navLink}>
               История заказов
             </Link>
           </li>

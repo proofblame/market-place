@@ -19,7 +19,7 @@ export const Cart = () => {
             Вы можете начать покупки с главной страницы
           </p>
           <Button
-            type={"addToCart"}
+            type={"mainButton"}
             text={"Перейти"}
             className={style.cartButton}
           />
