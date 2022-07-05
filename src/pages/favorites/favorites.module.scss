@@ -40,6 +40,7 @@
     max-width: 122px;
     margin: 0 auto;
     display: block;
+    @extend %fz-10;
   }
 }
 .filter {

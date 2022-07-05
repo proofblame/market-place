@@ -11,6 +11,7 @@ import {
   Favorites,
   Account,
   Cart,
+  Orderlist,
 } from "../../pages";
 // Ипорт компонентов
 import { ScrollToTop, Header } from "../index";
@@ -30,6 +31,7 @@ export const App = () => {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/orderlist" element={<Orderlist />} />
         </Routes>
       </div>
     </>

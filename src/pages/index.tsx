@@ -5,5 +5,6 @@ import { Feedbacks } from "./feedbacks/feedbacks";
 import { Favorites } from "./favorites/favorites";
 import { Account } from "./account/account";
 import { Cart } from "./cart/cart";
+import { Orderlist } from "./orderlist/orderlist";
 
-export { Card, Main, Brand, Feedbacks, Favorites, Account, Cart };
+export { Card, Main, Brand, Feedbacks, Favorites, Account, Cart, Orderlist };

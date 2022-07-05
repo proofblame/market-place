@@ -1,6 +1,6 @@
 @import '../../vendors/style-settings/variables.scss';
 .cart {
-  padding-top: 65px;
+  padding: 65px 0;
   @extend %fonts;
   color: $mainColor;
   &Text {
@@ -22,6 +22,7 @@
     max-width: 122px;
     margin: 0 auto;
     display: block;
+    @extend %fz-10;
   }
   &Adress {
     background-color: $background;
