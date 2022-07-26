@@ -29,31 +29,24 @@ export const Main = () => {
               <div className={style.categoryGroup}>
                 <Swiper
                   className={style.swiper}
-                  pagination={{ dynamicBullets: true }}
-                  modules={[Pagination, Grid]}
-                  // slidesPerColumn={2}
-                  slidesPerGroup={3}
-                  slidesPerView={3}
-                  spaceBetween={50}
-                  // slidesPerColumnFill={2}
-                  grabCursor={true}
+                  pagination={{
+                    dynamicBullets: true,
+                  }}
+                  modules={[Grid, Pagination]}
+                  slidesPerView={4}
+                  spaceBetween={10}
                   grid={{
                     rows: 2,
-                    fill: 'row',
+                  }}
+                  style={{
+                    '--swiper-pagination-color': 'rgba(244, 244, 244, .3)',
+                    '--swiper-pagination-bullet-inactive-color':
+                      'rgba(244, 244, 244, 0.1)',
+                    '--swiper-pagination-bullet-inactive-opacity': '1',
+                    '--swiper-pagination-bullet-size': '5px',
+                    '--swiper-pagination-bullet-vertical-gap': '5px',
                   }}>
-                  <SwiperSlide className={style.swiperSlide}>1</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>2</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>3</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>4</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>5</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>6</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>7</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>8</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>9</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>10</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>11</SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>12</SwiperSlide>
-                  {/* <SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
                     <div className={style.categoryItem}>
                       <img
                         className={style.categoryImg}
@@ -62,7 +55,117 @@ export const Main = () => {
                       />
                       <p className={style.categoryCaption}>Каталог</p>
                     </div>
-                  </SwiperSlide> */}
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className={style.swiperSlide}>
+                    <div className={style.categoryItem}>
+                      <img
+                        className={style.categoryImg}
+                        src={categoryImg}
+                        alt='Категория'
+                      />
+                      <p className={style.categoryCaption}>Каталог</p>
+                    </div>
+                  </SwiperSlide>
                 </Swiper>
               </div>
               {/* <Slider color={'dark'} /> */}

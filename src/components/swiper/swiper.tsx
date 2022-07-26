@@ -1,8 +1,8 @@
 import React from 'react';
 import { Swiper as SwiperSlider } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/grid';
-import 'swiper/css/pagination';
+import 'swiper/scss';
+import 'swiper/scss/grid';
+import 'swiper/scss/pagination';
 
 export const Swiper = ({ children, className, ...props }: any) => {
   return (
