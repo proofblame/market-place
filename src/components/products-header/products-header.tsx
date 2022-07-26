@@ -3,7 +3,7 @@ import style from "./products-header.module.scss";
 
 export const ProductsHeader = ({
   title,
-  button = "См. Все",
+  button = "Все",
   buttonOnClick,
   buttonClass,
 }: any) => {

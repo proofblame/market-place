@@ -143,44 +143,29 @@
   height: 42px;
   border-radius: 6px;
 }
-.basket {
-  background-image: url('./images/basket-icon.svg');
+%headerButton {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 13px 13px;
-  @include adaptive(width, 29, 29);
-  @include adaptive(height, 29, 29);
+  background-size: 18px 18px;
+  @include adaptive(width, 40, 40);
+  @include adaptive(height, 40, 40);
   background-color: $background;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   border: none;
   cursor: pointer;
+}
+.basket {
+  background-image: url('./images/basket-icon.svg');
+  @extend %headerButton;
 }
 .search {
   background-image: url('./images/search-icon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 13px 13px;
-  @include adaptive(width, 29, 29);
-  @include adaptive(height, 29, 29);
-  background-color: $background;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
+  @extend %headerButton;
 }
 .account {
   background-image: url('./images/account-icon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 13px 13px;
-  @include adaptive(width, 29, 29);
-  @include adaptive(height, 29, 29);
-  background-color: $background;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
+  @extend %headerButton;
 }
 .showMore {
   font-weight: 500;

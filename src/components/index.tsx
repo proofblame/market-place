@@ -14,6 +14,7 @@ import { Modal } from "./modal/modal";
 import { ConfirmPopup } from "./confirm-popup/confirm-popup";
 import { ProductsHeader } from "./products-header/products-header";
 import { MainButton } from "./main-button/main-button";
+import { Swiper } from "./swiper/swiper";
 
 export {
   App,
@@ -32,4 +33,5 @@ export {
   ConfirmPopup,
   ProductsHeader,
   MainButton,
+  Swiper,
 };
