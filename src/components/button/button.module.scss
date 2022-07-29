@@ -21,11 +21,10 @@
   background-image: url('./images/back-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
-  @include adaptiveSize(background-size, 16, 13, 16, 13);
-  @include adaptivePadding(padding, 8, 17, 8, 17);
-  @include adaptive(width, 50, 50);
-  @include adaptive(height, 30, 30);
-  @include adaptive(border-radius, 5, 5);
+  @include adaptiveSize(background-size, 6, 12, 6, 12);
+  @include adaptive(width, 40, 40);
+  @include adaptive(height, 40, 40);
+  @include adaptive(border-radius, 8, 8);
   border: none;
   box-sizing: border-box;
   background-color: $background;
@@ -35,20 +34,6 @@
   }
 }
 
-.share {
-  background-image: url('./images/share-icon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  @include adaptiveSize(background-size, 14, 12, 14, 12);
-  @include adaptivePadding(padding, 8, 8, 8, 8);
-  @include adaptive(width, 30, 30);
-  @include adaptive(height, 30, 30);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: $background;
-  border: none;
-  cursor: pointer;
-}
 .complaint {
   background-image: url('./images/complaint-icon.svg');
   background-repeat: no-repeat;
@@ -112,7 +97,7 @@
   border: none;
   cursor: pointer;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 8px;
 
   &.active {
   }
@@ -146,14 +131,66 @@
 %headerButton {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 18px 18px;
-  @include adaptive(width, 40, 40);
-  @include adaptive(height, 40, 40);
+  background-size: 20px 20px;
+  @include adaptive(width, 44, 44);
+  @include adaptive(height, 44, 44);
   background-color: $background;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+%_burgerElement {
+  @include adaptive(height, 2, 2);
+  width: 24px;
+  background-color: $mainColor;
+  border-radius: 18px;
+  transition: all linear 0.3s;
+}
+%_burgerPseudo {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu {
+  @extend %headerButton;
+  @extend %flex;
+  justify-content: center;
+  position: relative;
+  border: none;
+  span {
+    @extend %_burgerElement;
+    position: relative;
+    &::before {
+      @extend %_burgerPseudo;
+      @extend %_burgerElement;
+      top: -5px;
+    }
+
+    &::after {
+      @extend %_burgerPseudo;
+      @extend %_burgerElement;
+      bottom: -5px;
+    }
+  }
+
+  &.active {
+    span {
+      background: transparent;
+      &::before {
+        top: 0;
+        left: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 .basket {
   background-image: url('./images/basket-icon.svg');
@@ -165,6 +202,10 @@
 }
 .account {
   background-image: url('./images/account-icon.svg');
+  @extend %headerButton;
+}
+.share {
+  background-image: url('./images/share-icon.svg');
   @extend %headerButton;
 }
 .showMore {

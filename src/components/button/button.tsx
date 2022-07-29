@@ -1,84 +1,93 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import style from "./button.module.scss";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import style from './button.module.scss';
 
 export const Button = ({ type, className, text, onClick, active }: any) => {
+  const navigate = useNavigate();
+
   return (
     <>
-      {type === "favorite" && (
+      {type === 'favorite' && (
         <button className={`${style.favorite} ${className}`}></button>
       )}
-      {type === "back" && (
+      {type === 'back' && (
         <button
-          onClick={onClick}
+          onClick={() => navigate(-1)}
           className={`${style.back} ${className}`}></button>
       )}
-      {type === "share" && (
+      {type === 'share' && (
         <button className={`${style.share} ${className}`}></button>
       )}
-      {type === "complaint" && (
+      {type === 'complaint' && (
         <button className={`${style.complaint} ${className}`}></button>
       )}
-      {type === "like" && (
+      {type === 'like' && (
         <button
           onClick={onClick}
           className={`${style.like} ${active && style.active}`}></button>
       )}
-      {type === "dislike" && (
+      {type === 'dislike' && (
         <button
           onClick={onClick}
           className={`${style.dislike} ${active && style.active}`}></button>
       )}
-      {type === "favoriteCard" && (
+      {type === 'favoriteCard' && (
         <button className={`${style.favoriteCard} ${className}`}></button>
       )}
-      {type === "mainButton" && (
+      {type === 'mainButton' && (
         <button
           onClick={onClick}
           className={`${style.mainButton} ${className}`}>
-          {text || "В корзину"}
+          {text || 'В корзину'}
         </button>
       )}
-      {type === "decrement" && (
+      {type === 'decrement' && (
         <button onClick={onClick} className={`${style.decrement} ${className}`}>
           -
         </button>
       )}
-      {type === "increment" && (
+      {type === 'increment' && (
         <button onClick={onClick} className={`${style.increment} ${className}`}>
           +
         </button>
       )}
-      {type === "basket" && (
-        <Link to={"/cart"} className={`${style.basket} ${className}`}>
+      {type === 'menu' && (
+        <button
+          onClick={onClick}
+          className={`${style.menu} ${active && style.active} ${className}`}>
+          <span></span>
+        </button>
+      )}
+      {type === 'basket' && (
+        <Link to={'/cart'} className={`${style.basket} ${className}`}>
           <button
             onClick={onClick}
             className={`${style.basket} ${className}`}></button>
         </Link>
       )}
-      {type === "search" && (
+      {type === 'search' && (
         <button
           onClick={onClick}
           className={`${style.search} ${className}`}></button>
       )}
-      {type === "account" && (
-        <Link to={"/account"} className={`${style.account} ${className}`}>
+      {type === 'account' && (
+        <Link to={'/account'} className={`${style.account} ${className}`}>
           <button
             onClick={onClick}
             className={`${style.account} ${className}`}></button>
         </Link>
       )}
-      {type === "showMore" && (
+      {type === 'showMore' && (
         <button onClick={onClick} className={`${style.showMore} ${className}`}>
           {text}
         </button>
       )}
-      {type === "delete" && (
+      {type === 'delete' && (
         <button onClick={onClick} className={`${style.delete} ${className}`}>
           {text}
         </button>
       )}
-      {type === "select" && (
+      {type === 'select' && (
         <button onClick={onClick} className={`${style.select} ${className}`}>
           {text}
         </button>

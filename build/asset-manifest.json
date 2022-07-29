@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9870f897.css",
-    "main.js": "/static/js/main.d7662d96.js",
+    "main.css": "/static/css/main.4a250c70.css",
+    "main.js": "/static/js/main.14eb6cc0.js",
     "static/media/main-image.png": "/static/media/main-image.7bc7071b90f753549e82.png",
     "static/media/card-img.png": "/static/media/card-img.02dfc282a236181fc40d.png",
     "static/media/brand-image.png": "/static/media/brand-image.1f3ffccd814c77649b9d.png",
@@ -15,6 +15,7 @@
     "static/media/montserrat-v18-latin_cyrillic-500.woff2": "/static/media/montserrat-v18-latin_cyrillic-500.c2bbf96131933f2a6a90.woff2",
     "static/media/montserrat-v18-latin_cyrillic-regular.woff2": "/static/media/montserrat-v18-latin_cyrillic-regular.57960c9028c57ecd5006.woff2",
     "static/media/like-icon.svg": "/static/media/like-icon.4eedb2d7e938ff026218.svg",
+    "static/media/address-icon.svg": "/static/media/address-icon.430e4527f1b474ad23aa.svg",
     "static/media/logo-icon.svg": "/static/media/logo-icon.2a847fa76b31b82b1b997596fbfb6097.svg",
     "static/media/share-icon.svg": "/static/media/share-icon.223e15dc063824cd4040.svg",
     "static/media/adress-icon.svg": "/static/media/adress-icon.47b7077612a17de5bbdc.svg",
@@ -23,24 +24,24 @@
     "index.html": "/index.html",
     "static/media/history-view-icon.svg": "/static/media/history-view-icon.55f1d51ccd53e05b15e1.svg",
     "static/media/category-box-icon.svg": "/static/media/category-box-icon.d99cd31105c9dc6393cfd80ee8fdd4e0.svg",
+    "static/media/back-icon.svg": "/static/media/back-icon.0db7fc5b8d895faa05a7.svg",
     "static/media/support-icon.svg": "/static/media/support-icon.62abb4e77d8be357f6ae.svg",
     "static/media/complaint-icon.svg": "/static/media/complaint-icon.05da20a2b1c080b11e48.svg",
     "static/media/telegram-icon.svg": "/static/media/telegram-icon.a852c38a337da1d817b6.svg",
     "static/media/delete-icon.svg": "/static/media/delete-icon.9374dd6570b07adf334b.svg",
     "static/media/favorite-card-icon.svg": "/static/media/favorite-card-icon.6bd29022b9caaab6de64.svg",
     "static/media/favorite-icon.svg": "/static/media/favorite-icon.f3e1e23895a30ef3a178.svg",
-    "static/media/back-icon.svg": "/static/media/back-icon.bfedf1c001e941f84676.svg",
     "static/media/basket-icon.svg": "/static/media/basket-icon.e7c70a6f3aaa75265cc6.svg",
     "static/media/account-icon.svg": "/static/media/account-icon.075460b00e26f10d8dce.svg",
     "static/media/arrow-top-icon.svg": "/static/media/arrow-top-icon.e5e811501b6f81185491.svg",
     "static/media/arrow-icon.svg": "/static/media/arrow-icon.9a534c615514d95a241e.svg",
     "static/media/history-orders-icon.svg": "/static/media/history-orders-icon.c739d2b280cd60c91473.svg",
     "static/media/owner-default.svg": "/static/media/owner-default.49cab3404f48b8bebe1e0a22ac286ea0.svg",
-    "main.9870f897.css.map": "/static/css/main.9870f897.css.map",
-    "main.d7662d96.js.map": "/static/js/main.d7662d96.js.map"
+    "main.4a250c70.css.map": "/static/css/main.4a250c70.css.map",
+    "main.14eb6cc0.js.map": "/static/js/main.14eb6cc0.js.map"
   },
   "entrypoints": [
-    "static/css/main.9870f897.css",
-    "static/js/main.d7662d96.js"
+    "static/css/main.4a250c70.css",
+    "static/js/main.14eb6cc0.js"
   ]
 }

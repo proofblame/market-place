@@ -2,6 +2,7 @@
 
 $fontFamily: 'Montserrat', sans-serif;
 
+//Главные цвета
 $mainColor: #f4f4f4;
 $themeColor: #5670b6;
 $background: #131313;
@@ -27,7 +28,7 @@ $reasonsListSize: 1479px;
 %fonts {
   font-family: $fontFamily;
   font-style: normal;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 %fz-32 {
@@ -42,9 +43,13 @@ $reasonsListSize: 1479px;
   @include adaptive(font-size, 16, 16);
   @include adaptive(line-height, 20, 20);
 }
+%fz-14 {
+  @include adaptive(font-size, 14, 14);
+  @include adaptive(line-height, 17, 17);
+}
 %fz-12 {
   @include adaptive(font-size, 12, 12);
-  @include adaptive(line-height, 15, 15);
+  @include adaptive(line-height, 16, 16);
 }
 %fz-10 {
   @include adaptive(font-size, 10, 10);

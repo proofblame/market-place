@@ -1,0 +1,33 @@
+@import '../../vendors/style-settings/variables.scss';
+
+.section {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 74px;
+  width: 100%;
+  z-index: 2000;
+  max-width: $maxWidth + px;
+  margin: 0 auto;
+  @include adaptivePadding(padding, 0, 20, 0, 13);
+  // overflow: hidden;
+}
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  margin-bottom: 4px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

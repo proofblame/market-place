@@ -1,40 +1,42 @@
-import React from "react";
-import style from "./cart.module.scss";
+import React from 'react';
+import style from './cart.module.scss';
 import {
   Button,
   Container,
   MainButton,
+  Navigation,
   ProductsHeader,
-} from "../../components";
-import cardImg from "./images/card-img.jpg";
+} from '../../components';
+import cardImg from './images/card-img.jpg';
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
   return (
     <>
-      <section className={style.cart}>
-        <Container>
-          <ProductsHeader title={"Корзина"} button={false} />
+      <Navigation title={'Корзина'} />
+      {/* <section className={style.cart}>
+        <Container className={style.cartWrapper}>
           <p className={style.cartText}>В корзине пока ничего нет</p>
-          <p className={style.cartSubtext}>
-            Вы можете начать покупки с главной страницы
-          </p>
-          <Button
-            type={"mainButton"}
-            text={"Перейти"}
-            className={style.cartButton}
-          />
+          <Link to={'/'}>
+            <Button
+              type={'mainButton'}
+              text={'На главную'}
+              className={style.cartButton}
+            />
+          </Link>
         </Container>
-      </section>
+      </section> */}
       <section className={style.cart}>
-        <Container>
-          <ProductsHeader title={"Корзина"} button={"Кол-во: 200"} />
-        </Container>
         <div className={style.cartAdress}>
-          <Container className={style.cartAdressWrapper}>
-            <p className={style.cartAdressPoint}>Молдовка</p>
-            <button className={style.cartAdressButton}>Уточнить адрес</button>
+          <Container className={style.cartAdress}>
+            <p className={style.cartAdressPoint}>
+              Boxberry, ул. Коллонтай, 17к2
+            </p>
+            <button className={style.cartAdressButton}>Изменить</button>
           </Container>
         </div>
+        <br />
+        <br />
         <div className={style.cartSelect}>
           <Container className={style.cartSelectWrapper}>
             <p className={style.cartSelectPoint}>Выделить всё</p>
@@ -47,15 +49,15 @@ export const Cart = () => {
           <p className={style.cartDelivery}>Доставка курьером</p>
           <section className={style.card}>
             <div className={style.cardImgGroup}>
-              <img className={style.cardImg} src={cardImg} alt="" />
-              <Button type={"select"} />
+              <img className={style.cardImg} src={cardImg} alt='' />
+              <Button type={'select'} />
               <span className={style.cardDiscountPercent}>12%</span>
             </div>
             <div className={style.cardContentGroup}>
               <div className={style.cardContentHeader}>
                 <div className={style.cardContentText}>
                   <p className={style.cardTitle}>
-                    Товар супер мега поможет вам что-то{" "}
+                    Товар супер мега поможет вам что-то{' '}
                   </p>
                   <div className={style.cardCost}>
                     <span className={style.cardCostCurrent}>499 &#x20bd;</span>
@@ -66,22 +68,22 @@ export const Cart = () => {
                 </div>
                 <div className={style.cardContentButtons}>
                   <Button
-                    type={"favoriteCard"}
+                    type={'favoriteCard'}
                     className={style.cardContentButton}
                   />
-                  <Button type={"delete"} />
+                  <Button type={'delete'} />
                 </div>
               </div>
               <div className={style.cardContentFooter}>
                 <p className={style.cardContentSeller}>ООО ИЭТК</p>
                 <div className={style.cardContentCounter}>
                   <Button
-                    type={"decrement"}
+                    type={'decrement'}
                     className={style.cardContentButtonDecrement}
                   />
                   <p className={style.cardContentSum}>99+</p>
                   <Button
-                    type={"increment"}
+                    type={'increment'}
                     className={style.cardContentButtonIncrement}
                   />
                 </div>
@@ -111,8 +113,8 @@ export const Cart = () => {
         <section className={style.footer}>
           <Container>
             <Button
-              text={"Перейти к оформлению"}
-              type={"mainButton"}
+              text={'Перейти к оформлению'}
+              type={'mainButton'}
               className={style.footerButton}></Button>
           </Container>
         </section>

@@ -1,13 +1,17 @@
 @import '../../vendors/style-settings/variables.scss';
 .cart {
-  padding: 65px 0;
+  // padding: 65px 0;
   @extend %fonts;
   color: $mainColor;
+  &Wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   &Text {
-    font-weight: 700;
-    @extend %fz-16;
+    font-weight: 500;
+    @extend %fz-14;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   &Subtext {
     font-weight: 500;
@@ -17,38 +21,43 @@
     margin-bottom: 20px;
   }
   &Button {
-    height: 30px;
+    height: 40px;
     width: 100%;
-    max-width: 122px;
+    max-width: 160px;
     margin: 0 auto;
     display: block;
-    @extend %fz-10;
+    @extend %fz-12;
   }
   &Adress {
     background-color: $background;
     height: 30px;
     opacity: 0.8;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 56px;
     @extend %flex;
     &Wrapper {
       @extend %flex;
     }
     &Point {
-      font-weight: 500;
-      @extend %fz-10;
-      padding-left: 15px;
+      font-weight: 600;
+      @extend %fz-12;
+      padding-left: 25px;
       position: relative;
+      opacity: 0.8;
+      color: $mainColor;
       &::before {
         content: '';
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
-        background-image: url('./images/adress-icon.svg');
+        background-image: url('./images/address-icon.svg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        width: 10px;
-        height: 10px;
+        width: 16px;
+        height: 16px;
       }
     }
     &Button {

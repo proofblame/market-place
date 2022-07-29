@@ -29,9 +29,7 @@ export const Main = () => {
               <div className={style.categoryGroup}>
                 <Swiper
                   className={style.swiper}
-                  pagination={{
-                    dynamicBullets: true,
-                  }}
+                  pagination
                   modules={[Grid, Pagination]}
                   slidesPerView={4}
                   spaceBetween={10}

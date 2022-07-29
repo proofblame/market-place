@@ -1,0 +1,8 @@
+@import '../../vendors/style-settings/variables.scss';
+
+.wrapper {
+  padding-top: 30px;
+}
+.app {
+  @extend %fonts;
+}
