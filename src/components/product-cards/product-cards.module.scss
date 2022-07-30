@@ -2,7 +2,7 @@
 .productCards {
   list-style-type: none;
   @extend %flex;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 8px;
+  row-gap: 8px;
   flex-wrap: wrap;
 }

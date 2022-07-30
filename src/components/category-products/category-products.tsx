@@ -1,6 +1,7 @@
-import React from "react";
-import { Slider, ProductCards, Container } from "../index";
-import style from "./category-products.module.scss";
+import React from 'react';
+
+import { Container, ProductCards, Slider } from '../index';
+import style from './category-products.module.scss';
 
 export const CategoryProducts = ({ children }: any) => {
   return (
@@ -8,7 +9,7 @@ export const CategoryProducts = ({ children }: any) => {
       <section className={style.products}>
         {children}
         <ProductCards className={style.productsCards} />
-        <Slider color={"dark"} />
+        {/* <Slider color={'dark'} /> */}
       </section>
     </Container>
   );
