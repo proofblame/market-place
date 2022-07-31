@@ -1,8 +1,9 @@
-import React from "react";
-import style from "./feedback-list.module.scss";
-import { Container, Feedback } from "../index";
-import { Link } from "react-router-dom";
-import starsImg from "./images/stars.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Button, Container, Feedback } from '../index';
+import style from './feedback-list.module.scss';
+import starsImg from './images/stars.png';
 
 export const FeedbackList = () => {
   return (
@@ -14,26 +15,28 @@ export const FeedbackList = () => {
               <span>Отзывы</span>
               <span className={style.feedbackListCounter}>227</span>
             </p>
-            <div className={style.feedbackListStars}>
-              <img src={starsImg} alt="" />
-              <span className={style.feedbackListStarsCounter}>4.85</span>
-            </div>
           </div>
           <p className={style.feedbackListCaption}>
             Мы не нашли данный товар среди ваших покупок. Вы можете оставлять
-            отзывы только к товарам,которые преобрели
+            отзывы только к товарам,которые приобрели
           </p>
+          {/* <div className={style.buttonWrapper}>
+            <Button type='feedback' />
+          </div> */}
+          <div className={style.feedbackListStars}>
+            <img
+              className={style.feedbackListStarsImage}
+              src={starsImg}
+              alt=''
+            />
+            <span className={style.feedbackListStarsCounter}>4.85 / 5</span>
+          </div>
         </Container>
       </section>
       <ul className={style.feedbackListList}>
         <Feedback />
         <Feedback />
       </ul>
-      <Container>
-        <Link to={"/feedbacks"} className={style.link}>
-          Смотреть остальные отзывы...
-        </Link>
-      </Container>
     </>
   );
 };

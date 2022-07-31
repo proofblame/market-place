@@ -242,3 +242,20 @@
   width: 10px;
   height: 10px;
 }
+
+.feedback {
+  background: #5670b6;
+  border-radius: 8px;
+  padding: 12px 96px;
+  font-weight: 500;
+  @extend %fz-12;
+  border: none;
+  outline: none;
+  margin: 0;
+  color: $mainColor;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

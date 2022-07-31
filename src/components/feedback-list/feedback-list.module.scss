@@ -26,18 +26,28 @@
     opacity: 0.5;
   }
   &Stars {
-    @extend %flex;
+    display: flex;
     column-gap: 5px;
     &Counter {
       font-weight: 500;
       @extend %fz-10;
       opacity: 0.8;
     }
+
+    &Counter {
+      align-self: center;
+      @extend %fz-12;
+    }
+
+    &Image {
+      width: 120px;
+    }
   }
   &Caption {
     font-weight: 500;
     @extend %fz-12;
     opacity: 0.5;
+    margin-bottom: 12px;
   }
 }
 .link {
@@ -47,4 +57,8 @@
   padding: 20px 0 30px;
   display: block;
   text-align: center;
+}
+
+.buttonWrapper {
+  margin-bottom: 12px;
 }

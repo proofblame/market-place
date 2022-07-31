@@ -92,7 +92,7 @@ export const Main = () => {
                       'rgba(244, 244, 244, 0.1)',
                     '--swiper-pagination-bullet-inactive-opacity': '1',
                     '--swiper-pagination-bullet-size': '5px',
-                    '--swiper-pagination-bullet-vertical-gap': '5px',
+                    '--swiper-pagination-bullet-vertical-gap': '-15px',
                   }}
                 >
                   <SwiperSlide className={style.swiperSlide}>

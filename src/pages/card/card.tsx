@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import style from './card.module.scss';
-import cardImg from './images/card-img.png';
-import starsImg from './images/stars.png';
-import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import {
-  Slider,
-  Container,
-  Button,
-  CategoryProducts,
-  FeedbackList,
-  ProductsHeader,
-  MainButton,
-  Swiper,
-} from '../../components';
 import { Pagination } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+
+import {
+    Button, CategoryProducts, Container, FeedbackList, MainButton, ProductsHeader, Slider, Swiper
+} from '../../components';
+import { HeadUpButton } from '../../components/head-up-button/head-up-button';
+import style from './card.module.scss';
+import Left from './images/left.svg';
+import LeftLight from './images/LeftLight.svg';
+import cardImg from './images/product.svg';
+import rating from './images/Rating.svg';
+import Right from './images/right.svg';
+import RightLight from './images/RightLight.svg';
+import starsImg from './images/stars.png';
 
 export const Card = () => {
   const [checked, setChecked] = useState('1');
@@ -66,10 +66,6 @@ export const Card = () => {
           <Link to={'/'}>
             <Button type={'back'} />
           </Link>
-          <div className={style.navRightColumn}>
-            <Button type={'favorite'} />
-            <Button type={'share'} />
-          </div>
         </Container>
       </nav>
       <div className={style.imageGroup}>
@@ -83,98 +79,188 @@ export const Card = () => {
           <SwiperSlide>
             <img src={cardImg} alt='' className={style.image} />
           </SwiperSlide>
+          <Container>
+            <div className={style.container}>
+              <HeadUpButton
+                left={true}
+                right={true}
+                leftImage={Left}
+                rightImage={Right}
+              >
+                <div className={style.feedbackContainer}>
+                  <div className={style.ratingImg}>
+                    <img src={rating} alt='рейтинг' />
+                  </div>
+                  <span className={style.ratingAmount}>4,85</span>
+                  <span className={style.feedback}>
+                    <Link className={style.feedbacklink} to='#'>
+                      999 тыс
+                    </Link>
+                  </span>
+                </div>
+              </HeadUpButton>
+              <div className={style.navRightColumn}>
+                <HeadUpButton left={true} leftImage={Left}>
+                  <Button className={style.shareButton} type={'share'} />
+                </HeadUpButton>
+                <HeadUpButton right={true} rightImage={Right}>
+                  <Button type={'favorite'} />
+                </HeadUpButton>
+              </div>
+            </div>
+          </Container>
         </Swiper>
+
         {/* <ul className={style.imageList}>
           <li className={style.imageItem}>
             <img src={cardImg} alt="" className={style.image} />
           </li>
         </ul> */}
-        <Slider color={'light'} className={style.dots} />
+        {/* <Slider color={'light'} className={style.dots} /> */}
       </div>
       <Container>
         <h1 className={style.title}>
-          Сувенир банка "Мужчине, у которого есть всё" внутри: подтяжки
-          10х7,5х7,5 см. Вид: Оригинальные, Сувенирная банка.{' '}
+          Sony WH-1000XM4 «Лучшие наушники»тра та та та на бело м фоне красивые
+          с крутым звуком и оснащены стерео системой
         </h1>
         <div className={style.priceBlock}>
-          <div className={style.priceWrapper}>
-            <div className={style.pricePrevious}>1000 &#x20bd;</div>
-            <div className={style.stars}>
-              <div className={style.starsNumber}>
-                <img src={starsImg} alt='' />
-              </div>
-              <div className={style.starsCount}>22 отзыва</div>
-            </div>
+          <div className={style.cost}>
+            <span className={style.boughtAmount}>Купили более 1 400 раз</span>
+            <span className={style.discountPercent}>-25%</span>
+            <span className={style.costCurrent}>25 000 000 &#x20bd;</span>
+            <span className={style.costPrevious}>50 000 000 &#x20bd;</span>
           </div>
-
-          <p className={style.priceCurrent}>499 &#x20bd;</p>
         </div>
       </Container>
       <section className={style.tabs}>
         <Container>
           <div className={style.tabsHeader}>
-            <input
-              className={style.tabsInput}
-              type='radio'
-              name='caption'
-              id='caption-tab'
-              value='1'
-              checked={checked === '1' ? true : false}
-              onChange={changeRadioInput}
-            />
-            <label
-              className={`${style.tabsLabel} ${
+            <HeadUpButton
+              className={`${style.headUpButton} ${
                 checked === '1' && style.active
               }`}
-              htmlFor='caption-tab'>
-              Описание
-            </label>
-            <input
-              className={style.tabsInput}
-              type='radio'
-              name='feature'
-              id='feature-tab'
-              value='2'
-              checked={checked === '2' ? true : false}
-              onChange={changeRadioInput}
-            />
-            <label
-              className={`${style.tabsLabel} ${
+              classNameLeft={style.left}
+              classNameRight={style.right}
+              left={checked === '1' ? true : false}
+              right={checked === '1' ? true : false}
+              leftImage={LeftLight}
+              rightImage={RightLight}
+            >
+              <input
+                className={style.tabsInput}
+                type='radio'
+                name='caption'
+                id='caption-tab'
+                value='1'
+                checked={checked === '1' ? true : false}
+                onChange={changeRadioInput}
+              />
+              <label
+                className={`${style.tabsLabel} ${
+                  checked === '1' && style.active
+                }`}
+                htmlFor='caption-tab'
+              >
+                Описание
+              </label>
+            </HeadUpButton>
+            <HeadUpButton
+              className={`${style.headUpButton} ${
                 checked === '2' && style.active
               }`}
-              htmlFor='feature-tab'>
-              Характеристика
-            </label>
-          </div>
-          <div className={style.tabsContent}>
-            {checked === '1' && (
-              <div className={style.captionContent}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, quod. Necessitatibus sed ab ex voluptates saepe vitae
-                officiis consequuntur possimus dolorem quos repudiandae omnis
-                voluptatibus, deserunt, commodi at explicabo veniam.
-              </div>
-            )}
-            {checked === '2' && (
-              <div className={style.featureContent}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                minus illum sapiente nostrum ut? Maxime, corporis. Nesciunt
-                aliquam id impedit rem odio dolorem soluta repellendus quisquam
-                non, saepe, vero sit! Necessitatibus eos iste dolore commodi
-                aliquid voluptate itaque! Ratione dolorum natus explicabo
-                tempora veritatis, error laborum aspernatur nihil? Aspernatur
-                corporis soluta autem. Autem explicabo ex numquam quasi repellat
-                fugit ipsum!
-              </div>
-            )}
+              classNameLeft={style.left}
+              classNameRight={style.right}
+              left={checked === '2' ? true : false}
+              right={checked === '2' ? true : false}
+              leftImage={LeftLight}
+              rightImage={RightLight}
+            >
+              <input
+                className={style.tabsInput}
+                type='radio'
+                name='feature'
+                id='feature-tab'
+                value='2'
+                checked={checked === '2' ? true : false}
+                onChange={changeRadioInput}
+              />
+              <label
+                className={`${style.tabsLabel} ${
+                  checked === '2' && style.active
+                }`}
+                htmlFor='feature-tab'
+              >
+                Характеристика
+              </label>
+            </HeadUpButton>
           </div>
         </Container>
+        <div className={style.tabsContent}>
+          {checked === '1' && (
+            <div className={style.captionContent}>
+              Наслаждайтесь любимой музыкой и подкастами еще дольше с наушниками
+              WH-CH510 от Sony. Благодаря легкой конструкции и 35 часам работы
+              от аккумулятора вы можете не беспокоиться, что наушники разрядятся
+              в пути. Подключите наушники к смартфону или планшету через
+              беспроводную технологию Bluetooth и наслаждайтесь прослушиванием
+              любимой музыки.
+            </div>
+          )}
+          {checked === '2' && (
+            <div className={style.featureContent}>
+              <div className={style.feature}>
+                <span className={style.featureName}>Вид: </span>
+                <span className={style.featureImplementation}>
+                  Беспроводные наушники
+                </span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>Микрофон: </span>
+                <span className={style.featureImplementation}>Да</span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>
+                  Конструкция наушников:{' '}
+                </span>
+                <span className={style.featureImplementation}>
+                  Внутриканальные
+                </span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>Шумоподавление: </span>
+                <span className={style.featureImplementation}>Активное</span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>
+                  Время работы в режиме разговора:{' '}
+                </span>
+                <span className={style.featureImplementation}>10 часов</span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>
+                  Время зарядки до 100%:{' '}
+                </span>
+                <span className={style.featureImplementation}>2 часа</span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>Обьём аккамулятора: </span>
+                <span className={style.featureImplementation}>4000 Ампер</span>
+              </div>
+              <div className={style.feature}>
+                <span className={style.featureName}>USB: </span>
+                <span className={style.featureImplementation}>Нет</span>
+              </div>
+            </div>
+          )}
+        </div>
       </section>
       <section className={style.owner}>
         <Container>
           <Link to={'/brand'}>
             <p className={style.ownerStatus}>Магазин от RaccoonIT</p>
-            <p className={style.ownerName}>TG Market</p>
+            <p className={style.ownerName}>
+              Headphones магазин крутых наушников
+            </p>
           </Link>
         </Container>
       </section>
@@ -186,14 +272,16 @@ export const Card = () => {
       <div className={style.footer}>
         <Container>
           <div className={style.footerWrapper}>
-            <Button
-              type={'mainButton'}
-              text={mainButton.open && 'Перейти в корзину'}
-              className={`${style.footerButton} ${
-                mainButton.open && style.active
-              }`}
-              onClick={onClickMainButton}
-            />
+            <Link to='/cart'>
+              <Button
+                type={'mainButton'}
+                text={mainButton.open && 'Перейти в корзину'}
+                className={`${style.footerButton} ${
+                  mainButton.open && style.active
+                }`}
+                onClick={onClickMainButton}
+              />
+            </Link>
             {mainButton.open && (
               <div className={style.footerCounter}>
                 <Button

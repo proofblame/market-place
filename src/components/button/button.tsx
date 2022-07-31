@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import style from './button.module.scss';
 
 export const Button = ({ type, className, text, onClick, active }: any) => {
@@ -13,7 +14,8 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === 'back' && (
         <button
           onClick={() => navigate(-1)}
-          className={`${style.back} ${className}`}></button>
+          className={`${style.back} ${className}`}
+        ></button>
       )}
       {type === 'share' && (
         <button className={`${style.share} ${className}`}></button>
@@ -24,12 +26,14 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === 'like' && (
         <button
           onClick={onClick}
-          className={`${style.like} ${active && style.active}`}></button>
+          className={`${style.like} ${active && style.active}`}
+        ></button>
       )}
       {type === 'dislike' && (
         <button
           onClick={onClick}
-          className={`${style.dislike} ${active && style.active}`}></button>
+          className={`${style.dislike} ${active && style.active}`}
+        ></button>
       )}
       {type === 'favoriteCard' && (
         <button className={`${style.favoriteCard} ${className}`}></button>
@@ -37,7 +41,8 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === 'mainButton' && (
         <button
           onClick={onClick}
-          className={`${style.mainButton} ${className}`}>
+          className={`${style.mainButton} ${className}`}
+        >
           {text || 'В корзину'}
         </button>
       )}
@@ -54,7 +59,8 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === 'menu' && (
         <button
           onClick={onClick}
-          className={`${style.menu} ${active && style.active} ${className}`}>
+          className={`${style.menu} ${active && style.active} ${className}`}
+        >
           <span></span>
         </button>
       )}
@@ -62,19 +68,22 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         <Link to={'/cart'} className={`${style.basket} ${className}`}>
           <button
             onClick={onClick}
-            className={`${style.basket} ${className}`}></button>
+            className={`${style.basket} ${className}`}
+          ></button>
         </Link>
       )}
       {type === 'search' && (
         <button
           onClick={onClick}
-          className={`${style.search} ${className}`}></button>
+          className={`${style.search} ${className}`}
+        ></button>
       )}
       {type === 'account' && (
         <Link to={'/account'} className={`${style.account} ${className}`}>
           <button
             onClick={onClick}
-            className={`${style.account} ${className}`}></button>
+            className={`${style.account} ${className}`}
+          ></button>
         </Link>
       )}
       {type === 'showMore' && (
@@ -90,6 +99,11 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       {type === 'select' && (
         <button onClick={onClick} className={`${style.select} ${className}`}>
           {text}
+        </button>
+      )}
+      {type === 'feedback' && (
+        <button onClick={onClick} className={`${style.feedback} ${className}`}>
+          {text || 'Написать отзыв'}
         </button>
       )}
     </>
