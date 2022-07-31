@@ -272,7 +272,7 @@ export const Card = () => {
       <div className={style.footer}>
         <Container>
           <div className={style.footerWrapper}>
-            <Link to='/cart'>
+            <Link className={style.footerLink} to='/cart'>
               <Button
                 type={'mainButton'}
                 text={mainButton.open && 'Перейти в корзину'}

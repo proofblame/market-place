@@ -260,19 +260,27 @@
   padding: 10px 0;
   @extend %flex;
   justify-content: center;
+
   &Wrapper {
     @extend %flex;
     column-gap: 15px;
   }
+
   &Counter {
     @extend %flex;
     column-gap: 15px;
     flex: 1 0 50%;
   }
+
   &Sum {
     font-weight: 500;
     @extend %fz-16;
   }
+
+  &Link {
+    width: 100%;
+  }
+
   &Button {
     height: 42px;
     font-weight: 500;
@@ -280,10 +288,6 @@
     &.active {
       @extend %fz-12;
       padding: 0 30px;
-    }
-    &Decrement {
-    }
-    &Increment {
     }
   }
 }

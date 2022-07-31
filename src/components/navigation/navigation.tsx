@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Button } from '../index';
+
+import { Button, Container } from '../index';
 import style from './navigation.module.scss';
 
 export const Navigation = ({ title = 'TG Market' }: any) => {
@@ -9,6 +10,7 @@ export const Navigation = ({ title = 'TG Market' }: any) => {
         <div className={style.wrapper}>
           <Button type={'back'} className={style.button} />
           <h2 className={style.title}>{title}</h2>
+          <Button type={'delete'} className={style.delete} />
         </div>
       </Container>
     </section>

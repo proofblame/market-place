@@ -1,6 +1,6 @@
 @import '../../vendors/style-settings/variables.scss';
 .cart {
-  // padding: 65px 0;
+  padding: 20px 0 0 0;
   @extend %fonts;
   color: $mainColor;
   &Wrapper {
@@ -30,58 +30,47 @@
   }
   &Adress {
     background-color: $background;
-    height: 30px;
     opacity: 0.8;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    min-height: 56px;
     @extend %flex;
+
     &Wrapper {
       @extend %flex;
     }
+
     &Point {
       font-weight: 600;
       @extend %fz-12;
-      padding-left: 25px;
       position: relative;
       opacity: 0.8;
       color: $mainColor;
-      &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
-        background-image: url('./images/address-icon.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 16px;
-        height: 16px;
-      }
+      margin-bottom: 0 !important;
     }
+
     &Button {
       border: none;
       font-weight: 500;
       background: none;
       color: $themeColor;
-      @extend %fz-10;
+      @extend %fz-12;
     }
   }
+
   &Select {
     composes: cartAdress;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
     &Wrapper {
       composes: cartAdressWrapper;
     }
     &Point {
       composes: cartAdressPoint;
+      opacity: 1;
+      color: $mainColor;
+
       &::before {
-        opacity: 0.5;
-        border: 1px solid #f4f4f4;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-        background-image: none;
-        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        background-image: url('./images/Tick.svg');
+        border-radius: 4px;
       }
     }
     &Button {
@@ -100,12 +89,25 @@
   background: $background;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  @extend %flex;
-  height: 100px;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  grid-template-rows: repeat(2 1fr);
+
   &ImgGroup {
     position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 5px;
+      left: 5px;
+      width: 14px;
+      height: 14px;
+      background-image: url('./images/Tick.svg');
+      border-radius: 4px;
+    }
   }
+
   &Img {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -120,9 +122,6 @@
     border-radius: 10px;
     background-color: $themeColor;
     padding: 1px 5px;
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
   }
   &Title {
     font-weight: 500;
@@ -132,29 +131,29 @@
   &Cost {
     display: flex;
     align-items: center;
-    column-gap: 5px;
+    column-gap: 10px;
+
     &Current {
       color: $themeColor;
-      font-weight: 700;
-      @extend %fz-10;
-    }
-    &Previous {
       font-weight: 600;
-      @extend %fz-6;
+      @extend %fz-12;
+    }
+
+    &Previous {
+      font-weight: 400;
+      @extend %fz-10;
       color: $mainColor;
       text-decoration: line-through;
-      opacity: 0.7;
     }
   }
   &Content {
     &Group {
-      padding: 10px;
+      padding: 8px 0 0 8px;
       box-sizing: border-box;
     }
     &Header {
       @extend %flex;
       align-items: flex-start;
-      margin-bottom: 10px;
     }
     &Buttons {
       display: flex;
@@ -168,45 +167,84 @@
       background-color: $themeColor;
     }
     &Footer {
-      @extend %flex;
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
     &Seller {
       font-weight: 500;
       @extend %fz-10;
-      opacity: 0.5;
       width: 100%;
+      color: #9ca5ad;
+      margin-top: 5px;
     }
     &Counter {
-      @extend %flex;
+      display: flex;
+      width: 80px;
       column-gap: 7px;
-      width: 100%;
     }
     &ButtonDecrement {
       width: 23px !important;
       height: 23px !important;
       font-weight: 500;
       @extend %fz-8;
-      background-color: $background;
-      box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+      background-color: $background !important;
+      border: 1px solid $themeColor !important;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $themeColor !important;
+      }
     }
+
     &ButtonIncrement {
       width: 23px !important;
       height: 23px !important;
       font-weight: 500;
       @extend %fz-8;
-      background-color: $themeColor;
-      box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+      background-color: $background !important;
+      border: 1px solid $themeColor !important;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $themeColor !important;
+      }
     }
     &Sum {
+      align-self: center;
       font-weight: 500;
       @extend %fz-8;
     }
   }
 }
+
+.buttonContainer {
+  @extend %fz-10;
+  letter-spacing: 0.02em;
+  display: flex;
+  column-gap: 18px;
+}
+
+.button {
+  display: flex;
+
+  &Text {
+    margin-left: 7px;
+  }
+}
+
+.favoriteCard,
+.deleteCard {
+  width: 12px !important;
+  height: 12px !important;
+}
+
 .total {
   background: $background;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  padding: 20px 0;
+  padding: 16px 0;
   &Title {
     font-weight: 700;
     @extend %fz-16;
@@ -214,6 +252,7 @@
   }
   &List {
     list-style-type: none;
+    margin-bottom: 16px;
   }
   &Item {
     @extend %flex;
@@ -246,30 +285,29 @@
   }
   &Count {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-12;
     opacity: 0.8;
     &Cost {
       font-weight: 700;
-      @extend %fz-10;
+      @extend %fz-12;
     }
   }
   &Sale {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-12;
     opacity: 0.8;
     &Cost {
       font-weight: 700;
-      @extend %fz-10;
-      color: #ff004d;
+      @extend %fz-12;
+      color: $themeColor;
     }
   }
   &Price {
     font-weight: 700;
-    @extend %fz-10;
+    @extend %fz-16;
     &Cost {
       font-weight: 700;
-      @extend %fz-10;
-      color: #ff004d;
+      @extend %fz-14;
     }
   }
 }
@@ -283,9 +321,60 @@
   padding: 10px 0;
   @extend %flex;
   justify-content: center;
+
   &Button {
     height: 42px;
     font-weight: 500;
     @extend %fz-16;
   }
+
+  &Text {
+    color: #9ca5ad;
+    @extend %fz-12;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+  }
+}
+
+.history {
+  margin-bottom: 100px;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectCheckbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.selectAll {
+  min-width: 140px;
+  @extend %fz-12;
+  margin-bottom: 13px;
+}
+
+.visibleCheckbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #f4f4f4;
+  border-radius: 4px;
+}
+
+.selectCheckbox:checked + .visibleCheckbox {
+  background-image: url(./images/Tick.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkboxText {
+  margin-left: 9px;
 }

@@ -12,13 +12,13 @@
 }
 .wrapper {
   @extend %flex;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   min-height: 40px;
 }
-.button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+
+.delete {
+  width: 13px;
+  height: 13px;
+  margin-right: 12px;
 }
