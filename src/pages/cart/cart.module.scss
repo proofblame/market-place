@@ -28,6 +28,7 @@
     @extend %fz-12;
   }
   &Address {
+    margin-bottom: 16px;
     background-color: $background;
     opacity: 0.8;
     @extend %flex;
@@ -53,7 +54,7 @@
         background-image: url('./images/address-icon.svg');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size: 14px;
         width: 24px;
         height: 24px;
       }
@@ -68,171 +69,172 @@
     }
   }
 
-  &Delivery {
-    composes: cartAddressPoint;
-    font-weight: 500;
-    opacity: 0.8;
-    @extend %fz-6;
-    margin-bottom: 20px;
-  }
-
   &Select {
-  }
-}
-.card {
-  background: $background;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(2 1fr);
-  grid-template-rows: repeat(2 1fr);
-
-  &ImgGroup {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      content: '';
-      top: 5px;
-      left: 5px;
+    padding: 4px 0 0 5px;
+    @extend %flex;
+    justify-content: flex-start;
+    column-gap: 9px;
+    margin-bottom: 8px;
+    &Input {
+      background: transparent;
+      border: 1px solid $mainColor;
+      border-radius: 4px;
       width: 14px;
       height: 14px;
-      background-image: url('./images/Tick.svg');
-      border-radius: 4px;
+      display: block;
+      box-sizing: border-box;
+      &.active {
+        background-color: $themeColor;
+        border-color: $themeColor;
+        background-image: url('./images/tick.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &Label {
+      font-weight: 700;
+      @extend %fz-14;
+      color: $mainColor;
+    }
+    input {
+      display: none;
     }
   }
+}
 
+.card {
+  background: $background;
+  margin-bottom: 8px;
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  &Delete {
+    display: flex;
+    column-gap: 6px;
+    &Title {
+      font-weight: 500;
+      @extend %fz-10;
+    }
+    &Button {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  &Footer {
+    padding: 6px 8px;
+    @extend %flex;
+  }
+  &Header {
+    @extend %flex;
+    column-gap: 8px;
+    margin-bottom: 8px;
+    &Col {
+      position: relative;
+      &.right {
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+    }
+  }
+  &Select {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    &Input {
+      background: transparent;
+      border: 1px solid $themeColor;
+      border-radius: 4px;
+      width: 14px;
+      height: 14px;
+      box-sizing: border-box;
+      display: block;
+
+      &.active {
+        background-color: $themeColor;
+        background-image: url('./images/tick.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    input {
+      display: none;
+    }
+  }
   &Img {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
     width: 100px;
     height: 100px;
-  }
-  &DiscountPercent {
-    font-weight: 700;
-    @extend %fz-8;
-    opacity: 0.8;
-    color: $mainColor;
-    border-radius: 10px;
-    background-color: $themeColor;
-    padding: 1px 5px;
   }
   &Title {
     font-weight: 500;
     @extend %fz-12;
-    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &Cost {
-    display: flex;
-    align-items: center;
+    @extend %flex;
+    justify-content: flex-start;
     column-gap: 10px;
-
     &Current {
       color: $themeColor;
       font-weight: 600;
       @extend %fz-12;
     }
-
     &Previous {
       font-weight: 400;
       @extend %fz-10;
-      color: $mainColor;
       text-decoration: line-through;
     }
   }
-  &Content {
-    &Group {
-      padding: 8px 0 0 8px;
-      box-sizing: border-box;
-    }
-    &Header {
-      @extend %flex;
-      align-items: flex-start;
-    }
-    &Buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      row-gap: 12px;
-    }
-    &Button {
-      width: 10px !important;
-      height: 10px !important;
-      background-color: $themeColor;
-    }
-    &Footer {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 0;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-    &Seller {
-      font-weight: 500;
-      @extend %fz-10;
-      width: 100%;
-      color: #9ca5ad;
-      margin-top: 5px;
-    }
-    &Counter {
-      display: flex;
-      width: 80px;
-      column-gap: 7px;
-    }
-    &ButtonDecrement {
-      width: 23px !important;
-      height: 23px !important;
-      font-weight: 500;
-      @extend %fz-8;
-      background-color: $background !important;
-      border: 1px solid $themeColor !important;
-      cursor: pointer;
+  &Sale {
+    font-weight: 500;
+    @extend %fz-8;
+    background-color: #6556d9;
+    border-radius: 8px;
+    padding: 1px 5px;
+    align-self: flex-start;
+  }
+  &Saller {
+    font-weight: 500;
+    @extend %fz-10;
+    color: $secondColor;
+  }
+  &Favorite {
+    width: 12px;
+    height: 12px;
+  }
+}
+.select {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  input {
+    display: none;
+  }
 
-      &:hover {
-        background-color: $themeColor !important;
-      }
-    }
-
-    &ButtonIncrement {
-      width: 23px !important;
-      height: 23px !important;
-      font-weight: 500;
-      @extend %fz-8;
-      background-color: $background !important;
-      border: 1px solid $themeColor !important;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $themeColor !important;
-      }
-    }
-    &Sum {
-      align-self: center;
-      font-weight: 500;
-      @extend %fz-8;
-    }
+  &Label {
+    font-weight: 500;
+    @extend %fz-10;
   }
 }
 
-.buttonContainer {
-  @extend %fz-10;
-  letter-spacing: 0.02em;
+.counter {
   display: flex;
-  column-gap: 18px;
-}
-
-.button {
-  display: flex;
-
-  &Text {
-    margin-left: 7px;
+  align-items: center;
+  &Decrement {
   }
-}
-
-.favoriteCard,
-.deleteCard {
-  width: 12px !important;
-  height: 12px !important;
+  &Increment {
+  }
+  &Num {
+    width: 30px;
+    text-align: center;
+    font-weight: 500;
+    @extend %fz-8;
+  }
 }
 
 .total {
@@ -330,7 +332,6 @@
     margin-top: 8px;
   }
 }
-
 .history {
   margin-bottom: 100px;
 }

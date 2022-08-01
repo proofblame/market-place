@@ -61,8 +61,8 @@
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  @include adaptive(width, 22, 22);
-  @include adaptive(height, 22, 22);
+  width: 22px;
+  height: 22px;
 
   background-color: $themeColor;
   border: none;
@@ -91,22 +91,32 @@
   border: none;
   cursor: pointer;
   @extend %fz-16;
-  width: 42px;
-  height: 42px;
+  width: 24px;
+  height: 24px;
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  background-image: url('./images/decrement-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5px;
 }
 .increment {
   color: $mainColor;
-  background-color: #5670b6;
+  background-color: transparent;
   font-weight: 500;
   text-align: center;
   border: none;
   cursor: pointer;
   @extend %fz-16;
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $themeColor;
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-image: url('./images/increment-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5px;
 }
 %headerButton {
   background-repeat: no-repeat;
