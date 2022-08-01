@@ -2,7 +2,6 @@
 .breadcrumbs {
   @extend %flex;
   background: $background;
-  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +9,7 @@
   z-index: 1000;
   @extend %fonts;
   min-height: 30px;
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
 }
 .breadcrumb {
   @extend %fz-10;

@@ -17,6 +17,7 @@ import { MainButton } from './main-button/main-button';
 import { Swiper } from './swiper/swiper';
 import { Menu } from './menu/menu';
 import { Navigation } from './navigation/navigation';
+import { SvgSprite } from './svg-sprite/svg-sprite';
 
 export {
   App,
@@ -38,4 +39,5 @@ export {
   Swiper,
   Menu,
   Navigation,
+  SvgSprite,
 };

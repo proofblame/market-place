@@ -1,21 +1,15 @@
-import React from "react";
-import style from "./products-header.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import style from './products-header.module.scss';
 
-export const ProductsHeader = ({
-  title,
-  button = "Все",
-  buttonOnClick,
-  buttonClass,
-}: any) => {
+export const ProductsHeader = ({ title, link = 'Все', to = '/' }: any) => {
   return (
     <div className={style.productsHeader}>
       <h2 className={style.productsTitle}>{title}</h2>
-      {button && (
-        <button
-          onClick={buttonOnClick}
-          className={`${style.productsLink} ${buttonClass}`}>
-          {button}
-        </button>
+      {link && (
+        <Link to={to} className={style.productsLink}>
+          {link}
+        </Link>
       )}
     </div>
   );

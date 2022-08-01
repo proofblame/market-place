@@ -1,6 +1,5 @@
 @import '../../vendors/style-settings/variables.scss';
 .cart {
-  padding: 20px 0 0 0;
   @extend %fonts;
   color: $mainColor;
   &Wrapper {
@@ -28,11 +27,11 @@
     display: block;
     @extend %fz-12;
   }
-  &Adress {
+  &Address {
     background-color: $background;
     opacity: 0.8;
     @extend %flex;
-
+    padding: 16px 0;
     &Wrapper {
       @extend %flex;
     }
@@ -43,7 +42,21 @@
       position: relative;
       opacity: 0.8;
       color: $mainColor;
-      margin-bottom: 0 !important;
+      position: relative;
+      padding-left: 28px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        background-image: url('./images/address-icon.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+      }
     }
 
     &Button {
@@ -55,34 +68,15 @@
     }
   }
 
-  &Select {
-    composes: cartAdress;
-    margin-bottom: 13px;
-    &Wrapper {
-      composes: cartAdressWrapper;
-    }
-    &Point {
-      composes: cartAdressPoint;
-      opacity: 1;
-      color: $mainColor;
-
-      &::before {
-        width: 14px;
-        height: 14px;
-        background-image: url('./images/Tick.svg');
-        border-radius: 4px;
-      }
-    }
-    &Button {
-      composes: cartAdressButton;
-    }
-  }
   &Delivery {
-    composes: cartAdressPoint;
+    composes: cartAddressPoint;
     font-weight: 500;
     opacity: 0.8;
     @extend %fz-6;
     margin-bottom: 20px;
+  }
+
+  &Select {
   }
 }
 .card {
@@ -339,42 +333,4 @@
 
 .history {
   margin-bottom: 100px;
-}
-
-.select {
-  display: flex;
-  justify-content: space-between;
-}
-
-.selectCheckbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
-.selectAll {
-  min-width: 140px;
-  @extend %fz-12;
-  margin-bottom: 13px;
-}
-
-.visibleCheckbox {
-  display: inline-block;
-  vertical-align: middle;
-  width: 14px;
-  height: 14px;
-  border: 1px solid #f4f4f4;
-  border-radius: 4px;
-}
-
-.selectCheckbox:checked + .visibleCheckbox {
-  background-image: url(./images/Tick.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.checkboxText {
-  margin-left: 9px;
 }

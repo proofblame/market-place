@@ -10,14 +10,12 @@
   max-width: $maxWidth + px;
   margin: 0 auto;
   @include adaptivePadding(padding, 0, 20, 0, 13);
-  // overflow: hidden;
-}
-.wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
 }
+
 .nav {
   display: flex;
   flex-direction: column;

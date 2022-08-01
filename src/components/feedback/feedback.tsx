@@ -134,8 +134,7 @@ export const Feedback = () => {
               <span
                 className={`${style.ratingCounter} ${
                   likeState.likeActive && style.active
-                }`}
-              >
+                }`}>
                 {likeCount.like}
               </span>
             </div>
@@ -148,8 +147,7 @@ export const Feedback = () => {
               <span
                 className={`${style.ratingCounter} ${
                   likeState.dislikeActive && style.active
-                }`}
-              >
+                }`}>
                 {likeCount.dislike}
               </span>
             </div>

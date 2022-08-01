@@ -4,7 +4,7 @@
     @extend %fonts;
     color: $mainColor;
     @extend %flex;
-    margin-bottom: 16px;
+    padding: 8px 0;
   }
   &Title {
     font-weight: 700;
@@ -15,7 +15,7 @@
     opacity: 0.8;
     border: none;
     background: none;
-    color: $themeColor;
+    color: $linkColor;
     cursor: pointer;
   }
 }
