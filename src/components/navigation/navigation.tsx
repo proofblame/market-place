@@ -10,7 +10,11 @@ export const Navigation = ({ title, button }: any) => {
         <div className={style.wrapper}>
           <Button type={'back'} className={style.button} />
           {title && <h2 className={style.title}>{title}</h2>}
-          {button && <Button type={'delete'} className={style.delete} />}
+          {button ? (
+            <Button type={'delete'} className={style.delete} />
+          ) : (
+            <span></span>
+          )}
         </div>
       </Container>
     </section>

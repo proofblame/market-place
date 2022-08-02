@@ -38,11 +38,13 @@ export const FeedbackList = () => {
               <span className={style.feedbackListCounter}>999 тыс.</span>
             </p>
           </div>
-          <Button
-            type={'mainButton'}
-            text={'Написать отзыв'}
-            className={style.mainButton}
-          />
+          <Link to={'/feedbacks'}>
+            <Button
+              type={'mainButton'}
+              text={'Написать отзыв'}
+              className={style.mainButton}
+            />
+          </Link>
           <div className={style.feedbackListStars}>
             <img
               className={style.feedbackListStarsImage}

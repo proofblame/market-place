@@ -1,0 +1,19 @@
+@import '../../vendors/style-settings/variables.scss';
+
+.empty {
+  padding: 16px 0;
+}
+.title {
+  font-weight: 500;
+  @extend %fz-14;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.button {
+  height: 40px;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto;
+  display: block;
+  @extend %fz-12;
+}

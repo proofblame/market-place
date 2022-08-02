@@ -17,6 +17,7 @@ export const Menu = () => {
         <Button type={'share'} onClick={closeMenu} />
         <Button type={'search'} onClick={closeMenu} />
         <Button type={'account'} onClick={closeMenu} />
+        <Button type={'home'} onClick={closeMenu} />
       </nav>
       <Button type={'menu'} active={active} onClick={handleClickButton} />
     </section>

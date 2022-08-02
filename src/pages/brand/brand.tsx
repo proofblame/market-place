@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import style from "./brand.module.scss";
+import React, { useState } from 'react';
+import style from './brand.module.scss';
 import {
   Button,
-  CategoryProducts,
   Container,
+  ProductCards,
   ProductsHeader,
-} from "../../components";
+} from '../../components';
 
 export const Brand = () => {
   const [show, setShow] = useState({
     hide: false,
-    text: "Развернуть...",
+    text: 'Развернуть...',
   });
   const showDescription = () => {
     setShow({
       hide: !show.hide,
-      text: show.hide ? "Развернуть..." : "Свернуть",
+      text: show.hide ? 'Развернуть...' : 'Свернуть',
     });
   };
   return (
@@ -41,20 +41,19 @@ export const Brand = () => {
                 сладкий перец, помидоры и репчатый лук.
               </p>
               <Button
-                type={"showMore"}
+                type={'showMore'}
                 text={show.text}
                 onClick={showDescription}></Button>
             </section>
           </Container>
-          <CategoryProducts>
-            <ProductsHeader title={"Новинки"} />
-          </CategoryProducts>
-          <CategoryProducts>
-            <ProductsHeader title={"Скидки"} />
-          </CategoryProducts>
-          <CategoryProducts>
-            <ProductsHeader title={"Товары"} />
-          </CategoryProducts>
+          <Container>
+            <ProductsHeader title={'Новинки'} />
+            <ProductCards />
+            <ProductsHeader title={'Скидки'} />
+            <ProductCards />
+            <ProductsHeader title={'Товары'} />
+            <ProductCards />
+          </Container>
         </div>
       </section>
     </>

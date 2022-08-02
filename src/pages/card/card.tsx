@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Pagination } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
 import {
@@ -15,6 +15,7 @@ import cardImg from './images/product.svg';
 
 export const Card = () => {
   const [checked, setChecked] = useState('1');
+  const navigate = useNavigate();
   const changeRadioInput = (e: any) => {
     const { value } = e.target;
     setChecked(value);
@@ -26,7 +27,7 @@ export const Card = () => {
   const onDecrement = () => {
     if (mainButton.count === 1) {
       setMainButton({
-        ...mainButton,
+        count: 0,
         open: false,
       });
     } else {
@@ -52,9 +53,21 @@ export const Card = () => {
     } else {
       setMainButton({
         ...mainButton,
-        open: true,
+        open: false,
       });
+      navigate('/cart');
     }
+  };
+
+  const [show, setShow] = useState({
+    hide: false,
+    text: 'еще',
+  });
+  const showDescription = () => {
+    setShow({
+      hide: !show.hide,
+      text: show.hide ? show.text : '',
+    });
   };
 
   return (
@@ -104,10 +117,12 @@ export const Card = () => {
           Sony WH-1000XM4 «Лучшие наушники»тра та та та на бело м фоне красивые
           с крутым звуком и оснащены стерео системой
         </h1>
-        <div className={style.priceBlock}>
-          <div className={style.cost}>
+        <div className={style.cost}>
+          <div className={style.row}>
             <span className={style.boughtAmount}>Купили более 1 400 раз</span>
             <span className={style.discountPercent}>-25%</span>
+          </div>
+          <div className={style.row}>
             <span className={style.costCurrent}>25 000 000 &#x20bd;</span>
             <span className={style.costPrevious}>50 000 000 &#x20bd;</span>
           </div>
@@ -154,62 +169,76 @@ export const Card = () => {
         <div className={style.tabsContent}>
           <Container>
             {checked === '1' && (
-              <div className={style.captionContent}>
-                Наслаждайтесь любимой музыкой и подкастами еще дольше с
-                наушниками WH-CH510 от Sony. Благодаря легкой конструкции и 35
-                часам работы от аккумулятора вы можете не беспокоиться, что
-                наушники разрядятся в пути. Подключите наушники к смартфону или
-                планшету через беспроводную технологию Bluetooth и наслаждайтесь
-                прослушиванием любимой музыки.
+              <div className={style.tabsTab}>
+                <div
+                  className={`${style.tabsTabWrapper} ${
+                    show.hide && style.active
+                  }`}>
+                  <p className={style.tabsTabText}>
+                    Наслаждайтесь любимой музыкой и подкастами еще дольше с
+                    наушниками WH-CH510 от Sony. Благодаря легкой конструкции и
+                    35 часам работы от аккумулятора вы можете не беспокоиться,
+                    что наушники разрядятся в пути. Подключите наушники к
+                    смартфону или планшету через беспроводную технологию
+                    Bluetooth и наслаждайтесь прослушиванием любимой музыки.
+                  </p>
+                </div>
+                <Button
+                  type={'showMore'}
+                  text={show.text}
+                  onClick={showDescription}></Button>
               </div>
             )}
             {checked === '2' && (
-              <div className={style.featureContent}>
-                <div className={style.feature}>
-                  <span className={style.featureName}>Вид: </span>
-                  <span className={style.featureImplementation}>
-                    Беспроводные наушники
-                  </span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>Микрофон: </span>
-                  <span className={style.featureImplementation}>Да</span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>
-                    Конструкция наушников:{' '}
-                  </span>
-                  <span className={style.featureImplementation}>
-                    Внутриканальные
-                  </span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>Шумоподавление: </span>
-                  <span className={style.featureImplementation}>Активное</span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>
-                    Время работы в режиме разговора:{' '}
-                  </span>
-                  <span className={style.featureImplementation}>10 часов</span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>
-                    Время зарядки до 100%:{' '}
-                  </span>
-                  <span className={style.featureImplementation}>2 часа</span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>
-                    Обьём аккамулятора:{' '}
-                  </span>
-                  <span className={style.featureImplementation}>
-                    4000 Ампер
-                  </span>
-                </div>
-                <div className={style.feature}>
-                  <span className={style.featureName}>USB: </span>
-                  <span className={style.featureImplementation}>Нет</span>
+              <div className={style.tabsTab}>
+                <div
+                  className={`${style.tabsTabWrapper} ${
+                    show.hide && style.active
+                  }`}>
+                  <div className={style.tabsTable}>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Вид:</p>
+                      <p className={style.tabsTableRowValue}>
+                        Беспроводные наушники
+                      </p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Микрофон:</p>
+                      <p className={style.tabsTableRowValue}>Да</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Конструкция наушников:
+                      </p>
+                      <p className={style.tabsTableRowValue}>Внутриканальные</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Шумоподавление:</p>
+                      <p className={style.tabsTableRowValue}> Активное</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Время работы в режиме разговора:
+                      </p>
+                      <p className={style.tabsTableRowValue}>10 часов</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Время зарядки до 100%:
+                      </p>
+                      <p className={style.tabsTableRowValue}>2 часа</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Обьём аккамулятора:
+                      </p>
+                      <p className={style.tabsTableRowValue}>4000 Ампер</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>USB:</p>
+                      <p className={style.tabsTableRowValue}>Нет</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -238,7 +267,7 @@ export const Card = () => {
           <div className={style.footerWrapper}>
             <Button
               type={'mainButton'}
-              text={mainButton.open && 'Перейти в корзину'}
+              text={mainButton.open && 'В корзине'}
               className={`${style.footerButton} ${
                 mainButton.open && style.active
               }`}

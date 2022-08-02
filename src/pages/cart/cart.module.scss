@@ -2,6 +2,12 @@
 .cart {
   @extend %fonts;
   color: $mainColor;
+  &Title {
+    font-weight: 500;
+    @extend %fz-14;
+    text-align: center;
+    margin-bottom: 16px;
+  }
   &Wrapper {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -103,235 +109,61 @@
   }
 }
 
-.card {
-  background: $background;
-  margin-bottom: 8px;
+.total {
+  padding: 16px 0;
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  &Delete {
-    display: flex;
-    column-gap: 6px;
-    &Title {
-      font-weight: 500;
-      @extend %fz-10;
-    }
-    &Button {
-      width: 12px;
-      height: 12px;
-    }
-  }
-  &Footer {
-    padding: 6px 8px;
-    @extend %flex;
-  }
-  &Header {
-    @extend %flex;
-    column-gap: 8px;
-    margin-bottom: 8px;
-    &Col {
-      position: relative;
-      &.right {
-        padding-top: 8px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
-      }
-    }
-  }
-  &Select {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    &Input {
-      background: transparent;
-      border: 1px solid $themeColor;
-      border-radius: 4px;
-      width: 14px;
-      height: 14px;
-      box-sizing: border-box;
-      display: block;
-
-      &.active {
-        background-color: $themeColor;
-        background-image: url('./images/tick.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
-    input {
-      display: none;
-    }
-  }
-  &Img {
-    width: 100px;
-    height: 100px;
-  }
+  background-color: $background;
   &Title {
-    font-weight: 500;
-    @extend %fz-12;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-weight: 700;
+    @extend %fz-16;
+    margin-bottom: 8px;
   }
-  &Cost {
-    @extend %flex;
-    justify-content: flex-start;
-    column-gap: 10px;
-    &Current {
-      color: $themeColor;
-      font-weight: 600;
-      @extend %fz-12;
+  &Table {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-bottom: 16px;
+    &Row {
+      @extend %flex;
+
+      &Name {
+        font-weight: 500;
+        @extend %fz-12;
+      }
+      &.hr {
+        margin-top: 8px;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: 0;
+          right: 0;
+          border: 1px solid rgba(228, 224, 224, 0.2);
+          height: 1px;
+        }
+      }
     }
-    &Previous {
-      font-weight: 400;
-      @extend %fz-10;
-      text-decoration: line-through;
-    }
+  }
+  &Gross {
+    font-weight: 600;
+    @extend %fz-12;
+    opacity: 0.8;
   }
   &Sale {
-    font-weight: 500;
-    @extend %fz-8;
-    background-color: #6556d9;
-    border-radius: 8px;
-    padding: 1px 5px;
-    align-self: flex-start;
+    font-weight: 600;
+    @extend %fz-12;
+    opacity: 0.8;
+    color: $themeColor;
   }
-  &Saller {
+  &Button {
+    height: 40px;
+    margin-bottom: 8px;
+    @extend %fz-14;
+  }
+  &Subtitle {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-12;
     color: $secondColor;
   }
-  &Favorite {
-    width: 12px;
-    height: 12px;
-  }
-}
-.select {
-  display: flex;
-  align-items: center;
-  column-gap: 6px;
-  input {
-    display: none;
-  }
-
-  &Label {
-    font-weight: 500;
-    @extend %fz-10;
-  }
-}
-
-.counter {
-  display: flex;
-  align-items: center;
-  &Decrement {
-  }
-  &Increment {
-  }
-  &Num {
-    width: 30px;
-    text-align: center;
-    font-weight: 500;
-    @extend %fz-8;
-  }
-}
-
-.total {
-  background: $background;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  padding: 16px 0;
-  &Title {
-    font-weight: 700;
-    @extend %fz-16;
-    margin-bottom: 10px;
-  }
-  &List {
-    list-style-type: none;
-    margin-bottom: 16px;
-  }
-  &Item {
-    @extend %flex;
-    margin-bottom: 5px;
-    &.border {
-      padding-top: 15px;
-      position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 1px;
-        border-image-source: linear-gradient(
-          270deg,
-          rgba(244, 244, 244, 0) 0%,
-          rgba(244, 244, 244, 0.5) 51.04%,
-          rgba(244, 244, 244, 0) 100%
-        );
-        background: linear-gradient(
-          270deg,
-          rgba(244, 244, 244, 0) 0%,
-          rgba(244, 244, 244, 0.5) 51.04%,
-          rgba(244, 244, 244, 0) 100%
-        );
-      }
-    }
-  }
-  &Count {
-    font-weight: 500;
-    @extend %fz-12;
-    opacity: 0.8;
-    &Cost {
-      font-weight: 700;
-      @extend %fz-12;
-    }
-  }
-  &Sale {
-    font-weight: 500;
-    @extend %fz-12;
-    opacity: 0.8;
-    &Cost {
-      font-weight: 700;
-      @extend %fz-12;
-      color: $themeColor;
-    }
-  }
-  &Price {
-    font-weight: 700;
-    @extend %fz-16;
-    &Cost {
-      font-weight: 700;
-      @extend %fz-14;
-    }
-  }
-}
-.footer {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  background-color: $background;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px 0;
-  @extend %flex;
-  justify-content: center;
-
-  &Button {
-    height: 42px;
-    font-weight: 500;
-    @extend %fz-16;
-  }
-
-  &Text {
-    color: #9ca5ad;
-    @extend %fz-12;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-top: 8px;
-  }
-}
-.history {
-  margin-bottom: 100px;
 }

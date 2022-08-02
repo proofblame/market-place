@@ -34,6 +34,7 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
       )}
       {type === 'favoriteCard' && (
         <button
+          onClick={onClick}
           className={`${style.favoriteCard} ${className} ${
             active && style.active
           }`}></button>
@@ -100,6 +101,13 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         <button onClick={onClick} className={`${style.feedback} ${className}`}>
           {text || 'Написать отзыв'}
         </button>
+      )}
+      {type === 'home' && (
+        <Link to={'/'} className={style.home}>
+          <button
+            onClick={onClick}
+            className={`${style.home} ${className}`}></button>
+        </Link>
       )}
     </>
   );

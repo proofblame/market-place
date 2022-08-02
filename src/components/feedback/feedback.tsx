@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Button, Container } from '../index';
 import style from './feedback.module.scss';
-import ownerDefault from './images/owner-default.svg';
+import ownerDefault from './images/owner-default.png';
 import starsImg from './images/stars.png';
 
 export const Feedback = () => {

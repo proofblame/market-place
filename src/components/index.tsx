@@ -6,7 +6,6 @@ import { ProductCard } from './product-card/product-card';
 import { ProductCards } from './product-cards/product-cards';
 import { ScrollToTop } from './scroll-to-top/scroll-to-top';
 import { Slider } from './slider/slider';
-import { CategoryProducts } from './category-products/category-products';
 import { FeedbackList } from './feedback-list/feedback-list';
 import { Feedback } from './feedback/feedback';
 import { Logo } from './logo/logo';
@@ -18,6 +17,8 @@ import { Swiper } from './swiper/swiper';
 import { Menu } from './menu/menu';
 import { Navigation } from './navigation/navigation';
 import { SvgSprite } from './svg-sprite/svg-sprite';
+import { HorizontalCard } from './horizontal-card/horizontal-card';
+import { EmptyPage } from './empty-page/empty-page';
 
 export {
   App,
@@ -28,7 +29,6 @@ export {
   ProductCards,
   ScrollToTop,
   Slider,
-  CategoryProducts,
   FeedbackList,
   Feedback,
   Logo,
@@ -40,4 +40,6 @@ export {
   Menu,
   Navigation,
   SvgSprite,
+  HorizontalCard,
+  EmptyPage,
 };

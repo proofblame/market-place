@@ -3,7 +3,6 @@ import { Grid, Pagination } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
 
 import {
-  CategoryProducts,
   Container,
   ProductCards,
   ProductsHeader,
