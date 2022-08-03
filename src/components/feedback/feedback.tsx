@@ -125,31 +125,33 @@ export const Feedback = () => {
         <section className={style.feedbackFooter}>
           <div className={style.buttonContainer}>
             <span className={style.buttonSign}>Вам помог этот отзыв?</span>
-            <div className={style.ratingButton}>
-              <Button
-                onClick={handleLike}
-                active={likeState.likeActive}
-                type={'like'}
-              />
-              <span
-                className={`${style.ratingCounter} ${
-                  likeState.likeActive && style.active
-                }`}>
-                {likeCount.like}
-              </span>
-            </div>
-            <div className={style.ratingButton}>
-              <Button
-                onClick={handleDisLike}
-                active={likeState.dislikeActive}
-                type={'dislike'}
-              />
-              <span
-                className={`${style.ratingCounter} ${
-                  likeState.dislikeActive && style.active
-                }`}>
-                {likeCount.dislike}
-              </span>
+            <div className={style.ratingButtons}>
+              <div className={style.ratingButton}>
+                <Button
+                  onClick={handleLike}
+                  active={likeState.likeActive}
+                  type={'like'}
+                />
+                <span
+                  className={`${style.ratingCounter} ${
+                    likeState.likeActive && style.active
+                  }`}>
+                  {likeCount.like}
+                </span>
+              </div>
+              <div className={style.ratingButton}>
+                <Button
+                  onClick={handleDisLike}
+                  active={likeState.dislikeActive}
+                  type={'dislike'}
+                />
+                <span
+                  className={`${style.ratingCounter} ${
+                    likeState.dislikeActive && style.active
+                  }`}>
+                  {likeCount.dislike}
+                </span>
+              </div>
             </div>
           </div>
           <div className={style.container}>

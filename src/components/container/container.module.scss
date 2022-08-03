@@ -1,10 +1,9 @@
 @import '../../vendors/style-settings/variables.scss';
 .container {
   width: 100%;
-  // max-width: $maxWidth + px;
-  max-width: 320px;
+  max-width: $maxWidth + px;
+  // max-width: 320px;
   margin: 0 auto;
-  // @include adaptivePadding(padding, 0, 20, 0, 10);
-  padding: 0 13px;
+  @include adaptivePadding(padding, 0, 20, 0, 10);
   overflow: hidden;
 }

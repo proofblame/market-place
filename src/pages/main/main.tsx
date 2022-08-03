@@ -14,7 +14,7 @@ import mainBanner from './images/banner-img.png';
 import Headphones from './images/headphones.png';
 import Laptops from './images/laptops.png';
 import Phones from './images/phones.png';
-import promo from './images/promobanner.png';
+import promo from './images/promo-banner.png';
 import Watches from './images/watches.png';
 import style from './main.module.scss';
 import spriteMain from './images/sprite.svg';

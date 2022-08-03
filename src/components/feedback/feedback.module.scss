@@ -64,9 +64,6 @@
 }
 
 .buttonContainer {
-  display: grid;
-  grid-template-rows: repeat(2 1fr);
-  grid-template-columns: repeat(2 1fr);
 }
 
 .buttonSign {
@@ -78,6 +75,10 @@
 }
 
 .rating {
+  &Buttons {
+    @extend %flex;
+    max-width: 105px;
+  }
   &Button {
     display: flex;
     align-items: center;
@@ -88,6 +89,7 @@
     font-weight: 500;
     @extend %fz-10;
     opacity: 0.5;
+    max-width: 20px;
     &.active {
       opacity: 1;
     }

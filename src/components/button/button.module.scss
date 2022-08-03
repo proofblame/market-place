@@ -140,43 +140,53 @@
   left: 50%;
   transform: translateX(-50%);
 }
+// .menu {
+//   @extend %headerButton;
+//   @extend %flex;
+//   justify-content: center;
+//   position: relative;
+//   border: none;
+//   span {
+//     @extend %_burgerElement;
+//     position: relative;
+//     &::before {
+//       @extend %_burgerPseudo;
+//       @extend %_burgerElement;
+//       top: -5px;
+//     }
+
+//     &::after {
+//       @extend %_burgerPseudo;
+//       @extend %_burgerElement;
+//       bottom: -5px;
+//     }
+//   }
+
+//   &.active {
+//     span {
+//       background: transparent;
+//       &::before {
+//         top: 0;
+//         left: 0;
+//         transform: rotate(45deg);
+//       }
+
+//       &::after {
+//         bottom: 0;
+//         left: 0;
+//         transform: rotate(-45deg);
+//       }
+//     }
+//   }
+// }
 .menu {
   @extend %headerButton;
-  @extend %flex;
-  justify-content: center;
-  position: relative;
-  border: none;
-  span {
-    @extend %_burgerElement;
-    position: relative;
-    &::before {
-      @extend %_burgerPseudo;
-      @extend %_burgerElement;
-      top: -5px;
-    }
-
-    &::after {
-      @extend %_burgerPseudo;
-      @extend %_burgerElement;
-      bottom: -5px;
-    }
-  }
+  background-image: url('./images/menu-icon.svg');
+  transition: all 0.2s ease-out;
 
   &.active {
-    span {
-      background: transparent;
-      &::before {
-        top: 0;
-        left: 0;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        bottom: 0;
-        left: 0;
-        transform: rotate(-45deg);
-      }
-    }
+    background-image: url('./images/menu-icon-active.svg');
+    transform: rotate(-90deg);
   }
 }
 .basket {
