@@ -1,190 +1,101 @@
-import React from 'react';
-import style from './main.module.scss';
-import categoryImg from './images/category-box-icon.svg';
-import promo from './images/promo.png';
+import { Link } from 'react-router-dom';
+import { Grid, Pagination } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+
 import {
   Container,
-  Slider,
-  CategoryProducts,
+  ProductCards,
   ProductsHeader,
+  SvgSprite,
   Swiper,
 } from '../../components';
-import { SwiperSlide } from 'swiper/react';
-import { Grid, Pagination } from 'swiper';
+
+import mainBanner from './images/banner-img.png';
+import Headphones from './images/headphones.png';
+import Laptops from './images/laptops.png';
+import Phones from './images/phones.png';
+import promo from './images/promo-banner.png';
+import Watches from './images/watches.png';
+import style from './main.module.scss';
+import spriteMain from './images/sprite.svg';
+import { spriteConfig } from './sprite-config';
 
 export const Main = () => {
   return (
-    <>
-      <section className={style.main}>
+    <section className={style.main}>
+      <Container>
         <div className={style.mainWrapper}>
           <section className={style.banner}>
-            <Container>
-              <h1 className={style.bannerTitle}>Main Promo</h1>
-              <p className={style.bannerSubTitle}>Магазин от RaccoonIT</p>
-            </Container>
+            <Link to={'/card'}>
+              <img
+                src={mainBanner}
+                alt='Кибер понедельник'
+                className={style.bannerHeader}
+              />
+            </Link>
+            <div className={style.bannerBody}>
+              <Link to={'/card'}>
+                <img src={Watches} alt='Часы' />
+              </Link>
+              <Link to={'/card'}>
+                <img src={Headphones} alt='Наушники' />
+              </Link>
+              <Link to={'/card'}>
+                <img src={Laptops} alt='Ноутбуки' />
+              </Link>
+              <Link to={'/card'}>
+                <img src={Phones} alt='Телефоны' />
+              </Link>
+            </div>
           </section>
+          <ProductsHeader title={'Электроника'} />
+          <ProductCards className={style.productsCards} />
+          <ProductsHeader title={'Категории'} link={false} />
           <section className={style.category}>
-            <Container>
-              <ProductsHeader title={'Категории'} button={false} />
-              <div className={style.categoryGroup}>
-                <Swiper
-                  className={style.swiper}
-                  pagination
-                  modules={[Grid, Pagination]}
-                  slidesPerView={4}
-                  spaceBetween={10}
-                  grid={{
-                    rows: 2,
-                  }}
-                  style={{
-                    '--swiper-pagination-color': 'rgba(244, 244, 244, .3)',
-                    '--swiper-pagination-bullet-inactive-color':
-                      'rgba(244, 244, 244, 0.1)',
-                    '--swiper-pagination-bullet-inactive-opacity': '1',
-                    '--swiper-pagination-bullet-size': '5px',
-                    '--swiper-pagination-bullet-vertical-gap': '5px',
-                  }}>
-                  <SwiperSlide className={style.swiperSlide}>
+            <div className={style.categoryGroup}>
+              <Swiper
+                className={style.swiper}
+                pagination
+                modules={[Grid, Pagination]}
+                slidesPerView={4}
+                spaceBetween={10}
+                grid={{
+                  rows: 2,
+                }}
+                style={{
+                  '--swiper-pagination-color': 'rgba(244, 244, 244, .3)',
+                  '--swiper-pagination-bullet-inactive-color':
+                    'rgba(244, 244, 244, 0.1)',
+                  '--swiper-pagination-bullet-inactive-opacity': '1',
+                  '--swiper-pagination-bullet-size': '5px',
+                  '--swiper-pagination-bullet-vertical-gap': '-15px',
+                }}>
+                {spriteConfig.map((item, index) => (
+                  <SwiperSlide className={style.swiperSlide} key={index}>
                     <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
+                      <Link to='/card' className={style.categoryLink}>
+                        <SvgSprite
+                          sprite={spriteMain}
+                          id={item.img}
+                          className={style.categoryImg}
+                        />
+                      </Link>
+                      <p className={style.categoryCaption}>{item.name}</p>
                     </div>
                   </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className={style.swiperSlide}>
-                    <div className={style.categoryItem}>
-                      <img
-                        className={style.categoryImg}
-                        src={categoryImg}
-                        alt='Категория'
-                      />
-                      <p className={style.categoryCaption}>Каталог</p>
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-              </div>
-              {/* <Slider color={'dark'} /> */}
-            </Container>
+                ))}
+              </Swiper>
+            </div>
           </section>
-          <section className={style.promo}>
-            <Container>
-              <img src={promo} alt='Promo' />
-            </Container>
-          </section>
-          <CategoryProducts>
-            <ProductsHeader title={'Новинки'} />
-          </CategoryProducts>
-          <CategoryProducts>
-            <ProductsHeader title={'Скидки'} />
-          </CategoryProducts>
-          <CategoryProducts>
-            <ProductsHeader title={'Товары'} />
-          </CategoryProducts>
+          <ProductsHeader title={'Скидки'} button={'Все'} />
+          <ProductCards className={style.productsCards} />
+          <ProductsHeader title={'Сезонные товары'} button={'Все'} />
+          <ProductCards className={style.productsCards} />
+          <Link to={'/card'}>
+            <img src={promo} alt='Промо баннер' className={style.promo} />
+          </Link>
         </div>
-      </section>
-    </>
+      </Container>
+    </section>
   );
 };

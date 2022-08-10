@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import style from "./feedback.module.scss";
-import starsImg from "./images/stars.png";
-import ownerDefault from "./images/owner-default.svg";
-import { Container, Button } from "../index";
+import React, { useState } from 'react';
+
+import { Button, Container } from '../index';
+import style from './feedback.module.scss';
+import ownerDefault from './images/owner-default.png';
+import starsImg from './images/stars.png';
 
 export const Feedback = () => {
   const [likeState, setLikeState] = useState({
@@ -84,18 +85,19 @@ export const Feedback = () => {
       <Container>
         <div className={style.feedbackHeader}>
           <div className={style.feedbackData}>
-            <img className={style.feedbackRating} src={starsImg} alt="" />
+            <img className={style.feedbackRating} src={starsImg} alt='' />
             <span className={style.feedbackDate}>6 июня 2022</span>
           </div>
-          <Button type={"complaint"} />
         </div>
         <div className={style.feedbackOwner}>
           <img
             className={style.feedbackOwnerAvatar}
             src={ownerDefault}
-            alt=""
+            alt=''
           />
-          <p className={style.feedbackOwnerName}>Галина О.</p>
+          <p className={style.feedbackOwnerName}>
+            Пользователь предпочел скрыть свои данные
+          </p>
         </div>
         <div className={style.feedbackBody}>
           <ul className={style.feedbackBodyList}>
@@ -121,31 +123,39 @@ export const Feedback = () => {
         </div>
         {/* Лайки дизлайки */}
         <section className={style.feedbackFooter}>
-          <div className={style.ratingButton}>
-            <Button
-              onClick={handleLike}
-              active={likeState.likeActive}
-              type={"like"}
-            />
-            <span
-              className={`${style.ratingCounter} ${
-                likeState.likeActive && style.active
-              }`}>
-              {likeCount.like}
-            </span>
+          <div className={style.buttonContainer}>
+            <span className={style.buttonSign}>Вам помог этот отзыв?</span>
+            <div className={style.ratingButtons}>
+              <div className={style.ratingButton}>
+                <Button
+                  onClick={handleLike}
+                  active={likeState.likeActive}
+                  type={'like'}
+                />
+                <span
+                  className={`${style.ratingCounter} ${
+                    likeState.likeActive && style.active
+                  }`}>
+                  {likeCount.like}
+                </span>
+              </div>
+              <div className={style.ratingButton}>
+                <Button
+                  onClick={handleDisLike}
+                  active={likeState.dislikeActive}
+                  type={'dislike'}
+                />
+                <span
+                  className={`${style.ratingCounter} ${
+                    likeState.dislikeActive && style.active
+                  }`}>
+                  {likeCount.dislike}
+                </span>
+              </div>
+            </div>
           </div>
-          <div className={style.ratingButton}>
-            <Button
-              onClick={handleDisLike}
-              active={likeState.dislikeActive}
-              type={"dislike"}
-            />
-            <span
-              className={`${style.ratingCounter} ${
-                likeState.dislikeActive && style.active
-              }`}>
-              {likeCount.dislike}
-            </span>
+          <div className={style.container}>
+            <Button type={'complaint'} />
           </div>
         </section>
       </Container>

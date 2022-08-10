@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import style from './button.module.scss';
 
 export const Button = ({ type, className, text, onClick, active }: any) => {
@@ -32,7 +33,11 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
           className={`${style.dislike} ${active && style.active}`}></button>
       )}
       {type === 'favoriteCard' && (
-        <button className={`${style.favoriteCard} ${className}`}></button>
+        <button
+          onClick={onClick}
+          className={`${style.favoriteCard} ${className} ${
+            active && style.active
+          }`}></button>
       )}
       {type === 'mainButton' && (
         <button
@@ -42,14 +47,14 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         </button>
       )}
       {type === 'decrement' && (
-        <button onClick={onClick} className={`${style.decrement} ${className}`}>
-          -
-        </button>
+        <button
+          onClick={onClick}
+          className={`${style.decrement} ${className}`}></button>
       )}
       {type === 'increment' && (
-        <button onClick={onClick} className={`${style.increment} ${className}`}>
-          +
-        </button>
+        <button
+          onClick={onClick}
+          className={`${style.increment} ${className}`}></button>
       )}
       {type === 'menu' && (
         <button
@@ -91,6 +96,18 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         <button onClick={onClick} className={`${style.select} ${className}`}>
           {text}
         </button>
+      )}
+      {type === 'feedback' && (
+        <button onClick={onClick} className={`${style.feedback} ${className}`}>
+          {text || 'Написать отзыв'}
+        </button>
+      )}
+      {type === 'home' && (
+        <Link to={'/'} className={style.home}>
+          <button
+            onClick={onClick}
+            className={`${style.home} ${className}`}></button>
+        </Link>
       )}
     </>
   );

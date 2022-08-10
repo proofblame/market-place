@@ -1,0 +1,140 @@
+@import '../../vendors/style-settings/variables.scss';
+
+.card {
+  background: $background;
+  margin-bottom: 8px;
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  &Delete {
+    display: flex;
+    column-gap: 6px;
+    &Title {
+      font-weight: 500;
+      @extend %fz-10;
+    }
+    &Button {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  &Footer {
+    padding: 6px 8px;
+    @extend %flex;
+  }
+  &Header {
+    @extend %flex;
+    column-gap: 8px;
+    margin-bottom: 8px;
+    &Col {
+      position: relative;
+      &.right {
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+    }
+  }
+  &Select {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    &Input {
+      background: transparent;
+      border: 1px solid $themeColor;
+      border-radius: 4px;
+      width: 14px;
+      height: 14px;
+      box-sizing: border-box;
+      display: block;
+
+      &.active {
+        background-color: $themeColor;
+        background-image: url('./images/tick.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    input {
+      display: none;
+    }
+  }
+  &Img {
+    width: 100px;
+    height: 100px;
+  }
+  &Title {
+    font-weight: 500;
+    @extend %fz-12;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &Cost {
+    @extend %flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    &Current {
+      color: $themeColor;
+      font-weight: 600;
+      @extend %fz-12;
+    }
+    &Previous {
+      font-weight: 400;
+      @extend %fz-10;
+      text-decoration: line-through;
+    }
+  }
+  &Sale {
+    font-weight: 500;
+    @extend %fz-8;
+    background-color: #6556d9;
+    border-radius: 8px;
+    padding: 1px 5px;
+    align-self: flex-start;
+  }
+  &Saller {
+    font-weight: 500;
+    @extend %fz-10;
+    color: $secondColor;
+  }
+  &Favorite {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  input {
+    display: none;
+  }
+
+  &Label {
+    font-weight: 500;
+    @extend %fz-10;
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  &Decrement {
+    width: 24px;
+    height: 24px;
+  }
+  &Increment {
+    width: 24px;
+    height: 24px;
+  }
+  &Num {
+    width: 30px;
+    text-align: center;
+    font-weight: 500;
+    @extend %fz-8;
+  }
+}

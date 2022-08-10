@@ -4,18 +4,18 @@
     @extend %fonts;
     color: $mainColor;
     @extend %flex;
-    margin-bottom: 20px;
+    padding: 8px 0;
   }
   &Title {
     font-weight: 700;
     @extend %fz-16;
   }
   &Link {
-    @extend %fz-10;
+    @extend %fz-12;
     opacity: 0.8;
     border: none;
     background: none;
-    color: inherit;
+    color: $linkColor;
     cursor: pointer;
   }
 }

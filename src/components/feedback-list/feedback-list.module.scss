@@ -2,8 +2,7 @@
 .feedbackList {
   padding: 18px 0;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  background-color: $background;
-  max-width: 560px;
+  background-color: #1c1c1e;
   margin: 0 auto 10px;
   @extend %fonts;
   color: $mainColor;
@@ -11,10 +10,10 @@
     list-style-type: none;
   }
   &Header {
-    font-weight: 700;
-    @extend %fz-12;
+    font-weight: 500;
+    @extend %fz-16;
     @extend %flex;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   &Title {
     @extend %flex;
@@ -26,18 +25,29 @@
     opacity: 0.5;
   }
   &Stars {
-    @extend %flex;
+    display: flex;
+    align-items: center;
     column-gap: 5px;
     &Counter {
-      font-weight: 500;
-      @extend %fz-10;
+      font-weight: 400;
+      @extend %fz-12;
       opacity: 0.8;
+    }
+
+    &Counter {
+      align-self: center;
+      @extend %fz-12;
+    }
+
+    &Image {
+      width: 120px;
     }
   }
   &Caption {
-    font-weight: 500;
+    font-weight: 400;
     @extend %fz-12;
     opacity: 0.5;
+    margin-bottom: 12px;
   }
 }
 .link {
@@ -47,4 +57,13 @@
   padding: 20px 0 30px;
   display: block;
   text-align: center;
+}
+
+.buttonWrapper {
+  margin-bottom: 12px;
+}
+.mainButton {
+  @extend %fz-12;
+  min-height: 40px;
+  margin-bottom: 12px;
 }

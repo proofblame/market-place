@@ -12,15 +12,14 @@ export const Menu = () => {
   };
   return (
     <section className={style.section}>
-      <div className={style.wrapper}>
-        <nav className={`${style.nav} ${active && style.active}`}>
-          <Button type={'basket'} onClick={closeMenu} />
-          <Button type={'share'} onClick={closeMenu} />
-          <Button type={'search'} onClick={closeMenu} />
-          <Button type={'account'} onClick={closeMenu} />
-        </nav>
-        <Button type={'menu'} active={active} onClick={handleClickButton} />
-      </div>
+      <nav className={`${style.nav} ${active && style.active}`}>
+        <Button type={'basket'} onClick={closeMenu} />
+        <Button type={'share'} onClick={closeMenu} />
+        <Button type={'search'} onClick={closeMenu} />
+        <Button type={'account'} onClick={closeMenu} />
+        <Button type={'home'} onClick={closeMenu} />
+      </nav>
+      <Button type={'menu'} active={active} onClick={handleClickButton} />
     </section>
   );
 };

@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import style from './card.module.scss';
-import cardImg from './images/card-img.png';
-import starsImg from './images/stars.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { Pagination } from 'swiper';
 import { SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
 import {
-  Slider,
-  Container,
   Button,
-  CategoryProducts,
+  Container,
   FeedbackList,
+  ProductCards,
   ProductsHeader,
-  MainButton,
   Swiper,
 } from '../../components';
-import { Pagination } from 'swiper';
+import style from './card.module.scss';
+import cardImg from './images/product.svg';
 
 export const Card = () => {
   const [checked, setChecked] = useState('1');
+  const navigate = useNavigate();
   const changeRadioInput = (e: any) => {
     const { value } = e.target;
     setChecked(value);
@@ -29,7 +27,7 @@ export const Card = () => {
   const onDecrement = () => {
     if (mainButton.count === 1) {
       setMainButton({
-        ...mainButton,
+        count: 0,
         open: false,
       });
     } else {
@@ -55,59 +53,79 @@ export const Card = () => {
     } else {
       setMainButton({
         ...mainButton,
-        open: true,
+        open: false,
       });
+      navigate('/cart');
     }
   };
+
+  const [show, setShow] = useState({
+    hide: false,
+    text: 'еще',
+  });
+  const showDescription = () => {
+    setShow({
+      hide: !show.hide,
+      text: show.hide ? show.text : '',
+    });
+  };
+
   return (
     <section className={style.section}>
-      <nav className={style.nav}>
-        <Container className={style.navWrapper}>
-          <Link to={'/'}>
-            <Button type={'back'} />
-          </Link>
-          <div className={style.navRightColumn}>
-            <Button type={'favorite'} />
-            <Button type={'share'} />
-          </div>
-        </Container>
-      </nav>
-      <div className={style.imageGroup}>
-        <Swiper pagination={{ dynamicBullets: true }} modules={[Pagination]}>
+      <Container>
+        <Button type={'back'} className={style.backButton} />
+      </Container>
+      <section>
+        <Swiper
+          pagination
+          modules={[Pagination]}
+          className={style.swiper}
+          style={{
+            '--swiper-pagination-color': '#F4F4F4',
+            '--swiper-pagination-bullet-inactive-color':
+              'rgba(244, 244, 244, 0.5)',
+            '--swiper-pagination-bullet-inactive-opacity': '1',
+            '--swiper-pagination-bullet-size': '6px',
+            '--swiper-pagination-bullet-vertical-gap': '15px',
+          }}>
           <SwiperSlide>
-            <img src={cardImg} alt='' className={style.image} />
+            <img src={cardImg} alt='' className={style.cardImg} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={cardImg} alt='' className={style.image} />
+            <img src={cardImg} alt='' className={style.cardImg} />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={cardImg} alt='' className={style.image} />
+            <img src={cardImg} alt='' className={style.cardImg} />
           </SwiperSlide>
+          <Container className={style.buttonsGroup}>
+            <div className={style.rating}>
+              <span className={style.ratingStars}>4,85</span>
+              <span className={style.ratingReviews}>
+                <Link to={'/feedbacks'}>999 тыс.</Link>
+              </span>
+            </div>
+            <div className={style.buttonsRight}>
+              <Button type={'share'} className={style.buttonShare} />
+              <Button type={'favorite'} className={style.buttonFavorite} />
+            </div>
+          </Container>
         </Swiper>
-        {/* <ul className={style.imageList}>
-          <li className={style.imageItem}>
-            <img src={cardImg} alt="" className={style.image} />
-          </li>
-        </ul> */}
-        <Slider color={'light'} className={style.dots} />
-      </div>
+      </section>
+
       <Container>
         <h1 className={style.title}>
-          Сувенир банка "Мужчине, у которого есть всё" внутри: подтяжки
-          10х7,5х7,5 см. Вид: Оригинальные, Сувенирная банка.{' '}
+          Sony WH-1000XM4 «Лучшие наушники»тра та та та на бело м фоне красивые
+          с крутым звуком и оснащены стерео системой
         </h1>
-        <div className={style.priceBlock}>
-          <div className={style.priceWrapper}>
-            <div className={style.pricePrevious}>1000 &#x20bd;</div>
-            <div className={style.stars}>
-              <div className={style.starsNumber}>
-                <img src={starsImg} alt='' />
-              </div>
-              <div className={style.starsCount}>22 отзыва</div>
-            </div>
+        <div className={style.cost}>
+          <div className={style.row}>
+            <span className={style.boughtAmount}>Купили более 1 400 раз</span>
+            <span className={style.discountPercent}>-25%</span>
           </div>
-
-          <p className={style.priceCurrent}>499 &#x20bd;</p>
+          <div className={style.row}>
+            <span className={style.costCurrent}>25 000 000 &#x20bd;</span>
+            <span className={style.costPrevious}>50 000 000 &#x20bd;</span>
+          </div>
         </div>
       </Container>
       <section className={style.tabs}>
@@ -129,6 +147,7 @@ export const Card = () => {
               htmlFor='caption-tab'>
               Описание
             </label>
+
             <input
               className={style.tabsInput}
               type='radio'
@@ -146,49 +165,109 @@ export const Card = () => {
               Характеристика
             </label>
           </div>
-          <div className={style.tabsContent}>
+        </Container>
+        <div className={style.tabsContent}>
+          <Container>
             {checked === '1' && (
-              <div className={style.captionContent}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, quod. Necessitatibus sed ab ex voluptates saepe vitae
-                officiis consequuntur possimus dolorem quos repudiandae omnis
-                voluptatibus, deserunt, commodi at explicabo veniam.
+              <div className={style.tabsTab}>
+                <div
+                  className={`${style.tabsTabWrapper} ${
+                    show.hide && style.active
+                  }`}>
+                  <p className={style.tabsTabText}>
+                    Наслаждайтесь любимой музыкой и подкастами еще дольше с
+                    наушниками WH-CH510 от Sony. Благодаря легкой конструкции и
+                    35 часам работы от аккумулятора вы можете не беспокоиться,
+                    что наушники разрядятся в пути. Подключите наушники к
+                    смартфону или планшету через беспроводную технологию
+                    Bluetooth и наслаждайтесь прослушиванием любимой музыки.
+                  </p>
+                </div>
+                <Button
+                  type={'showMore'}
+                  text={show.text}
+                  onClick={showDescription}></Button>
               </div>
             )}
             {checked === '2' && (
-              <div className={style.featureContent}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                minus illum sapiente nostrum ut? Maxime, corporis. Nesciunt
-                aliquam id impedit rem odio dolorem soluta repellendus quisquam
-                non, saepe, vero sit! Necessitatibus eos iste dolore commodi
-                aliquid voluptate itaque! Ratione dolorum natus explicabo
-                tempora veritatis, error laborum aspernatur nihil? Aspernatur
-                corporis soluta autem. Autem explicabo ex numquam quasi repellat
-                fugit ipsum!
+              <div className={style.tabsTab}>
+                <div
+                  className={`${style.tabsTabWrapper} ${
+                    show.hide && style.active
+                  }`}>
+                  <div className={style.tabsTable}>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Вид:</p>
+                      <p className={style.tabsTableRowValue}>
+                        Беспроводные наушники
+                      </p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Микрофон:</p>
+                      <p className={style.tabsTableRowValue}>Да</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Конструкция наушников:
+                      </p>
+                      <p className={style.tabsTableRowValue}>Внутриканальные</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>Шумоподавление:</p>
+                      <p className={style.tabsTableRowValue}> Активное</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Время работы в режиме разговора:
+                      </p>
+                      <p className={style.tabsTableRowValue}>10 часов</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Время зарядки до 100%:
+                      </p>
+                      <p className={style.tabsTableRowValue}>2 часа</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>
+                        Обьём аккамулятора:
+                      </p>
+                      <p className={style.tabsTableRowValue}>4000 Ампер</p>
+                    </div>
+                    <div className={style.tabsTableRow}>
+                      <p className={style.tabsTableRowName}>USB:</p>
+                      <p className={style.tabsTableRowValue}>Нет</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
-          </div>
-        </Container>
+          </Container>
+        </div>
       </section>
       <section className={style.owner}>
         <Container>
           <Link to={'/brand'}>
             <p className={style.ownerStatus}>Магазин от RaccoonIT</p>
-            <p className={style.ownerName}>TG Market</p>
+            <p className={style.ownerName}>
+              Headphones магазин крутых наушников
+            </p>
           </Link>
         </Container>
       </section>
       <FeedbackList />
-      <CategoryProducts>
+      <Container>
         <ProductsHeader title={'Промо товары'} />
-      </CategoryProducts>
+        <ProductCards className={style.productsCards} />
+        <ProductCards className={style.productsCards} />
+      </Container>
       {/* <MainButton /> */}
       <div className={style.footer}>
         <Container>
           <div className={style.footerWrapper}>
             <Button
               type={'mainButton'}
-              text={mainButton.open && 'Перейти в корзину'}
+              text={mainButton.open && 'В корзине'}
               className={`${style.footerButton} ${
                 mainButton.open && style.active
               }`}

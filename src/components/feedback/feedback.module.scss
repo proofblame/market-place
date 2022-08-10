@@ -1,11 +1,10 @@
 @import '../../vendors/style-settings/variables.scss';
 .feedback {
   &Item {
-    padding: 30px 0;
+    padding: 16px 0;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: $background;
-    margin: 0 auto 10px;
-    max-width: 560px;
+    background-color: #1c1c1e;
+    margin: 0 auto 24px;
   }
   &Header {
     @extend %flex;
@@ -15,15 +14,15 @@
     column-gap: 10px;
   }
   &Rating {
-    max-width: 108px;
+    max-width: 68px;
   }
   &Date {
-    font-weight: 500;
+    font-weight: 400;
     @extend %fz-10;
-    opacity: 0.5;
+    opacity: 0.8;
   }
   &Owner {
-    padding: 15px 0 20px;
+    padding: 8px 0 16px;
     @extend %flex;
     justify-content: flex-start;
     column-gap: 7px;
@@ -32,11 +31,10 @@
     }
     &Name {
       font-weight: 500;
-      @extend %fz-16;
+      @extend %fz-12;
     }
   }
   &Body {
-    margin-bottom: 25px;
     &List {
       list-style-type: none;
       flex-direction: column;
@@ -44,6 +42,7 @@
       align-items: flex-start;
       justify-content: space-between;
       row-gap: 10px;
+      margin-bottom: 16px;
     }
     &Item {
       font-weight: 500;
@@ -53,26 +52,51 @@
       margin-bottom: 5px;
     }
     &Text {
-      opacity: 0.5;
+      font-weight: 400;
+      color: rgba(244, 244, 244, 0.8);
     }
   }
   &Footer {
     @extend %flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     column-gap: 35px;
   }
 }
+
+.buttonContainer {
+}
+
+.buttonSign {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 8px;
+  color: #838383;
+  @extend %fz-12;
+}
+
 .rating {
-  &Button {
+  &Buttons {
     @extend %flex;
-    column-gap: 5px;
+    max-width: 105px;
+  }
+  &Button {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    @extend %fz-10;
   }
   &Counter {
     font-weight: 500;
     @extend %fz-10;
     opacity: 0.5;
+    max-width: 20px;
     &.active {
       opacity: 1;
     }
   }
+}
+
+.container {
+  align-self: flex-end;
+  height: 30px;
 }

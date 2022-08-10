@@ -1,22 +1,5 @@
 @import '../../vendors/style-settings/variables.scss';
-.favorite {
-  background-image: url('./images/favorite-icon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  @include adaptiveSize(background-size, 14, 12, 14, 12);
-  @include adaptivePadding(padding, 8, 8, 8, 8);
-  @include adaptive(width, 30, 30);
-  @include adaptive(height, 30, 30);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: $background;
-  border: none;
-  cursor: pointer;
 
-  &.active {
-    background-image: url('./images/favorite-active-icon.svg');
-  }
-}
 .back {
   background-image: url('./images/back-icon.svg');
   background-repeat: no-repeat;
@@ -78,8 +61,8 @@
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  @include adaptive(width, 22, 22);
-  @include adaptive(height, 22, 22);
+  // width: 22px;
+  // height: 22px;
 
   background-color: $themeColor;
   border: none;
@@ -98,9 +81,6 @@
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
-
-  &.active {
-  }
 }
 
 .decrement {
@@ -111,29 +91,36 @@
   border: none;
   cursor: pointer;
   @extend %fz-16;
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
-  box-shadow: 0px 8.4px 42px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-image: url('./images/decrement-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5px;
 }
 .increment {
   color: $mainColor;
-  background-color: #5670b6;
+  background-color: $background;
   font-weight: 500;
   text-align: center;
   border: none;
   cursor: pointer;
   @extend %fz-16;
-  width: 42px;
-  height: 42px;
-  border-radius: 6px;
+
+  border: 1px solid $themeColor;
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-image: url('./images/increment-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5px;
 }
 %headerButton {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px 20px;
-  @include adaptive(width, 44, 44);
-  @include adaptive(height, 44, 44);
+  width: 44px;
+  height: 44px;
   background-color: $background;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -153,43 +140,53 @@
   left: 50%;
   transform: translateX(-50%);
 }
+// .menu {
+//   @extend %headerButton;
+//   @extend %flex;
+//   justify-content: center;
+//   position: relative;
+//   border: none;
+//   span {
+//     @extend %_burgerElement;
+//     position: relative;
+//     &::before {
+//       @extend %_burgerPseudo;
+//       @extend %_burgerElement;
+//       top: -5px;
+//     }
+
+//     &::after {
+//       @extend %_burgerPseudo;
+//       @extend %_burgerElement;
+//       bottom: -5px;
+//     }
+//   }
+
+//   &.active {
+//     span {
+//       background: transparent;
+//       &::before {
+//         top: 0;
+//         left: 0;
+//         transform: rotate(45deg);
+//       }
+
+//       &::after {
+//         bottom: 0;
+//         left: 0;
+//         transform: rotate(-45deg);
+//       }
+//     }
+//   }
+// }
 .menu {
   @extend %headerButton;
-  @extend %flex;
-  justify-content: center;
-  position: relative;
-  border: none;
-  span {
-    @extend %_burgerElement;
-    position: relative;
-    &::before {
-      @extend %_burgerPseudo;
-      @extend %_burgerElement;
-      top: -5px;
-    }
-
-    &::after {
-      @extend %_burgerPseudo;
-      @extend %_burgerElement;
-      bottom: -5px;
-    }
-  }
+  background-image: url('./images/menu-icon.svg');
+  transition: all 0.2s ease-out;
 
   &.active {
-    span {
-      background: transparent;
-      &::before {
-        top: 0;
-        left: 0;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        bottom: 0;
-        left: 0;
-        transform: rotate(-45deg);
-      }
-    }
+    background-image: url('./images/menu-icon-active.svg');
+    transform: rotate(-90deg);
   }
 }
 .basket {
@@ -208,6 +205,19 @@
   background-image: url('./images/share-icon.svg');
   @extend %headerButton;
 }
+.home {
+  background-image: url('./images/home-icon.svg');
+  @extend %headerButton;
+}
+.favorite {
+  background-image: url('./images/favorite-icon.svg');
+  @extend %headerButton;
+
+  &.active {
+    background-image: url('./images/favorite-active-icon.svg');
+  }
+}
+
 .showMore {
   font-weight: 500;
   color: $themeColor;
@@ -219,6 +229,7 @@
   margin: 0;
   cursor: pointer;
 }
+
 .delete {
   background-image: url('./images/delete-icon.svg');
   background-repeat: no-repeat;
@@ -241,4 +252,21 @@
   border-radius: 50%;
   width: 10px;
   height: 10px;
+}
+
+.feedback {
+  background: #5670b6;
+  border-radius: 8px;
+  padding: 12px 96px;
+  font-weight: 500;
+  @extend %fz-12;
+  border: none;
+  outline: none;
+  margin: 0;
+  color: $mainColor;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
