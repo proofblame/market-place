@@ -321,10 +321,12 @@
     .decrement {
       @include adaptive(height, 68, 42);
       @include adaptive(width, 68, 42);
+      @include adaptiveSize(background-size, 16, 16, 8, 8);
     }
     .increment {
       @include adaptive(height, 68, 42);
       @include adaptive(width, 68, 42);
+      @include adaptiveSize(background-size, 16, 16, 8, 8);
     }
 
     .sum {
