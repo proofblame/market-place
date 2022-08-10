@@ -11,7 +11,7 @@ import { Feedback } from './feedback/feedback';
 import { Logo } from './logo/logo';
 import { Modal } from './modal/modal';
 import { ConfirmPopup } from './confirm-popup/confirm-popup';
-import { ProductsHeader } from './products-header/products-header';
+import { Category } from './category/category';
 import { MainButton } from './main-button/main-button';
 import { Swiper } from './swiper/swiper';
 import { Menu } from './menu/menu';
@@ -34,7 +34,7 @@ export {
   Logo,
   Modal,
   ConfirmPopup,
-  ProductsHeader,
+  Category,
   MainButton,
   Swiper,
   Menu,

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import style from './brand.module.scss';
-import {
-  Button,
-  Container,
-  ProductCards,
-  ProductsHeader,
-} from '../../components';
+import { Button, Container, ProductCards, Category } from '../../components';
 
 export const Brand = () => {
   const [show, setShow] = useState({
@@ -47,11 +42,11 @@ export const Brand = () => {
             </section>
           </Container>
           <Container>
-            <ProductsHeader title={'Новинки'} />
+            <Category title={'Новинки'} />
             <ProductCards />
-            <ProductsHeader title={'Скидки'} />
+            <Category title={'Скидки'} />
             <ProductCards />
-            <ProductsHeader title={'Товары'} />
+            <Category title={'Товары'} />
             <ProductCards />
           </Container>
         </div>

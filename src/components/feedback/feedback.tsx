@@ -81,82 +81,68 @@ export const Feedback = () => {
     setDisLike();
   };
   return (
-    <li className={style.feedbackItem}>
-      <Container>
-        <div className={style.feedbackHeader}>
-          <div className={style.feedbackData}>
-            <img className={style.feedbackRating} src={starsImg} alt='' />
-            <span className={style.feedbackDate}>6 июня 2022</span>
-          </div>
-        </div>
-        <div className={style.feedbackOwner}>
-          <img
-            className={style.feedbackOwnerAvatar}
-            src={ownerDefault}
-            alt=''
-          />
-          <p className={style.feedbackOwnerName}>
+    <li>
+      <Container className={style.container}>
+        <header className={style.header}>
+          <img className={style.rating} src={starsImg} alt='' />
+          <span className={style.date}>6 июня 2022</span>
+        </header>
+        <div className={style.owner}>
+          <img className={style.avatar} src={ownerDefault} alt='' />
+          <p className={style.name}>
             Пользователь предпочел скрыть свои данные
           </p>
         </div>
-        <div className={style.feedbackBody}>
-          <ul className={style.feedbackBodyList}>
-            <li className={style.feedbackBodyItem}>
-              <p className={style.feedbackBodyTitle}>Плюсы</p>
-              <p className={style.feedbackBodyText}>
+        <div className={style.body}>
+          <ul className={style.list}>
+            <li className={style.item}>
+              <p className={style.subtitle}>Плюсы</p>
+              <p className={style.text}>
                 Хорошее качество Классно упакован, быстрая доставка
               </p>
             </li>
-            <li className={style.feedbackBodyItem}>
-              <p className={style.feedbackBodyTitle}>Минусы</p>
-              <p className={style.feedbackBodyText}>
-                Хорошее качество Классно упакован, быстрая доставка
-              </p>
-            </li>
-            <li className={style.feedbackBodyItem}>
-              <p className={style.feedbackBodyTitle}>Комментарий</p>
-              <p className={style.feedbackBodyText}>
+            <li className={style.item}>
+              <p className={style.subtitle}>Минусы</p>
+              <p className={style.text}>
                 Хорошее качество Классно упакован, быстрая доставка
               </p>
             </li>
           </ul>
         </div>
         {/* Лайки дизлайки */}
-        <section className={style.feedbackFooter}>
-          <div className={style.buttonContainer}>
-            <span className={style.buttonSign}>Вам помог этот отзыв?</span>
-            <div className={style.ratingButtons}>
-              <div className={style.ratingButton}>
+        <section className={style.footer}>
+          <div className={style.voting}>
+            <span className={style.question}>Вам помог этот отзыв?</span>
+            <ul className={style.buttons}>
+              <li className={style.button}>
                 <Button
                   onClick={handleLike}
                   active={likeState.likeActive}
                   type={'like'}
                 />
                 <span
-                  className={`${style.ratingCounter} ${
+                  className={`${style.counter} ${
                     likeState.likeActive && style.active
                   }`}>
                   {likeCount.like}
                 </span>
-              </div>
-              <div className={style.ratingButton}>
+              </li>
+              <li className={style.button}>
                 <Button
                   onClick={handleDisLike}
                   active={likeState.dislikeActive}
                   type={'dislike'}
                 />
                 <span
-                  className={`${style.ratingCounter} ${
+                  className={`${style.counter} ${
                     likeState.dislikeActive && style.active
                   }`}>
                   {likeCount.dislike}
                 </span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
-          <div className={style.container}>
-            <Button type={'complaint'} />
-          </div>
+          <Button type={'complaint'} />
         </section>
       </Container>
     </li>

@@ -1,470 +1,340 @@
 @import '../../sass/';
 
-.section {
+.page {
   position: relative;
-  @extend %fonts;
-  color: $mainColor;
-  padding-bottom: 50px;
-}
-.swiper {
-  margin: 0 auto;
-  max-width: $maxWidth + px;
-  position: relative;
-}
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  padding-top: 40px;
-
-  &Wrapper {
-    @extend %flex;
-  }
-  &RightColumn {
-    @extend %flex;
-    column-gap: 10px;
-  }
-}
-.row {
-  @extend %flex;
-}
-.backButton {
-  position: absolute;
-  z-index: 2;
-  margin-top: 8px;
-}
-.buttons {
-  &Group {
-    @extend %flex;
-    position: relative;
-    bottom: 35px;
-    z-index: 2;
-    max-height: 35px;
-  }
-  &Right {
-    max-height: 35px;
-    position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: -24px;
-      width: 24px;
-      height: 23px;
-      background-image: url('./images/corner.svg');
-      background-repeat: no-repeat;
-      background-position: bottom right;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: -24px;
-      width: 24px;
-      height: 23px;
-      background-image: url('./images/corner.svg');
-      background-repeat: no-repeat;
-      background-position: bottom right;
-      transform: scale(-1, 1);
-    }
-  }
-}
-.button {
-  &Share {
-    max-width: 40px;
-    max-height: 35px;
-    background-size: 16px !important;
-    background-color: $rootColor !important;
-    border-radius: 8px 8px 0px 0px !important;
-    box-shadow: none !important;
-    margin-right: 8px;
-  }
-  &Favorite {
-    @extend .buttonShare;
-    margin-right: 0;
-  }
-}
-%pseudoRating {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -24px;
-  width: 24px;
-  height: 23px;
-  background-image: url('./images/corner.svg');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-.rating {
-  height: 35px;
-  padding: 0 13px;
-  background-color: $rootColor;
-  border-radius: 8px 8px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -24px;
-    width: 24px;
-    height: 23px;
-    background-image: url('./images/corner.svg');
-    background-repeat: no-repeat;
-    background-position: bottom right;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: -24px;
-    width: 24px;
-    height: 23px;
-    background-image: url('./images/corner.svg');
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    transform: scale(-1, 1);
-  }
-  &Stars {
-    font-weight: 400;
-    @extend %fz-20;
-    position: relative;
-    padding-left: 15px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      width: 10px;
-      height: 10px;
-      background-image: url('./images/star.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-  }
-  &Reviews {
-    font-weight: 400;
-    @extend %fz-18;
-    color: $themeColor;
-  }
-}
-
-.cardImage {
-}
-
-.container {
-  position: absolute;
-  content: '';
-  bottom: -1px;
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-}
-
-.feedbackContainer {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 0.5fr 1.5fr;
-  width: 65px;
-  height: 35px;
-  padding: 4px 10px;
-}
-
-.ratingImg {
-  width: 10px;
-  height: 9px;
-  margin-right: 5px;
-}
-
-.ratingAmount {
-  @extend %fz-20;
-}
-
-.feedback {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  @extend %fz-18;
-  color: $themeColor;
-  justify-self: center;
-  width: 45px;
-}
-
-.feedbacklink {
-  width: 100%;
-}
-
-.cost {
-  margin-bottom: 16px;
-
-  &Current {
-    font-weight: 500;
-    @extend %fz-24;
-    color: $mainColor;
-  }
-
-  &Previous {
+  padding-top: 0;
+  @include adaptive(padding-bottom, 100, 64);
+  .title {
+    @include adaptive(padding-bottom, 24, 8);
     font-weight: 500;
     @extend %fz-20;
-    text-decoration: line-through;
-    opacity: 0.5;
   }
-}
 
-.boughtAmount {
-  @extend %fz-18;
-  opacity: 0.5;
-}
-
-.discountPercent {
-  @extend %fz-20;
-  font-weight: 400;
-  background-color: #6556d9;
-  padding: 3px 10px;
-  border-radius: 10px;
-  @extend %flex;
-  justify-content: end;
-  align-self: end;
-  justify-self: end;
-}
-
-.dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.title {
-  padding-bottom: 8px;
-  font-weight: 500;
-  @extend %fz-20;
-}
-
-.price {
-  &Block {
-    padding-top: 10px;
-    padding-bottom: 20px;
-  }
-  &Wrapper {
-    @extend %flex;
-  }
-  &Previous {
-    font-weight: 600;
-    @extend %fz-18;
-    color: $themeColor;
-    text-decoration: line-through;
-  }
-  &Current {
-    padding-top: 10px;
-    font-weight: 700;
-    @extend %fz-32;
-  }
-}
-.stars {
-  &Number {
-    margin-bottom: 4px;
-  }
-  &Count {
-    font-weight: 500;
-    opacity: 0.8;
-    @extend %fz-18;
-  }
-}
-.tabs {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  margin: 0 auto 8px;
-
-  &Header {
-    font-weight: 700;
-    @extend %fz-28;
-    display: flex;
-    justify-content: space-between;
-  }
-  &Input {
-    display: none;
-  }
-  &Label {
-    padding: 8px 0;
+  .swiper {
+    margin: 0 auto;
+    max-width: $maxWidth + px;
+    position: relative;
     width: 100%;
-    text-align: center;
-    font-weight: 500;
-    @extend %fz-24;
-    color: rgba(244, 244, 244, 0.5);
-    cursor: pointer;
-    border-radius: 8px 8px 0px 0px;
 
-    &.active {
+    .info {
+      @extend %flex;
       position: relative;
-      background-color: #1c1c1e;
+      height: 100%;
+      z-index: 2;
+      @include adaptive(max-height, 62, 35);
+      @include adaptive(bottom, 62, 35);
+    }
+    .rating {
+      @include adaptive(height, 62, 35);
+      @include adaptivePadding(padding, 0, 20, 0, 13);
+      background-color: $background;
+      border-radius: 0;
+      @include adaptive(border-top-left-radius, 16, 8);
+      @include adaptive(border-top-right-radius, 16, 8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
       &::before {
         content: '';
         position: absolute;
         bottom: 0;
-        left: -24px;
-        width: 24px;
-        height: 23px;
-        background-image: url('./images/corner-black.svg');
+        @include adaptive(left, -42, -24);
+        @include adaptive(width, 42, 24);
+        @include adaptive(height, 40, 24);
+        background-image: url('./images/corner.svg');
         background-repeat: no-repeat;
         background-position: bottom right;
-        transform: scale(-1, 1);
       }
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        right: -24px;
-        width: 24px;
-        height: 23px;
-        background-image: url('./images/corner-black.svg');
+        @include adaptive(right, -42, -24);
+        @include adaptive(width, 42, 24);
+        @include adaptive(height, 40, 24);
+        background-image: url('./images/corner.svg');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        transform: scale(-1, 1);
+      }
+      .stars {
+        font-weight: 400;
+        @extend %fz-20;
+        position: relative;
+        @include adaptive(padding-left, 24, 15);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          @include adaptive(width, 18, 10);
+          @include adaptive(height, 18, 10);
+          background-image: url('./images/star.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      .reviews {
+        font-weight: 400;
+        @extend %fz-18;
+        color: $themeColor;
+      }
+    }
+    .col {
+      @include adaptive(height, 62, 35);
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+
+        @include adaptive(left, -42, -24);
+        @include adaptive(width, 42, 24);
+        @include adaptive(height, 40, 24);
+        background-image: url('./images/corner.svg');
         background-repeat: no-repeat;
         background-position: bottom right;
       }
-    }
-  }
-  &Content {
-    background-color: #1c1c1e;
-    font-weight: 400;
-    @extend %fz-20;
-    padding: 16px 0;
-    letter-spacing: 0.02em;
-    color: rgba(244, 244, 244, 0.8);
-  }
-  &Tab {
-    &Wrapper {
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      &.active {
-        display: block;
-        -webkit-line-clamp: none;
-        -webkit-box-orient: vertical;
-        overflow: auto;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        @include adaptive(right, -42, -24);
+        @include adaptive(width, 42, 24);
+        @include adaptive(height, 40, 24);
+        background-image: url('./images/corner.svg');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        transform: scale(-1, 1);
+      }
+
+      .button {
+        @include adaptive(max-width, 62, 40);
+        @include adaptive(height, 62, 35);
+        @include adaptiveSize(background-size, 30, 30, 15, 15);
+        background-color: $background;
+        border-radius: 0;
+        @include adaptive(border-top-left-radius, 16, 8);
+        @include adaptive(border-top-right-radius, 16, 8);
+        box-shadow: none;
+        @include adaptive(margin-right, 16, 8);
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
   }
-  &Table {
+
+  .back {
+    z-index: 3000;
+    position: absolute;
+    margin-top: 8px;
+    overflow: initial;
+  }
+
+  .cost {
+    .amount {
+      @extend %fz-18;
+      opacity: 0.5;
+    }
+
+    .percent {
+      @extend %fz-20;
+      font-weight: 400;
+      background-color: #6556d9;
+      @include adaptivePadding(padding, 5, 18, 3, 10);
+      @include adaptive(border-radius, 18, 10);
+      @extend %flex;
+      justify-content: end;
+      align-self: end;
+      justify-self: end;
+    }
+
+    .prices {
+      @extend %flex;
+      justify-content: flex-start;
+      @include adaptive(column-gap, 16, 8);
+      .current {
+        font-weight: 500;
+        @extend %fz-40;
+        letter-spacing: 0.02em;
+      }
+
+      .previous {
+        font-weight: 500;
+        @extend %fz-20;
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .tabs {
+    .header {
+      font-weight: 700;
+      @extend %fz-28;
+      display: flex;
+      justify-content: space-between;
+    }
+    .input {
+      display: none;
+    }
+    .label {
+      @include adaptivePadding(padding, 14, 0, 8, 0);
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      @extend %fz-24;
+      color: rgba(244, 244, 244, 0.5);
+      cursor: pointer;
+      border-radius: 0;
+      @include adaptive(border-top-left-radius, 16, 8);
+      @include adaptive(border-top-right-radius, 16, 8);
+
+      &.active {
+        position: relative;
+        background-color: #1c1c1e;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -24px;
+          @include adaptive(width, 42, 24);
+          @include adaptive(height, 40, 24);
+          background-image: url('./images/corner-black.svg');
+          background-repeat: no-repeat;
+          background-position: bottom right;
+          transform: scale(-1, 1);
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: -24px;
+          @include adaptive(width, 42, 24);
+          @include adaptive(height, 40, 24);
+          background-image: url('./images/corner-black.svg');
+          background-repeat: no-repeat;
+          background-position: bottom right;
+        }
+      }
+    }
+    .content {
+      background-color: #1c1c1e;
+      font-weight: 400;
+      @extend %fz-22;
+      @include adaptivePadding(padding, 32, 0, 16, 0);
+      letter-spacing: 0.02em;
+      color: rgba(244, 244, 244, 0.8);
+    }
+    .tab {
+      .wrapper {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        &.active {
+          display: block;
+          -webkit-line-clamp: none;
+          -webkit-box-orient: vertical;
+          overflow: auto;
+        }
+      }
+    }
+    .table {
+      display: flex;
+      flex-direction: column;
+      .row {
+        @include adaptivePadding(padding, 16, 0, 8, 0);
+        border-bottom: 1px solid rgba(228, 224, 224, 0.1);
+        @extend %flex;
+        @extend %fz-20;
+        .name {
+          font-weight: 400;
+          color: $secondColor;
+        }
+        .value {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+
+  .owner {
+    @include adaptive(padding-top, 32, 16);
+    @include adaptive(padding-bottom, 32, 16);
+    background-color: #1c1c1e;
     display: flex;
     flex-direction: column;
-    &Row {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(228, 224, 224, 0.1);
-      @extend %flex;
-      @extend %fz-20;
-      &Name {
-        font-weight: 400;
-        color: $secondColor;
-      }
-      &Value {
-        color: $mainColor;
-      }
+    @include adaptive(row-gap, 8, 4);
+
+    .name {
+      font-weight: 400;
+      @extend %fz-18;
+      opacity: 0.8;
+    }
+    .title {
+      font-weight: 500;
+      @extend %fz-28;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 0;
     }
   }
-}
 
-.headUpButton {
-  width: 147px;
-  background-color: #000;
-}
-
-.left {
-  left: -23px;
-}
-
-.right {
-  right: -18px;
-}
-
-.active {
-  background-color: #1c1c1e;
-  opacity: 1;
-  color: $mainColor;
-}
-
-.shareButton {
-  height: 35px !important;
-}
-
-.owner {
-  padding: 16px 0;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  background-color: #1c1c1e;
-  margin: 0 auto 8px;
-
-  &Status {
-    font-weight: 400;
-    @extend %fz-18;
-    opacity: 0.8;
-    margin-bottom: 5px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    @include adaptive(row-gap, 16, 8);
   }
-  &Name {
-    font-weight: 500;
-    @extend %fz-28;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-.footer {
-  // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  background-color: $background;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px 0;
-  @extend %flex;
-  justify-content: center;
 
-  &Wrapper {
+  .footer {
+    background-color: $background;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include adaptive(padding-top, 16, 8);
+    @include adaptive(padding-bottom, 16, 8);
     @extend %flex;
     column-gap: 15px;
-  }
 
-  &Counter {
-    @extend %flex;
-    // flex: 1 0 50%;
-    width: 50%;
-  }
-
-  &Sum {
-    font-weight: 500;
-    @extend %fz-28;
-    width: 50px;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  &Link {
-    width: 100%;
-  }
-
-  &Button {
-    height: 42px;
-    font-weight: 500;
-    @extend %fz-24;
-    &.active {
+    .button {
+      @include adaptive(height, 68, 42);
+      font-weight: 500;
       @extend %fz-20;
-      padding: 0 30px;
-      max-width: 300px;
+      &.active {
+        width: 50%;
+      }
     }
-    &Decrement {
-      width: 40px;
-      height: 40px;
+
+    .counter {
+      @extend %flex;
+      width: 50%;
     }
-    &Increment {
-      width: 40px;
-      height: 40px;
+    .decrement {
+      @include adaptive(height, 68, 42);
+      @include adaptive(width, 68, 42);
+    }
+    .increment {
+      @include adaptive(height, 68, 42);
+      @include adaptive(width, 68, 42);
+    }
+
+    .sum {
+      font-weight: 500;
+      @extend %fz-28;
+      width: 50px;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }

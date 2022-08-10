@@ -1,28 +1,28 @@
-import React from "react";
-import { Button, Container, ProductsHeader } from "../../components";
-import style from "./orderlist.module.scss";
-import cardImg from "./images/card-img.jpg";
+import React from 'react';
+import { Button, Container, Category } from '../../components';
+import style from './orderlist.module.scss';
+import cardImg from './images/card-img.jpg';
 
 export const Orderlist = () => {
   return (
     <>
       <section className={style.section}>
         <Container>
-          <ProductsHeader title={"Заказы"} button={false} />
+          <Category title={'Заказы'} button={false} />
           <p className={style.title}>Вы пока ничего не заказывали</p>
           <p className={style.subtitle}>
             Вы можете начать покупки с главной страницы
           </p>
           <Button
-            type={"mainButton"}
-            text={"Перейти"}
+            type={'mainButton'}
+            text={'Перейти'}
             className={style.button}
           />
         </Container>
       </section>
       <section className={style.section}>
         <Container>
-          <ProductsHeader title={"Заказы"} button={false} />
+          <Category title={'Заказы'} button={false} />
           <div className={style.filter}>
             <div className={style.period}>
               <p className={style.periodSubtitle}>Показать</p>
@@ -52,10 +52,10 @@ export const Orderlist = () => {
             </p>
             <ul className={style.orderList}>
               <li className={style.orderItem}>
-                <img className={style.orderImage} src={cardImg} alt="" />
+                <img className={style.orderImage} src={cardImg} alt='' />
               </li>
               <li className={style.orderItem}>
-                <img className={style.orderImage} src={cardImg} alt="" />
+                <img className={style.orderImage} src={cardImg} alt='' />
               </li>
             </ul>
           </Container>

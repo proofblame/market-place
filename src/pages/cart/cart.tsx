@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Button,
   Container,
@@ -7,9 +7,9 @@ import {
   HorizontalCard,
   Navigation,
   ProductCards,
-  ProductsHeader,
-} from "../../components";
-import style from "./cart.module.scss";
+  Category,
+} from '../../components';
+import style from './cart.module.scss';
 
 export const Cart = () => {
   const [checked, setChecked] = useState(false);
@@ -19,8 +19,8 @@ export const Cart = () => {
   };
   return (
     <section className={style.page}>
-      <Navigation title={"Корзина"}>
-        <Button type={"delete"} className={style.delete} />
+      <Navigation title={'Корзина'}>
+        <Button type={'delete'} className={style.delete} />
       </Navigation>
       <Container className={style.address}>
         <p className={style.point}>Boxberry, ул. Коллонтай, 17к2</p>
@@ -29,16 +29,15 @@ export const Cart = () => {
       <Container className={style.brand}>
         <section className={style.select}>
           <input
-            type="checkbox"
-            id="cartSelect"
+            type='checkbox'
+            id='cartSelect'
             checked={checked}
             onChange={handleChangeInput}
           />
           <span
             className={`${style.pseudo} ${checked && style.active}`}
-            onClick={handleChangeInput}
-          ></span>
-          <label className={style.label} htmlFor="cartSelect">
+            onClick={handleChangeInput}></span>
+          <label className={style.label} htmlFor='cartSelect'>
             Iport Супер техникс
           </label>
         </section>
@@ -65,8 +64,8 @@ export const Cart = () => {
             </div>
             <div className={style.col}>
               <Button
-                type={"mainButton"}
-                text={"Перейти к оформлению"}
+                type={'mainButton'}
+                text={'Перейти к оформлению'}
                 className={style.button}
               />
               <p className={style.subtitle}>
@@ -76,11 +75,11 @@ export const Cart = () => {
           </div>
         </Container>
       </section>
-          <EmptyPage page={"корзине"} />
-        <Container>
-          <ProductsHeader title={"История просмотров"} />
-          <ProductCards />
-        </Container>
+      <EmptyPage page={'корзине'} />
+      <Container>
+        <Category title={'История просмотров'} />
+        <ProductCards />
+      </Container>
     </section>
   );
 };

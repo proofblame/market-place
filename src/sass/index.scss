@@ -24,6 +24,18 @@ html::-webkit-scrollbar-thumb {
 }
 body {
   @extend %fonts;
+  color: $mainColor;
+  background-color: $background;
+}
+
+// Page
+
+.page {
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+  @include adaptive(padding-bottom, 32, 16);
+  @include adaptive(padding-top, 16, 8);
 }
 
 // Card
@@ -42,4 +54,9 @@ body {
     @extend %fz-18;
     text-decoration: line-through;
   }
+}
+
+// flex
+.flex {
+  @extend %flex;
 }

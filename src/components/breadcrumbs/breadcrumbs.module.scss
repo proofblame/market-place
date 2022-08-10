@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 10000;
   @extend %fonts;
   @include adaptive(min-height, 52, 30);
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);

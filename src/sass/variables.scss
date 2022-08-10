@@ -1,6 +1,6 @@
-@import "./mixins.scss";
+@import './mixins.scss';
 
-$fontFamily: "Montserrat", sans-serif;
+$fontFamily: 'Montserrat', sans-serif;
 
 //Главные цвета
 $rootColor: #090909;
@@ -38,10 +38,10 @@ $reasonsListSize: 1479px;
   @include adaptive(font-size, 32, 32);
   @include adaptive(line-height, 39, 39);
 }
-// %fz-24 {
-//   @include adaptive(font-size, 24, 24);
-//   @include adaptive(line-height, 29, 29);
-// }
+%fz-40 {
+  @include adaptive(font-size, 40, 24);
+  @include adaptive(line-height, 49, 29);
+}
 %fz-28 {
   @include adaptive(font-size, 28, 16);
   @include adaptive(line-height, 36, 20);
@@ -49,6 +49,10 @@ $reasonsListSize: 1479px;
 %fz-24 {
   @include adaptive(font-size, 24, 14);
   @include adaptive(line-height, 31, 17);
+}
+%fz-22 {
+  @include adaptive(font-size, 22, 12);
+  @include adaptive(line-height, 29, 16);
 }
 %fz-20 {
   @include adaptive(font-size, 20, 12);
@@ -74,7 +78,7 @@ $reasonsListSize: 1479px;
 }
 
 %pseudo {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

@@ -73,14 +73,10 @@
 
   .button {
     @extend %fz-18;
+    @include adaptive(height, 55, 32);
     width: 100%;
-    padding: 10px;
   }
 }
 .cardPrevious {
   color: #838383;
 }
-
-
-
-

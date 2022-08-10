@@ -7,7 +7,7 @@ import {
   Container,
   FeedbackList,
   ProductCards,
-  ProductsHeader,
+  Category,
   Swiper,
 } from '../../components';
 import style from './card.module.scss';
@@ -71,46 +71,45 @@ export const Card = () => {
   };
 
   return (
-    <section className={style.section}>
-      <Container>
-        <Button type={'back'} className={style.backButton} />
+    <section className={style.page}>
+      <Swiper
+        pagination
+        modules={[Pagination]}
+        className={style.swiper}
+        style={{
+          '--swiper-pagination-color': '#F4F4F4',
+          '--swiper-pagination-bullet-inactive-color':
+            'rgba(244, 244, 244, 0.5)',
+          '--swiper-pagination-bullet-inactive-opacity': '1',
+          '--swiper-pagination-bullet-size': '6px',
+          '--swiper-pagination-bullet-vertical-gap': '15px',
+        }}>
+        <SwiperSlide>
+          <img src={cardImg} alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cardImg} alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={cardImg} alt='' />
+        </SwiperSlide>
+        <Container className={style.info}>
+          <div className={style.rating}>
+            <span className={style.stars}>4,85</span>
+            <span className={style.reviews}>
+              <Link to={'/prices'}>999 тыс.</Link>
+            </span>
+          </div>
+          <div className={style.col}>
+            <Button type={'share'} className={style.button} />
+            <Button type={'favorite'} className={style.button} />
+          </div>
+        </Container>
+      </Swiper>
+
+      <Container className={style.back}>
+        <Button type={'back'} />
       </Container>
-      <section>
-        <Swiper
-          pagination
-          modules={[Pagination]}
-          className={style.swiper}
-          style={{
-            '--swiper-pagination-color': '#F4F4F4',
-            '--swiper-pagination-bullet-inactive-color':
-              'rgba(244, 244, 244, 0.5)',
-            '--swiper-pagination-bullet-inactive-opacity': '1',
-            '--swiper-pagination-bullet-size': '6px',
-            '--swiper-pagination-bullet-vertical-gap': '15px',
-          }}>
-          <SwiperSlide>
-            <img src={cardImg} alt='' className={style.cardImg} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={cardImg} alt='' className={style.cardImg} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={cardImg} alt='' className={style.cardImg} />
-          </SwiperSlide>
-          <Container className={style.buttonsGroup}>
-            <div className={style.rating}>
-              <span className={style.ratingStars}>4,85</span>
-              <span className={style.ratingReviews}>
-                <Link to={'/feedbacks'}>999 тыс.</Link>
-              </span>
-            </div>
-            <div className={style.buttonsRight}>
-              <Button type={'share'} className={style.buttonShare} />
-              <Button type={'favorite'} className={style.buttonFavorite} />
-            </div>
-          </Container>
-        </Swiper>
-      </section>
 
       <Container>
         <h1 className={style.title}>
@@ -118,21 +117,21 @@ export const Card = () => {
           с крутым звуком и оснащены стерео системой
         </h1>
         <div className={style.cost}>
-          <div className={style.row}>
-            <span className={style.boughtAmount}>Купили более 1 400 раз</span>
-            <span className={style.discountPercent}>-25%</span>
+          <div className={style.flex}>
+            <span className={style.amount}>Купили более 1 400 раз</span>
+            <span className={style.percent}>-25%</span>
           </div>
-          <div className={style.row}>
-            <span className={style.costCurrent}>25 000 000 &#x20bd;</span>
-            <span className={style.costPrevious}>50 000 000 &#x20bd;</span>
+          <div className={style.prices}>
+            <span className={style.current}>25 000 000 &#x20bd;</span>
+            <span className={style.previous}>50 000 000 &#x20bd;</span>
           </div>
         </div>
       </Container>
       <section className={style.tabs}>
         <Container>
-          <div className={style.tabsHeader}>
+          <div className={style.header}>
             <input
-              className={style.tabsInput}
+              className={style.input}
               type='radio'
               name='caption'
               id='caption-tab'
@@ -141,15 +140,13 @@ export const Card = () => {
               onChange={changeRadioInput}
             />
             <label
-              className={`${style.tabsLabel} ${
-                checked === '1' && style.active
-              }`}
+              className={`${style.label} ${checked === '1' && style.active}`}
               htmlFor='caption-tab'>
               Описание
             </label>
 
             <input
-              className={style.tabsInput}
+              className={style.input}
               type='radio'
               name='feature'
               id='feature-tab'
@@ -158,23 +155,19 @@ export const Card = () => {
               onChange={changeRadioInput}
             />
             <label
-              className={`${style.tabsLabel} ${
-                checked === '2' && style.active
-              }`}
+              className={`${style.label} ${checked === '2' && style.active}`}
               htmlFor='feature-tab'>
               Характеристика
             </label>
           </div>
         </Container>
-        <div className={style.tabsContent}>
+        <div className={style.content}>
           <Container>
             {checked === '1' && (
-              <div className={style.tabsTab}>
+              <div className={style.tab}>
                 <div
-                  className={`${style.tabsTabWrapper} ${
-                    show.hide && style.active
-                  }`}>
-                  <p className={style.tabsTabText}>
+                  className={`${style.wrapper} ${show.hide && style.active}`}>
+                  <p className={style.text}>
                     Наслаждайтесь любимой музыкой и подкастами еще дольше с
                     наушниками WH-CH510 от Sony. Благодаря легкой конструкции и
                     35 часам работы от аккумулятора вы можете не беспокоиться,
@@ -190,53 +183,43 @@ export const Card = () => {
               </div>
             )}
             {checked === '2' && (
-              <div className={style.tabsTab}>
+              <div className={style.tab}>
                 <div
-                  className={`${style.tabsTabWrapper} ${
-                    show.hide && style.active
-                  }`}>
-                  <div className={style.tabsTable}>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>Вид:</p>
-                      <p className={style.tabsTableRowValue}>
-                        Беспроводные наушники
-                      </p>
+                  className={`${style.wrapper} ${show.hide && style.active}`}>
+                  <div className={style.table}>
+                    <div className={style.row}>
+                      <p className={style.name}>Вид:</p>
+                      <p className={style.value}>Беспроводные наушники</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>Микрофон:</p>
-                      <p className={style.tabsTableRowValue}>Да</p>
+                    <div className={style.row}>
+                      <p className={style.name}>Микрофон:</p>
+                      <p className={style.value}>Да</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>
-                        Конструкция наушников:
-                      </p>
-                      <p className={style.tabsTableRowValue}>Внутриканальные</p>
+                    <div className={style.row}>
+                      <p className={style.name}>Конструкция наушников:</p>
+                      <p className={style.value}>Внутриканальные</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>Шумоподавление:</p>
-                      <p className={style.tabsTableRowValue}> Активное</p>
+                    <div className={style.row}>
+                      <p className={style.name}>Шумоподавление:</p>
+                      <p className={style.value}> Активное</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>
+                    <div className={style.row}>
+                      <p className={style.name}>
                         Время работы в режиме разговора:
                       </p>
-                      <p className={style.tabsTableRowValue}>10 часов</p>
+                      <p className={style.value}>10 часов</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>
-                        Время зарядки до 100%:
-                      </p>
-                      <p className={style.tabsTableRowValue}>2 часа</p>
+                    <div className={style.row}>
+                      <p className={style.name}>Время зарядки до 100%:</p>
+                      <p className={style.value}>2 часа</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>
-                        Обьём аккамулятора:
-                      </p>
-                      <p className={style.tabsTableRowValue}>4000 Ампер</p>
+                    <div className={style.row}>
+                      <p className={style.name}>Обьём аккамулятора:</p>
+                      <p className={style.value}>4000 Ампер</p>
                     </div>
-                    <div className={style.tabsTableRow}>
-                      <p className={style.tabsTableRowName}>USB:</p>
-                      <p className={style.tabsTableRowValue}>Нет</p>
+                    <div className={style.row}>
+                      <p className={style.name}>USB:</p>
+                      <p className={style.value}>Нет</p>
                     </div>
                   </div>
                 </div>
@@ -245,52 +228,44 @@ export const Card = () => {
           </Container>
         </div>
       </section>
-      <section className={style.owner}>
-        <Container>
-          <Link to={'/brand'}>
-            <p className={style.ownerStatus}>Магазин от RaccoonIT</p>
-            <p className={style.ownerName}>
-              Headphones магазин крутых наушников
-            </p>
-          </Link>
-        </Container>
-      </section>
+
+      <Container className={style.owner}>
+        <Link to={'/brand'}>
+          <p className={style.name}>Магазин от RaccoonIT</p>
+          <p className={style.title}>Headphones магазин крутых наушников</p>
+        </Link>
+      </Container>
+
       <FeedbackList />
-      <Container>
-        <ProductsHeader title={'Промо товары'} />
+      <Container className={style.container}>
+        <Category title={'Промо товары'} />
         <ProductCards className={style.productsCards} />
         <ProductCards className={style.productsCards} />
       </Container>
       {/* <MainButton /> */}
-      <div className={style.footer}>
-        <Container>
-          <div className={style.footerWrapper}>
+      <Container className={style.footer}>
+        <Button
+          type={'mainButton'}
+          text={mainButton.open && 'В корзине'}
+          className={`${style.button} ${mainButton.open && style.active}`}
+          onClick={onClickMainButton}
+        />
+        {mainButton.open && (
+          <div className={style.counter}>
             <Button
-              type={'mainButton'}
-              text={mainButton.open && 'В корзине'}
-              className={`${style.footerButton} ${
-                mainButton.open && style.active
-              }`}
-              onClick={onClickMainButton}
+              type={'decrement'}
+              className={style.decrement}
+              onClick={onDecrement}
             />
-            {mainButton.open && (
-              <div className={style.footerCounter}>
-                <Button
-                  type={'decrement'}
-                  className={style.footerButtonDecrement}
-                  onClick={onDecrement}
-                />
-                <p className={style.footerSum}>{mainButton.count}</p>
-                <Button
-                  type={'increment'}
-                  className={style.footerButtonIncrement}
-                  onClick={onIncrement}
-                />
-              </div>
-            )}
+            <p className={style.sum}>{mainButton.count}</p>
+            <Button
+              type={'increment'}
+              className={style.increment}
+              onClick={onIncrement}
+            />
           </div>
-        </Container>
-      </div>
+        )}
+      </Container>
     </section>
   );
 };

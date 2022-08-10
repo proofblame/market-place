@@ -33,8 +33,9 @@
   mask-image: url('./images/like-icon.svg');
   mask-repeat: no-repeat;
   mask-position: center;
-  @include adaptive(width, 20, 20);
-  @include adaptive(height, 20, 20);
+  @include adaptive(width, 40, 24);
+  @include adaptive(height, 40, 24);
+  @include adaptiveSize(mask-size, 28, 28, 18, 18);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -47,8 +48,9 @@
   mask-image: url('./images/like-icon.svg');
   mask-repeat: no-repeat;
   mask-position: center;
-  @include adaptive(width, 20, 20);
-  @include adaptive(height, 20, 20);
+  @include adaptive(width, 40, 24);
+  @include adaptive(height, 40, 24);
+  @include adaptiveSize(mask-size, 28, 28, 18, 18);
   background-color: #838383;
   transform: rotate(180deg);
   border: none;

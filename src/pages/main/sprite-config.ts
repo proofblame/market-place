@@ -108,3 +108,37 @@ export const spriteConfig = [
     img: 'Tourism',
   },
 ];
+export const shortSpriteConfig = [
+  {
+    name: 'Все категории',
+    img: 'AllCategories',
+  },
+  {
+    name: 'Акции',
+    img: 'Promotions',
+  },
+  {
+    name: 'Электроника',
+    img: 'Electronics',
+  },
+  {
+    name: 'Одежда и обувь',
+    img: 'Clothes',
+  },
+  {
+    name: 'Бытовая техника',
+    img: 'Appliances',
+  },
+  {
+    name: 'Книги',
+    img: 'Books',
+  },
+  {
+    name: 'Популярное',
+    img: 'Popular',
+  },
+  {
+    name: 'Аптека',
+    img: 'Drugstore',
+  },
+]

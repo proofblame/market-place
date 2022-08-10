@@ -1,69 +1,55 @@
 @import '../../sass/';
-.feedbackList {
-  padding: 18px 0;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+.container {
+  @include adaptive(padding-top, 32, 16);
+  @include adaptive(padding-bottom, 32, 16);
   background-color: #1c1c1e;
-  margin: 0 auto 10px;
-  @extend %fonts;
-  color: $mainColor;
-  &List {
-    list-style-type: none;
-  }
-  &Header {
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+
+  .header {
     font-weight: 500;
     @extend %fz-28;
     @extend %flex;
-    margin-bottom: 10px;
+    justify-content: flex-start;
+    @include adaptive(column-gap, 16, 8);
+    .title {
+      @extend %flex;
+      column-gap: 5px;
+    }
+    .counter {
+      font-weight: 500;
+      @extend %fz-18;
+      opacity: 0.5;
+    }
   }
-  &Title {
-    @extend %flex;
-    column-gap: 5px;
-  }
-  &Counter {
-    font-weight: 500;
-    @extend %fz-18;
+  .caption {
+    font-weight: 400;
+    @extend %fz-20;
     opacity: 0.5;
   }
-  &Stars {
+  .stars {
     display: flex;
     align-items: center;
-    column-gap: 5px;
-    &Counter {
+    @include adaptive(column-gap, 16, 8);
+    .img {
+      @include adaptive(width, 200, 120);
+    }
+    .counter {
       font-weight: 400;
       @extend %fz-20;
       opacity: 0.8;
     }
-
-    &Counter {
-      align-self: center;
-      @extend %fz-20;
-    }
-
-    &Image {
-      width: 120px;
-    }
   }
-  &Caption {
-    font-weight: 400;
+
+  .button {
     @extend %fz-20;
-    opacity: 0.5;
-    margin-bottom: 12px;
+    @include adaptive(min-height, 68, 40);
   }
 }
-.link {
-  font-weight: 500;
-  @extend %fz-20;
-  color: $themeColor;
-  padding: 20px 0 30px;
-  display: block;
-  text-align: center;
-}
-
-.buttonWrapper {
-  margin-bottom: 12px;
-}
-.mainButton {
-  @extend %fz-20;
-  min-height: 40px;
-  margin-bottom: 12px;
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
 }

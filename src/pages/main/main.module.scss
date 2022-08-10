@@ -1,27 +1,5 @@
 @import '../../sass/';
-%sectionBottom {
-  margin-bottom: 8px;
-}
 
-.main {
-  @extend %fonts;
-  color: $mainColor;
-  background-color: $background;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  &Slide {
-    height: 91px !important;
-    text-align: center;
-  }
-  &Bullet {
-    background: rgba(244, 244, 244, 0.1);
-  }
-}
 .banner {
   display: flex;
   flex-direction: column;
@@ -35,68 +13,30 @@
     }
   }
 }
-.category {
-  @extend %sectionBottom;
-  padding-top: 8px;
-  &Group {
-    height: 230px;
-    position: relative;
-    position: relative;
-  }
-  &List {
-    @extend %flex;
-    column-gap: 10px;
-    margin-bottom: 10px;
-  }
-  &Item {
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include adaptive(gap, 16, 8);
+  .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 4px;
   }
-  &Link {
-    width: 66px;
-    height: 66px;
-  }
-  &Img {
-    width: 66px;
-    height: 66px;
-    padding: 17px 15px;
+  .img {
+    width: 100%;
+    height: 100%;
+    @include adaptive(max-width, 114, 66);
+    @include adaptive(max-height, 114, 66);
+    @include adaptivePadding(padding, 23, 23, 13, 13);
+    box-sizing: border-box;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    @include adaptive(border-radius, 16, 8);
     background-color: $background;
   }
-  &Caption {
+  .name {
     font-weight: 500;
     @extend %fz-18;
     opacity: 0.8;
+    text-align: center;
   }
-}
-.promo {
-  padding: 8px 0;
-}
-.products {
-  @extend %sectionBottom;
-  &Header {
-    @extend %flex;
-    margin-bottom: 20px;
-  }
-  &Title {
-    font-weight: 700;
-    @extend %fz-28;
-  }
-  &Link {
-    @extend %fz-18;
-    opacity: 0.8;
-  }
-  &Body {
-  }
-  &Slider {
-  }
-  &Cards {
-  }
-}
-
-.displayNone {
-  display: none;
 }

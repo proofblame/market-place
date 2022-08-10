@@ -3,7 +3,7 @@ import style from './favorites.module.scss';
 import {
   Container,
   Modal,
-  ProductsHeader,
+  Category,
   Button,
   Navigation,
   EmptyPage,
@@ -23,7 +23,7 @@ export const Favorites = () => {
           <EmptyPage page={'избранном'} />
         </Container>
         <Container>
-          <ProductsHeader title={'История просмотров'} />
+          <Category title={'История просмотров'} />
           <ProductCards />
         </Container>
       </section>

@@ -1,102 +1,96 @@
 @import '../../sass/';
-.feedback {
-  &Item {
-    padding: 16px 0;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: #1c1c1e;
-    margin: 0 auto 24px;
-  }
-  &Header {
-    @extend %flex;
-  }
-  &Data {
-    @extend %flex;
-    column-gap: 10px;
-  }
-  &Rating {
-    max-width: 68px;
-  }
-  &Date {
-    font-weight: 400;
-    @extend %fz-18;
-    opacity: 0.8;
-  }
-  &Owner {
-    padding: 8px 0 16px;
+
+.container {
+  @include adaptive(padding-top, 32, 16);
+  @include adaptive(padding-bottom, 32, 16);
+  background-color: #1c1c1e;
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+
+  .header {
     @extend %flex;
     justify-content: flex-start;
-    column-gap: 7px;
-    &Avatar {
-      max-width: 30px;
+    @include adaptive(column-gap, 16, 8);
+
+    .rating {
+      @include adaptive(max-width, 117, 68);
     }
-    &Name {
+    .date {
+      font-weight: 400;
+      @extend %fz-18;
+      opacity: 0.8;
+    }
+  }
+  .owner {
+    padding-bottom: 8px;
+    @extend %flex;
+    justify-content: flex-start;
+    @include adaptive(column-gap, 16, 8);
+    .avatar {
+      @include adaptive(max-width, 52, 30);
+    }
+    .name {
       font-weight: 500;
       @extend %fz-20;
     }
   }
-  &Body {
-    &List {
+  .body {
+    padding-bottom: 8px;
+    .list {
       list-style-type: none;
       flex-direction: column;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      row-gap: 10px;
-      margin-bottom: 16px;
-    }
-    &Item {
-      font-weight: 500;
-      @extend %fz-20;
-    }
-    &Title {
-      margin-bottom: 5px;
-    }
-    &Text {
-      font-weight: 400;
-      color: rgba(244, 244, 244, 0.8);
+      @include adaptive(row-gap, 16, 8);
+      .item {
+        display: flex;
+        flex-direction: column;
+        @include adaptive(row-gap, 8, 4);
+        .subtitle {
+          font-weight: 500;
+          @extend %fz-20;
+        }
+        .text {
+          font-weight: 400;
+          @extend %fz-20;
+          color: rgba(244, 244, 244, 0.8);
+        }
+      }
     }
   }
-  &Footer {
+  .footer {
     @extend %flex;
-    justify-content: space-between;
-    column-gap: 35px;
-  }
-}
-
-.buttonContainer {
-}
-
-.buttonSign {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  margin-bottom: 8px;
-  color: #838383;
-  @extend %fz-20;
-}
-
-.rating {
-  &Buttons {
-    @extend %flex;
-    max-width: 105px;
-  }
-  &Button {
-    display: flex;
-    align-items: center;
-    column-gap: 7px;
-    @extend %fz-18;
-  }
-  &Counter {
-    font-weight: 500;
-    @extend %fz-18;
-    opacity: 0.5;
-    max-width: 20px;
-    &.active {
-      opacity: 1;
+    align-items: flex-end;
+    .voting {
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 8, 4);
+      .question {
+        color: #838383;
+        @extend %fz-20;
+      }
+      .buttons {
+        list-style-type: none;
+        @extend %flex;
+        justify-content: flex-start;
+        @include adaptive(column-gap, 36, 24);
+        .button {
+          @extend %flex;
+          @include adaptive(column-gap, 8, 4);
+          @extend %fz-18;
+          .counter {
+            font-weight: 500;
+            @extend %fz-18;
+            opacity: 0.5;
+            width: 40px;
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
-}
-
-.container {
-  align-self: flex-end;
-  height: 30px;
 }
