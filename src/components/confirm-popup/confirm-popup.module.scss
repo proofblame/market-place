@@ -4,7 +4,7 @@
   color: $mainColor;
   font-weight: 500;
   opacity: 0.8;
-  @extend %fz-10;
+  @extend %fz-18;
 
   &Title {
     text-align: center;
@@ -19,7 +19,7 @@
     height: 50px;
     font-weight: 500;
     color: $mainColor;
-    @extend %fz-10;
+    @extend %fz-18;
     &No {
       border-radius: 0px 0px 0px 8px;
       background-color: $background;

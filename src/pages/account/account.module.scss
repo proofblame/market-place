@@ -21,12 +21,12 @@
   }
   &Name {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-28;
     margin-bottom: 5px;
   }
   &Id {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.5;
   }
 }
@@ -45,7 +45,7 @@
 .nav {
   &List {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-28;
     list-style-type: none;
   }
   &Item {

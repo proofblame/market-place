@@ -25,3 +25,21 @@ html::-webkit-scrollbar-thumb {
 body {
   @extend %fonts;
 }
+
+// Card
+
+.card {
+  &Percent {
+    font-weight: 500;
+    @extend %fz-14;
+    background-color: #6556d9;
+    @include adaptive(border-radius, 14, 8);
+    @include adaptivePadding(padding, 2, 10, 1, 5);
+    align-self: flex-start;
+  }
+  &Previous {
+    font-weight: 400;
+    @extend %fz-18;
+    text-decoration: line-through;
+  }
+}

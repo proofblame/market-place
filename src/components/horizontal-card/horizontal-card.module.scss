@@ -1,140 +1,142 @@
-@import '../../sass/';
+@import "../../sass/";
 
 .card {
   background: $background;
-  margin-bottom: 8px;
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  &Delete {
-    display: flex;
-    column-gap: 6px;
-    &Title {
-      font-weight: 500;
-      @extend %fz-10;
-    }
-    &Button {
-      width: 12px;
-      height: 12px;
-    }
-  }
-  &Footer {
-    padding: 6px 8px;
+  @include adaptive(border-radius, 14, 8);
+
+  .header {
     @extend %flex;
-  }
-  &Header {
-    @extend %flex;
-    column-gap: 8px;
-    margin-bottom: 8px;
-    &Col {
+    @include adaptive(column-gap, 14, 8);
+    @include adaptive(margin-bottom, 11, 8);
+
+    .imgGroup {
       position: relative;
-      &.right {
-        padding-top: 8px;
+
+      .select {
+        position: absolute;
+        @include adaptive(top, 8, 5);
+        @include adaptive(left, 8, 5);
+        .pseudo {
+          background: transparent;
+          border: 1px solid $themeColor;
+          @include adaptive(border-radius, 6, 4);
+          @include adaptive(width, 24, 14);
+          @include adaptive(height, 24, 14);
+          box-sizing: border-box;
+          display: block;
+
+          &.active {
+            background-color: $themeColor;
+            background-image: url("./images/tick.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+        }
+        input {
+          display: none;
+        }
+      }
+
+      .img {
+        @include adaptive(width, 174, 100);
+        @include adaptive(height, 174, 100);
+      }
+    }
+
+    .description {
+      @include adaptive(padding-top, 14, 8);
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 14, 8);
+
+      .title {
+        font-weight: 500;
+        @extend %fz-20;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .cost {
+        @extend %flex;
+        justify-content: flex-start;
+        @include adaptive(column-gap, 14, 10);
+        .sum {
+          color: $themeColor;
+          font-weight: 600;
+          @extend %fz-20;
+        }
+      }
+
+      .row {
         display: flex;
-        flex-direction: column;
-        row-gap: 8px;
+        align-items: center;
+        @include adaptive(column-gap, 16, 10);
       }
-    }
-  }
-  &Select {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    &Input {
-      background: transparent;
-      border: 1px solid $themeColor;
-      border-radius: 4px;
-      width: 14px;
-      height: 14px;
-      box-sizing: border-box;
-      display: block;
 
-      &.active {
-        background-color: $themeColor;
-        background-image: url('./images/tick.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+      .current {
+        color: rgba(228, 224, 224, 0.5);
+        font-weight: 500;
+        @extend %fz-18;
+      }
+      .saller {
+        font-weight: 500;
+        @extend %fz-18;
+        color: $secondColor;
       }
     }
-    input {
-      display: none;
-    }
   }
-  &Img {
-    width: 100px;
-    height: 100px;
-  }
-  &Title {
-    font-weight: 500;
-    @extend %fz-12;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  &Cost {
+
+  .footer {
+    @include adaptivePadding(padding, 10, 14, 6, 8);
     @extend %flex;
-    justify-content: flex-start;
-    column-gap: 10px;
-    &Current {
-      color: $themeColor;
-      font-weight: 600;
-      @extend %fz-12;
+    .select {
+      display: flex;
+      align-items: center;
+      @include adaptive(column-gap, 12, 6);
+
+      input {
+        display: none;
+      }
+
+      .pseudo {
+        @include adaptive(width, 21, 12);
+        @include adaptive(height, 21, 12);
+      }
+
+      .label {
+        font-weight: 500;
+        @extend %fz-18;
+      }
     }
-    &Previous {
-      font-weight: 400;
-      @extend %fz-10;
-      text-decoration: line-through;
+    .delete {
+      display: flex;
+      @include adaptive(column-gap, 12, 6);
+      .title {
+        font-weight: 500;
+        @extend %fz-18;
+      }
+      .button {
+        @include adaptive(width, 21, 12);
+        @include adaptive(height, 21, 12);
+      }
     }
-  }
-  &Sale {
-    font-weight: 500;
-    @extend %fz-8;
-    background-color: #6556d9;
-    border-radius: 8px;
-    padding: 1px 5px;
-    align-self: flex-start;
-  }
-  &Saller {
-    font-weight: 500;
-    @extend %fz-10;
-    color: $secondColor;
-  }
-  &Favorite {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-.select {
-  display: flex;
-  align-items: center;
-  column-gap: 6px;
-  input {
-    display: none;
-  }
-
-  &Label {
-    font-weight: 500;
-    @extend %fz-10;
-  }
-}
-
-.counter {
-  display: flex;
-  align-items: center;
-  &Decrement {
-    width: 24px;
-    height: 24px;
-  }
-  &Increment {
-    width: 24px;
-    height: 24px;
-  }
-  &Num {
-    width: 30px;
-    text-align: center;
-    font-weight: 500;
-    @extend %fz-8;
+    .counter {
+      display: flex;
+      align-items: center;
+      .button {
+        @include adaptive(width, 40, 24);
+        @include adaptive(height, 42, 25);
+      }
+      .num {
+        width: 30px;
+        text-align: center;
+        font-weight: 500;
+        @extend %fz-14;
+      }
+    }
   }
 }

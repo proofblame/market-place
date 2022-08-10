@@ -132,7 +132,7 @@
   }
   &Stars {
     font-weight: 400;
-    @extend %fz-12;
+    @extend %fz-20;
     position: relative;
     padding-left: 15px;
 
@@ -151,7 +151,7 @@
   }
   &Reviews {
     font-weight: 400;
-    @extend %fz-10;
+    @extend %fz-18;
     color: $themeColor;
   }
 }
@@ -185,13 +185,13 @@
 }
 
 .ratingAmount {
-  @extend %fz-12;
+  @extend %fz-20;
 }
 
 .feedback {
   grid-column-start: 1;
   grid-column-end: 3;
-  @extend %fz-10;
+  @extend %fz-18;
   color: $themeColor;
   justify-self: center;
   width: 45px;
@@ -212,19 +212,19 @@
 
   &Previous {
     font-weight: 500;
-    @extend %fz-12;
+    @extend %fz-20;
     text-decoration: line-through;
     opacity: 0.5;
   }
 }
 
 .boughtAmount {
-  @extend %fz-10;
+  @extend %fz-18;
   opacity: 0.5;
 }
 
 .discountPercent {
-  @extend %fz-12;
+  @extend %fz-20;
   font-weight: 400;
   background-color: #6556d9;
   padding: 3px 10px;
@@ -245,7 +245,7 @@
 .title {
   padding-bottom: 8px;
   font-weight: 500;
-  @extend %fz-12;
+  @extend %fz-20;
 }
 
 .price {
@@ -258,7 +258,7 @@
   }
   &Previous {
     font-weight: 600;
-    @extend %fz-10;
+    @extend %fz-18;
     color: $themeColor;
     text-decoration: line-through;
   }
@@ -275,7 +275,7 @@
   &Count {
     font-weight: 500;
     opacity: 0.8;
-    @extend %fz-10;
+    @extend %fz-18;
   }
 }
 .tabs {
@@ -284,7 +284,7 @@
 
   &Header {
     font-weight: 700;
-    @extend %fz-16;
+    @extend %fz-28;
     display: flex;
     justify-content: space-between;
   }
@@ -296,7 +296,7 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
-    @extend %fz-14;
+    @extend %fz-24;
     color: rgba(244, 244, 244, 0.5);
     cursor: pointer;
     border-radius: 8px 8px 0px 0px;
@@ -332,7 +332,7 @@
   &Content {
     background-color: #1c1c1e;
     font-weight: 400;
-    @extend %fz-12;
+    @extend %fz-20;
     padding: 16px 0;
     letter-spacing: 0.02em;
     color: rgba(244, 244, 244, 0.8);
@@ -358,7 +358,7 @@
       padding: 8px 0;
       border-bottom: 1px solid rgba(228, 224, 224, 0.1);
       @extend %flex;
-      @extend %fz-12;
+      @extend %fz-20;
       &Name {
         font-weight: 400;
         color: $secondColor;
@@ -401,13 +401,13 @@
 
   &Status {
     font-weight: 400;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.8;
     margin-bottom: 5px;
   }
   &Name {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-28;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -437,7 +437,7 @@
 
   &Sum {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-28;
     width: 50px;
     text-align: center;
     text-overflow: ellipsis;
@@ -452,9 +452,9 @@
   &Button {
     height: 42px;
     font-weight: 500;
-    @extend %fz-14;
+    @extend %fz-24;
     &.active {
-      @extend %fz-12;
+      @extend %fz-20;
       padding: 0 30px;
       max-width: 300px;
     }

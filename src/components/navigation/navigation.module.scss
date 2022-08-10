@@ -1,24 +1,11 @@
 @import '../../sass/';
-.title {
-  font-size: 12px;
-  line-height: 15px;
-  color: $mainColor;
-  text-align: center;
-  min-height: 15px;
-}
-.section {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
+
 .wrapper {
   @extend %flex;
-  justify-content: space-between;
-  position: relative;
-  min-height: 40px;
 }
 
-.delete {
-  width: 13px;
-  height: 13px;
-  margin-right: 12px;
+.title {
+  color: $mainColor;
+  text-align: center;
+  @extend %fz-20;
 }

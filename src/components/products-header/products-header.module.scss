@@ -1,21 +1,21 @@
 @import '../../sass/';
-.products {
-  &Header {
+
+  .section {
     @extend %fonts;
     color: $mainColor;
     @extend %flex;
-    padding: 8px 0;
+    @include adaptivePadding(padding, 16, 0, 8, 0);
   }
-  &Title {
+  .title {
     font-weight: 700;
-    @extend %fz-16;
+    @extend %fz-28;
   }
-  &Link {
-    @extend %fz-12;
+  .link {
+    @extend %fz-20;
     opacity: 0.8;
     border: none;
     background: none;
     color: $linkColor;
     cursor: pointer;
   }
-}
+

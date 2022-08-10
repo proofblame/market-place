@@ -1,8 +1,7 @@
-@import '../../sass/';
-
+@import "../../sass/";
 
 .wrapper {
-  padding-top: 30px;
+  @include adaptive(padding-top, 68, 38);
 }
 .app {
   @extend %fonts;

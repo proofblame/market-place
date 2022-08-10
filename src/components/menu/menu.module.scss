@@ -2,27 +2,24 @@
 
 .section {
   position: fixed;
-  // left: 0;
   right: 0;
   bottom: 100px;
   width: 100%;
   max-width: 0;
   z-index: 2000;
-  // max-width: $maxWidth + px;
   margin: 0 auto;
-  // @include adaptivePadding(padding, 0, 20, 0, 13);
-  padding-right: 13px;
+  @include adaptive(padding-right, 20, 13);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+  @include adaptive(row-gap, 8, 4);
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
-  margin-bottom: 4px;
+  @include adaptive(row-gap, 8, 4);
   transform: translateX(150%);
   opacity: 0;
   transition: all 0.2s ease-out;

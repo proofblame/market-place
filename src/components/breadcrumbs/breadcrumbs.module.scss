@@ -1,6 +1,8 @@
 @import '../../sass/';
+
 .breadcrumbs {
   @extend %flex;
+  justify-content: flex-start;
   background: $background;
   position: fixed;
   top: 0;
@@ -8,11 +10,11 @@
   right: 0;
   z-index: 1000;
   @extend %fonts;
-  min-height: 30px;
+  @include adaptive(min-height, 52, 30);
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+  @extend %fz-18;
 }
 .breadcrumb {
-  @extend %fz-10;
   letter-spacing: 0.02em;
   color: $mainColor;
   opacity: 0.8;

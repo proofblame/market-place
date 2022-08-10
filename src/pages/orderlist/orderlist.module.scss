@@ -7,14 +7,14 @@
 }
 .title {
   font-weight: 700;
-  @extend %fz-16;
+  @extend %fz-28;
   text-align: center;
   margin-bottom: 10px;
   color: $mainColor;
 }
 .subtitle {
   font-weight: 500;
-  @extend %fz-12;
+  @extend %fz-20;
   opacity: 0.5;
   text-align: center;
   margin-bottom: 20px;
@@ -26,7 +26,7 @@
   max-width: 122px;
   margin: 0 auto;
   display: block;
-  @extend %fz-10;
+  @extend %fz-18;
 }
 .filter {
   margin-bottom: 20px;
@@ -71,7 +71,7 @@
   }
   &Title {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
   }
 }
 .years {
@@ -82,7 +82,7 @@
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     padding: 4px 9px;
   }
   &Start {
@@ -103,28 +103,28 @@
   }
   &Date {
     font-weight: 500;
-    @extend %fz-12;
+    @extend %fz-20;
     opacity: 0.8;
   }
   &Number {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     color: $themeColor;
   }
   &Delivery {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     text-align: right;
   }
   &Payment {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.5;
     text-align: right;
   }
   &DeliveryDate {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     margin-bottom: 10px;
   }
   &List {

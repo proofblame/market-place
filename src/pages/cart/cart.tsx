@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Container,
@@ -8,8 +8,8 @@ import {
   Navigation,
   ProductCards,
   ProductsHeader,
-} from '../../components';
-import style from './cart.module.scss';
+} from "../../components";
+import style from "./cart.module.scss";
 
 export const Cart = () => {
   const [checked, setChecked] = useState(false);
@@ -18,73 +18,69 @@ export const Cart = () => {
     setChecked(!checked);
   };
   return (
-    <>
-      <Navigation title={'Корзина'} button={true} />
-      <section className={style.cart}>
-        <div className={style.cartAddress}>
-          <Container className={style.cartAddressWrapper}>
-            <p className={style.cartAddressPoint}>
-              Boxberry, ул. Коллонтай, 17к2
-            </p>
-            <button className={style.cartAddressButton}>Изменить</button>
-          </Container>
-        </div>
-        <Container>
-          <section className={style.cartSelect}>
-            <input
-              type='checkbox'
-              id='cartSelect'
-              checked={checked}
-              onChange={handleChangeInput}
-            />
-            <span
-              className={`${style.cartSelectInput} ${checked && style.active}`}
-              onClick={handleChangeInput}></span>
-            <label className={style.cartSelectLabel} htmlFor='cartSelect'>
-              Iport Супер техникс
-            </label>
-          </section>
-        </Container>
-        <Container>
-          <HorizontalCard />
-          <HorizontalCard />
-        </Container>
-        <section className={style.total}>
-          <Container>
-            <p className={style.totalTitle}>Ваша корзина</p>
-            <div className={style.totalTable}>
-              <div className={style.totalTableRow}>
-                <p className={style.totalTableRowName}>Товары (521)</p>
-                <p className={style.totalGross}>977 126 &#x20bd;</p>
-              </div>
-              <div className={style.totalTableRow}>
-                <p className={style.totalTableRowName}>Скидка</p>
-                <p className={style.totalSale}>- 437 043 &#x20bd;</p>
-              </div>
-              <div className={`${style.totalTableRow} ${style.hr}`}>
-                <p className={style.totalNetName}>Общая стоимость</p>
-                <p className={style.totalNet}>540 083 &#x20bd;</p>
-              </div>
-            </div>
-            <Button
-              type={'mainButton'}
-              text={'Перейти к оформлению'}
-              className={style.totalButton}
-            />
-            <p className={style.totalSubtitle}>
-              Способ доставки можно выбрать при оформлении заказа
-            </p>
-          </Container>
+    <section className={style.page}>
+      <Navigation title={"Корзина"}>
+        <Button type={"delete"} className={style.delete} />
+      </Navigation>
+      <Container className={style.address}>
+        <p className={style.point}>Boxberry, ул. Коллонтай, 17к2</p>
+        <button className={style.button}>Изменить</button>
+      </Container>
+      <Container className={style.brand}>
+        <section className={style.select}>
+          <input
+            type="checkbox"
+            id="cartSelect"
+            checked={checked}
+            onChange={handleChangeInput}
+          />
+          <span
+            className={`${style.pseudo} ${checked && style.active}`}
+            onClick={handleChangeInput}
+          ></span>
+          <label className={style.label} htmlFor="cartSelect">
+            Iport Супер техникс
+          </label>
         </section>
-
-        <Container>
-          <EmptyPage page={'корзине'} />
-        </Container>
-        <Container>
-          <ProductsHeader title={'История просмотров'} />
-          <ProductCards />
+        <HorizontalCard />
+        <HorizontalCard />
+      </Container>
+      <section className={style.total}>
+        <Container className={style.wrapper}>
+          <p className={style.title}>Ваша корзина</p>
+          <div className={style.table}>
+            <div className={style.row}>
+              <p className={style.name}>Товары (521)</p>
+              <p className={style.gross}>977 126 &#x20bd;</p>
+            </div>
+            <div className={style.row}>
+              <p className={style.name}>Скидка</p>
+              <p className={style.sale}>- 437 043 &#x20bd;</p>
+            </div>
+          </div>
+          <div className={style.net}>
+            <div className={style.row}>
+              <p className={style.title}>Общая стоимость</p>
+              <p className={style.value}>540 083 &#x20bd;</p>
+            </div>
+            <div className={style.col}>
+              <Button
+                type={"mainButton"}
+                text={"Перейти к оформлению"}
+                className={style.button}
+              />
+              <p className={style.subtitle}>
+                Способ доставки можно выбрать при оформлении заказа
+              </p>
+            </div>
+          </div>
         </Container>
       </section>
-    </>
+          <EmptyPage page={"корзине"} />
+        <Container>
+          <ProductsHeader title={"История просмотров"} />
+          <ProductCards />
+        </Container>
+    </section>
   );
 };

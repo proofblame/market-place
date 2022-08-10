@@ -11,7 +11,7 @@
   }
   &Header {
     font-weight: 500;
-    @extend %fz-16;
+    @extend %fz-28;
     @extend %flex;
     margin-bottom: 10px;
   }
@@ -21,7 +21,7 @@
   }
   &Counter {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.5;
   }
   &Stars {
@@ -30,13 +30,13 @@
     column-gap: 5px;
     &Counter {
       font-weight: 400;
-      @extend %fz-12;
+      @extend %fz-20;
       opacity: 0.8;
     }
 
     &Counter {
       align-self: center;
-      @extend %fz-12;
+      @extend %fz-20;
     }
 
     &Image {
@@ -45,14 +45,14 @@
   }
   &Caption {
     font-weight: 400;
-    @extend %fz-12;
+    @extend %fz-20;
     opacity: 0.5;
     margin-bottom: 12px;
   }
 }
 .link {
   font-weight: 500;
-  @extend %fz-12;
+  @extend %fz-20;
   color: $themeColor;
   padding: 20px 0 30px;
   display: block;
@@ -63,7 +63,7 @@
   margin-bottom: 12px;
 }
 .mainButton {
-  @extend %fz-12;
+  @extend %fz-20;
   min-height: 40px;
   margin-bottom: 12px;
 }

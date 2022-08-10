@@ -1,6 +1,6 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
-$fontFamily: 'Montserrat', sans-serif;
+$fontFamily: "Montserrat", sans-serif;
 
 //Главные цвета
 $rootColor: #090909;
@@ -38,29 +38,29 @@ $reasonsListSize: 1479px;
   @include adaptive(font-size, 32, 32);
   @include adaptive(line-height, 39, 39);
 }
-%fz-24 {
-  @include adaptive(font-size, 24, 24);
-  @include adaptive(line-height, 29, 29);
+// %fz-24 {
+//   @include adaptive(font-size, 24, 24);
+//   @include adaptive(line-height, 29, 29);
+// }
+%fz-28 {
+  @include adaptive(font-size, 28, 16);
+  @include adaptive(line-height, 36, 20);
 }
-%fz-16 {
-  @include adaptive(font-size, 16, 16);
-  @include adaptive(line-height, 20, 20);
+%fz-24 {
+  @include adaptive(font-size, 24, 14);
+  @include adaptive(line-height, 31, 17);
+}
+%fz-20 {
+  @include adaptive(font-size, 20, 12);
+  @include adaptive(line-height, 24, 16);
+}
+%fz-18 {
+  @include adaptive(font-size, 18, 10);
+  @include adaptive(line-height, 23, 12);
 }
 %fz-14 {
-  @include adaptive(font-size, 14, 14);
-  @include adaptive(line-height, 17, 17);
-}
-%fz-12 {
-  @include adaptive(font-size, 12, 12);
-  @include adaptive(line-height, 16, 16);
-}
-%fz-10 {
-  @include adaptive(font-size, 10, 10);
-  @include adaptive(line-height, 12, 12);
-}
-%fz-8 {
-  @include adaptive(font-size, 8, 8);
-  @include adaptive(line-height, 10, 10);
+  @include adaptive(font-size, 14, 8);
+  @include adaptive(line-height, 17, 10);
 }
 %fz-6 {
   @include adaptive(font-size, 6, 6);
@@ -73,11 +73,25 @@ $reasonsListSize: 1479px;
   align-items: center;
 }
 
+%pseudo {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 // Шаблоный брейкпоинтов
 
 //  768px
 // @media screen and (max-width: $_768) {}
 // @media screen and (max-width: $_425) {}
+
+// @include adaptive();
+// @include adaptivePadding();
 
 %bounce-1 {
   animation-name: bounce-1;

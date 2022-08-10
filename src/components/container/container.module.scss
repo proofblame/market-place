@@ -4,6 +4,7 @@
   max-width: $maxWidth + px;
   // max-width: 320px;
   margin: 0 auto;
-  @include adaptivePadding(padding, 0, 20, 0, 10);
+  @include adaptive(padding-left, 20, 10);
+  @include adaptive(padding-right, 20, 10);
   overflow: hidden;
 }

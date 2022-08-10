@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Button } from '../index';
-import cardImg from './images/headphones.svg';
-import rating from './images/star.svg';
-import style from './product-card.module.scss';
+import { Button } from "../index";
+import cardImg from "./images/headphones.svg";
+import rating from "./images/star.svg";
+import style from "./product-card.module.scss";
 
 export const ProductCard = () => {
   const [like, setLike] = useState(false);
@@ -14,41 +14,39 @@ export const ProductCard = () => {
   };
   return (
     <li className={style.card}>
-      <div className={style.cardHeader}>
-        <Link to={'/card'}>
-          <img className={style.cardImg} src={cardImg} alt='' />
+      <header className={style.header}>
+        <Link to={"/card"}>
+          <img className={style.img} src={cardImg} alt="" />
         </Link>
         <Button
-          type={'favoriteCard'}
-          className={style.favoriteButton}
+          type={"favoriteCard"}
+          className={style.button}
           active={like}
           onClick={handleChangeLike}
         />
-      </div>
-      <div className={style.cost}>
-        <span className={style.costCurrent}>499 000 &#x20bd;</span>
-        <span className={style.costPrevious}>1000 &#x20bd;</span>
-        <span className={style.cardDiscountPercent}>12%</span>
-      </div>
-      <div className={style.cardBody}>
-        <p className={style.cardTitle}>
+      </header>
+      <div className={style.body}>
+        <span className={style.price}>499 000 &#x20bd;</span>
+        <div className={style.flex}>
+          <span className={style.cardPrevious}>1000 &#x20bd;</span>
+          <span className={style.cardPercent}>12%</span>
+        </div>
+        <p className={style.title}>
           Товар супер мега Товар супер мегаТовар супер мега Товар супер мега
         </p>
-
-        <div className={style.feedbackContainer}>
-          <div className={style.ratingImg}>
-            <img src={rating} alt='рейтинг' />
-          </div>
-          <span className={style.ratingAmount}>4,8</span>
-          <span className={style.feedback}>102 отзыва</span>
+      </div>
+      <div className={style.feedback}>
+        <div className={style.img}>
+          <img src={rating} alt="рейтинг" />
         </div>
+        <span className={style.amount}>4,8</span>
+        <span className={style.count}>102 отзыва</span>
       </div>
       <Button
-        type={'mainButton'}
-        className={style.addToCartButton}
-        onClick={() => navigate('/cart')}
+        type={"mainButton"}
+        className={style.button}
+        onClick={() => navigate("/cart")}
       />
-      <div className={style.cardFooter}></div>
     </li>
   );
 };

@@ -24,14 +24,14 @@
   }
   &Subtitle {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
   }
 }
 .description {
   @extend %sectionBottom;
   &Text {
     font-weight: 500;
-    @extend %fz-12;
+    @extend %fz-20;
     opacity: 0.8;
     display: -webkit-box;
     -webkit-line-clamp: 3;

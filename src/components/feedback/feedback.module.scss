@@ -18,7 +18,7 @@
   }
   &Date {
     font-weight: 400;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.8;
   }
   &Owner {
@@ -31,7 +31,7 @@
     }
     &Name {
       font-weight: 500;
-      @extend %fz-12;
+      @extend %fz-20;
     }
   }
   &Body {
@@ -46,7 +46,7 @@
     }
     &Item {
       font-weight: 500;
-      @extend %fz-12;
+      @extend %fz-20;
     }
     &Title {
       margin-bottom: 5px;
@@ -71,7 +71,7 @@
   grid-column-end: 3;
   margin-bottom: 8px;
   color: #838383;
-  @extend %fz-12;
+  @extend %fz-20;
 }
 
 .rating {
@@ -83,11 +83,11 @@
     display: flex;
     align-items: center;
     column-gap: 7px;
-    @extend %fz-10;
+    @extend %fz-18;
   }
   &Counter {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.5;
     max-width: 20px;
     &.active {

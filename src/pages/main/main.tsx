@@ -26,14 +26,16 @@ export const Main = () => {
       <Container>
         <div className={style.mainWrapper}>
           <section className={style.banner}>
+            <div className={style.header}>
             <Link to={'/card'}>
               <img
                 src={mainBanner}
                 alt='Кибер понедельник'
-                className={style.bannerHeader}
+                
               />
             </Link>
-            <div className={style.bannerBody}>
+            </div>
+            <div className={style.body}>
               <Link to={'/card'}>
                 <img src={Watches} alt='Часы' />
               </Link>

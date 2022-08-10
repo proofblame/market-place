@@ -36,17 +36,15 @@ const routes = [
 export const Breadcrumbs = () => {
   const breadcrumbs = useBreadcrumbs(routes, { disableDefaults: true });
   return (
-    <section className={style.breadcrumbs}>
-      <Container>
+      <Container className={style.breadcrumbs}>
         {breadcrumbs.map(({ match, breadcrumb }, index) => (
           <span key={match.pathname}>
             <NavLink className={style.breadcrumb} to={match.pathname}>
-              {breadcrumb}
-              {breadcrumbs.length - 1 !== index && ' / '}
+              {breadcrumb}&nbsp;
+              {breadcrumbs.length - 1 !== index && `/` }&nbsp;
             </NavLink>
           </span>
         ))}
       </Container>
-    </section>
   );
 };

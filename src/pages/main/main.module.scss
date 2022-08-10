@@ -23,16 +23,15 @@
   }
 }
 .banner {
-  margin-bottom: 16px;
-  &Header {
-    padding: 8px 0;
-  }
-  &Body {
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+  .body {
     @extend %flex;
     flex-wrap: wrap;
-    gap: 8px;
+    @include adaptive(gap, 16, 8);
     img {
-      max-width: 143px;
+      @include adaptive(max-width, 247, 143);
     }
   }
 }
@@ -69,7 +68,7 @@
   }
   &Caption {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.8;
   }
 }
@@ -84,10 +83,10 @@
   }
   &Title {
     font-weight: 700;
-    @extend %fz-16;
+    @extend %fz-28;
   }
   &Link {
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.8;
   }
   &Body {

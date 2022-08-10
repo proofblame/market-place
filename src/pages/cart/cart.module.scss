@@ -1,169 +1,176 @@
-@import '../../sass/';
-.cart {
-  @extend %fonts;
-  color: $mainColor;
-  &Title {
-    font-weight: 500;
-    @extend %fz-14;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  &Wrapper {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  &Text {
-    font-weight: 500;
-    @extend %fz-14;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  &Subtext {
-    font-weight: 500;
-    @extend %fz-12;
-    opacity: 0.5;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  &Button {
-    height: 40px;
-    width: 100%;
-    max-width: 160px;
-    margin: 0 auto;
-    display: block;
-    @extend %fz-12;
-  }
-  &Address {
-    margin-bottom: 16px;
-    background-color: $background;
-    opacity: 0.8;
-    @extend %flex;
-    padding: 16px 0;
-    &Wrapper {
-      @extend %flex;
-    }
+@import "../../sass/";
 
-    &Point {
+.page {
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+  color: $mainColor;
+  @include adaptive(padding-bottom, 32, 16);
+  .address {
+    @extend %flex;
+    @include adaptive(padding-top, 32, 16);
+    @include adaptive(padding-bottom, 32, 16);
+
+    .point {
       font-weight: 600;
-      @extend %fz-12;
+      @extend %fz-20;
       position: relative;
       opacity: 0.8;
       color: $mainColor;
-      position: relative;
-      padding-left: 28px;
+      @include adaptive(padding-left, 56, 28);
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
-        background-image: url('./images/address-icon.svg');
+        background-image: url("./images/address-icon.svg");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 14px;
-        width: 24px;
-        height: 24px;
+        @include adaptive(width, 42, 24);
+        @include adaptive(height, 42, 24);
+        @include adaptiveSize(background-size, 24, 27, 14, 16);
       }
     }
-
-    &Button {
+    .button {
       border: none;
       font-weight: 500;
       background: none;
       color: $themeColor;
-      @extend %fz-12;
+      @extend %fz-20;
+      letter-spacing: 0.02em;
     }
   }
 
-  &Select {
-    padding: 4px 0 0 5px;
-    @extend %flex;
-    justify-content: flex-start;
-    column-gap: 9px;
-    margin-bottom: 8px;
-    &Input {
-      background: transparent;
-      border: 1px solid $mainColor;
-      border-radius: 4px;
-      width: 14px;
-      height: 14px;
-      display: block;
-      box-sizing: border-box;
-      &.active {
-        background-color: $themeColor;
-        border-color: $themeColor;
-        background-image: url('./images/tick.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
-    &Label {
-      font-weight: 700;
-      @extend %fz-14;
-      color: $mainColor;
-    }
-    input {
-      display: none;
-    }
-  }
-}
-
-.total {
-  padding: 16px 0;
-  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
-  background-color: $background;
-  &Title {
-    font-weight: 700;
-    @extend %fz-16;
-    margin-bottom: 8px;
-  }
-  &Table {
+  .brand {
+    @extend %fonts;
+    color: $mainColor;
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
-    margin-bottom: 16px;
-    &Row {
+    @include adaptive(row-gap, 16, 8);
+    .select {
+      padding: 4px 0;
       @extend %flex;
-
-      &Name {
-        font-weight: 500;
-        @extend %fz-12;
+      justify-content: flex-start;
+      @include adaptive(column-gap, 16, 8);
+      @include adaptive(padding-left, 8, 5);
+      .pseudo {
+        background: transparent;
+        border: 1px solid $mainColor;
+        @include adaptive(border-radius, 7, 4);
+        @include adaptive(width, 24, 14);
+        @include adaptive(height, 24, 14);
+        display: block;
+        box-sizing: border-box;
+        &.active {
+          background-color: $themeColor;
+          border-color: $themeColor;
+          background-image: url("./images/tick.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
       }
-      &.hr {
-        margin-top: 8px;
-        position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          top: -8px;
-          left: 0;
-          right: 0;
-          border: 1px solid rgba(228, 224, 224, 0.2);
-          height: 1px;
+      .label {
+        font-weight: 700;
+        @extend %fz-24;
+        color: $mainColor;
+      }
+      input {
+        display: none;
+      }
+    }
+  }
+
+  .total {
+    @include adaptivePadding(padding, 32, 0, 16, 0);
+    box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
+    background-color: $background;
+    color: $mainColor;
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 16, 8);
+    }
+    .title {
+      font-weight: 700;
+      @extend %fz-28;
+    }
+    .table {
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 16, 8);
+      .row {
+        @extend %flex;
+
+        .name {
+          font-weight: 500;
+          @extend %fz-20;
+          opacity: 0.8;
+        }
+        &.hr {
+          margin-top: 8px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            border: 1px solid rgba(228, 224, 224, 0.2);
+            height: 1px;
+          }
         }
       }
     }
-  }
-  &Gross {
-    font-weight: 600;
-    @extend %fz-12;
-    opacity: 0.8;
-  }
-  &Sale {
-    font-weight: 600;
-    @extend %fz-12;
-    opacity: 0.8;
-    color: $themeColor;
-  }
-  &Button {
-    height: 40px;
-    margin-bottom: 8px;
-    @extend %fz-14;
-  }
-  &Subtitle {
-    font-weight: 500;
-    @extend %fz-12;
-    color: $secondColor;
+    .gross {
+      font-weight: 600;
+      @extend %fz-20;
+      opacity: 0.8;
+    }
+    .sale {
+      font-weight: 600;
+      @extend %fz-20;
+      opacity: 0.8;
+      color: $themeColor;
+    }
+    .net {
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 32, 16);
+      .row {
+        @extend %flex;
+      }
+      .value {
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        @extend %fz-20;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        @include adaptive(row-gap, 16, 8);
+        .button {
+          @include adaptive(height, 68, 40);
+          @extend %fz-24;
+        }
+        .subtitle {
+          font-weight: 500;
+          @extend %fz-20;
+          letter-spacing: 0.02em;
+          color: $secondColor;
+          position: relative;
+          @include adaptive(padding-left, 53, 32);
+          &::before {
+            @extend %pseudo;
+            background-image: url("./images/attention-icon.svg");
+            @include adaptive(width, 40, 24);
+            @include adaptive(height, 40, 24);
+            @include adaptiveSize(background-size, 29, 29, 16, 16);
+          }
+        }
+      }
+    }
   }
 }

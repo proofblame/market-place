@@ -4,10 +4,11 @@
   background-image: url('./images/back-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
-  @include adaptiveSize(background-size, 6, 12, 6, 12);
-  @include adaptive(width, 40, 40);
-  @include adaptive(height, 40, 40);
+  @include adaptiveSize(background-size, 10, 20, 6, 12);
+  @include adaptive(width, 68, 40);
+  @include adaptive(height, 68, 40);
   @include adaptive(border-radius, 8, 8);
+  box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
   border: none;
   box-sizing: border-box;
   background-color: $background;
@@ -90,7 +91,7 @@
   text-align: center;
   border: none;
   cursor: pointer;
-  @extend %fz-16;
+  @extend %fz-28;
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   background-image: url('./images/decrement-icon.svg');
@@ -105,7 +106,7 @@
   text-align: center;
   border: none;
   cursor: pointer;
-  @extend %fz-16;
+  @extend %fz-28;
 
   border: 1px solid $themeColor;
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);
@@ -118,12 +119,12 @@
 %headerButton {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20px 20px;
-  width: 44px;
-  height: 44px;
+  @include adaptiveSize(background-size, 40, 40, 20, 20);
+  @include adaptive(width, 76, 44);
+  @include adaptive(height, 76, 44);
   background-color: $background;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  @include adaptive(border-radius, 16, 8);
   border: none;
   cursor: pointer;
 }
@@ -221,7 +222,7 @@
 .showMore {
   font-weight: 500;
   color: $themeColor;
-  @extend %fz-12;
+  @extend %fz-20;
   opacity: 0.8;
   border: none;
   background: none;
@@ -234,9 +235,9 @@
   background-image: url('./images/delete-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  @include adaptive(width, 10, 10);
-  @include adaptive(height, 10, 10);
+  @include adaptive(width, 40, 22);
+  @include adaptive(height, 40, 22);
+  @include adaptiveSize(background-size, 23, 23, 13, 13);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -259,7 +260,7 @@
   border-radius: 8px;
   padding: 12px 96px;
   font-weight: 500;
-  @extend %fz-12;
+  @extend %fz-20;
   border: none;
   outline: none;
   margin: 0;

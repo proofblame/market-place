@@ -22,13 +22,13 @@
   }
   &Text {
     font-weight: 700;
-    @extend %fz-16;
+    @extend %fz-28;
     text-align: center;
     margin-bottom: 10px;
   }
   &Subtext {
     font-weight: 500;
-    @extend %fz-12;
+    @extend %fz-20;
     opacity: 0.5;
     text-align: center;
     margin-bottom: 20px;
@@ -39,7 +39,7 @@
     max-width: 122px;
     margin: 0 auto;
     display: block;
-    @extend %fz-10;
+    @extend %fz-18;
   }
 }
 .filter {
@@ -58,7 +58,7 @@
   }
   &Item {
     font-weight: 500;
-    @extend %fz-10;
+    @extend %fz-18;
     opacity: 0.8;
   }
   &Button {

@@ -1,9 +1,8 @@
 @import '../../sass/';
-.ProductCards {
+.cards {
   list-style-type: none;
   @extend %flex;
-  column-gap: 8px;
-  row-gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  @include adaptive(column-gap, 16, 8);
+  @include adaptive(row-gap, 16, 8);
 }

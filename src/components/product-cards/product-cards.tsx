@@ -4,7 +4,7 @@ import { ProductCard } from '../index';
 import classnames from 'classnames';
 
 export const ProductCards = ({ className }: any) => {
-  let classNames = classnames(className, style.ProductCards);
+  let classNames = classnames(className, style.cards);
   return (
     <ul className={classNames}>
       <ProductCard />
