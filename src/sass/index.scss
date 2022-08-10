@@ -1,10 +1,10 @@
 /* 
 version 0.0.1
 */
-@import './vendors/style-settings/variables.scss';
-@import './vendors/style-settings/normalize.scss';
-@import './vendors/style-settings/reset.scss';
-@import './vendors/style-settings/fonts.scss';
+@import './variables.scss';
+@import './normalize.scss';
+@import './reset.scss';
+@import './fonts.scss';
 
 html {
   background-color: $rootColor;
