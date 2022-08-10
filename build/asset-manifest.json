@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbc8e95a.css",
-    "main.js": "/static/js/main.aad40a0b.js",
+    "main.css": "/static/css/main.b7248079.css",
+    "main.js": "/static/js/main.1994bfc0.js",
     "static/media/banner-img.png": "/static/media/banner-img.60089ef315e29c16e5cb.png",
     "static/media/product.svg": "/static/media/product.4b0c83c94fc499c605906cf76659dd90.svg",
     "static/media/head-phones.svg": "/static/media/head-phones.95fb3340165ff7c59c0bbcbcc593efdc.svg",
@@ -53,11 +53,11 @@
     "static/media/increment-icon.svg": "/static/media/increment-icon.fc3a864411a0ce71b525.svg",
     "static/media/decrement-icon.svg": "/static/media/decrement-icon.d32f511d2ee4256a5e09.svg",
     "static/media/corner-black.svg": "/static/media/corner-black.67f471b08db9c762c5c7.svg",
-    "main.cbc8e95a.css.map": "/static/css/main.cbc8e95a.css.map",
-    "main.aad40a0b.js.map": "/static/js/main.aad40a0b.js.map"
+    "main.b7248079.css.map": "/static/css/main.b7248079.css.map",
+    "main.1994bfc0.js.map": "/static/js/main.1994bfc0.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbc8e95a.css",
-    "static/js/main.aad40a0b.js"
+    "static/css/main.b7248079.css",
+    "static/js/main.1994bfc0.js"
   ]
 }

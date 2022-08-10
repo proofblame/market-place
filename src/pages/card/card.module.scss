@@ -22,7 +22,7 @@
       height: 100%;
       z-index: 2;
       @include adaptive(max-height, 62, 35);
-      @include adaptive(bottom, 62, 35);
+      @include adaptive(bottom, 61, 34);
     }
     .rating {
       @include adaptive(height, 62, 35);
