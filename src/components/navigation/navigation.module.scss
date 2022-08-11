@@ -2,14 +2,20 @@
 
 .wrapper {
   @extend %flex;
+  position: relative;
 }
 
 .button {
   width: 100%;
+  z-index: 2;
 }
 .title {
   color: $mainColor;
   text-align: center;
   @extend %fz-20;
   width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
