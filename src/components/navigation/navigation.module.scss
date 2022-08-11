@@ -4,8 +4,12 @@
   @extend %flex;
 }
 
+.button {
+  width: 100%;
+}
 .title {
   color: $mainColor;
   text-align: center;
   @extend %fz-20;
+  width: 100%;
 }

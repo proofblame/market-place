@@ -3,7 +3,6 @@
 .page {
   position: relative;
   padding-top: 0;
-  @include adaptive(padding-bottom, 100, 64);
   .title {
     @include adaptive(padding-bottom, 24, 8);
     font-weight: 500;
@@ -270,10 +269,12 @@
     @include adaptive(padding-top, 32, 16);
     @include adaptive(padding-bottom, 32, 16);
     background-color: #1c1c1e;
-    display: flex;
-    flex-direction: column;
-    @include adaptive(row-gap, 8, 4);
 
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 16, 8);
+    }
     .name {
       font-weight: 400;
       @extend %fz-18;
@@ -293,51 +294,5 @@
     display: flex;
     flex-direction: column;
     @include adaptive(row-gap, 16, 8);
-  }
-
-  .footer {
-    background-color: $background;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    @include adaptive(padding-top, 16, 8);
-    @include adaptive(padding-bottom, 16, 8);
-    @extend %flex;
-    column-gap: 15px;
-
-    .button {
-      @include adaptive(height, 68, 42);
-      font-weight: 500;
-      @extend %fz-20;
-      &.active {
-        width: 50%;
-      }
-    }
-
-    .counter {
-      @extend %flex;
-      width: 50%;
-    }
-    .decrement {
-      @include adaptive(height, 68, 42);
-      @include adaptive(width, 68, 42);
-      @include adaptiveSize(background-size, 16, 16, 8, 8);
-    }
-    .increment {
-      @include adaptive(height, 68, 42);
-      @include adaptive(width, 68, 42);
-      @include adaptiveSize(background-size, 16, 16, 8, 8);
-    }
-
-    .sum {
-      font-weight: 500;
-      @extend %fz-28;
-      width: 50px;
-      text-align: center;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
   }
 }

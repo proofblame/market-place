@@ -4,8 +4,9 @@
   background-image: url('./images/back-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%;
   @include adaptiveSize(background-size, 10, 20, 6, 12);
-  @include adaptive(width, 68, 40);
+  @include adaptive(max-width, 68, 40);
   @include adaptive(height, 68, 40);
   @include adaptive(border-radius, 8, 8);
   box-shadow: 0px 4.62px 23.1px rgba(0, 0, 0, 0.5);

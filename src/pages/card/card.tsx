@@ -9,6 +9,8 @@ import {
   ProductCards,
   Category,
   Swiper,
+  Navigation,
+  AddToCart,
 } from '../../components';
 import style from './card.module.scss';
 import cardImg from './images/product.svg';
@@ -19,44 +21,6 @@ export const Card = () => {
   const changeRadioInput = (e: any) => {
     const { value } = e.target;
     setChecked(value);
-  };
-  const [mainButton, setMainButton] = useState({
-    open: false,
-    count: 0,
-  });
-  const onDecrement = () => {
-    if (mainButton.count === 1) {
-      setMainButton({
-        count: 0,
-        open: false,
-      });
-    } else {
-      setMainButton({
-        ...mainButton,
-        count: mainButton.count - 1,
-      });
-    }
-  };
-  const onIncrement = () => {
-    setMainButton({
-      ...mainButton,
-      count: mainButton.count + 1,
-    });
-  };
-
-  const onClickMainButton = () => {
-    if (mainButton.count === 0) {
-      setMainButton({
-        count: mainButton.count + 1,
-        open: true,
-      });
-    } else {
-      setMainButton({
-        ...mainButton,
-        open: false,
-      });
-      navigate('/cart');
-    }
   };
 
   const [show, setShow] = useState({
@@ -106,11 +70,9 @@ export const Card = () => {
           </div>
         </Container>
       </Swiper>
-
       <Container className={style.back}>
         <Button type={'back'} />
       </Container>
-
       <Container>
         <h1 className={style.title}>
           Sony WH-1000XM4 «Лучшие наушники»тра та та та на бело м фоне красивые
@@ -228,14 +190,12 @@ export const Card = () => {
           </Container>
         </div>
       </section>
-
       <Container className={style.owner}>
-        <Link to={'/brand'}>
+        <Link to={'/brand'} className={style.wrapper}>
           <p className={style.name}>Магазин от RaccoonIT</p>
           <p className={style.title}>Headphones магазин крутых наушников</p>
         </Link>
       </Container>
-
       <FeedbackList />
       <Container className={style.container}>
         <Category title={'Промо товары'} />
@@ -243,29 +203,7 @@ export const Card = () => {
         <ProductCards className={style.productsCards} />
       </Container>
       {/* <MainButton /> */}
-      <Container className={style.footer}>
-        <Button
-          type={'mainButton'}
-          text={mainButton.open && 'В корзине'}
-          className={`${style.button} ${mainButton.open && style.active}`}
-          onClick={onClickMainButton}
-        />
-        {mainButton.open && (
-          <div className={style.counter}>
-            <Button
-              type={'decrement'}
-              className={style.decrement}
-              onClick={onDecrement}
-            />
-            <p className={style.sum}>{mainButton.count}</p>
-            <Button
-              type={'increment'}
-              className={style.increment}
-              onClick={onIncrement}
-            />
-          </div>
-        )}
-      </Container>
+      <AddToCart />
     </section>
   );
 };

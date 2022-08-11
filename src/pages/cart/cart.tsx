@@ -19,9 +19,11 @@ export const Cart = () => {
   };
   return (
     <section className={style.page}>
-      <Navigation title={'Корзина'}>
-        <Button type={'delete'} className={style.delete} />
-      </Navigation>
+      <Container className={style.navigation}>
+        <Navigation title={'Корзина'}>
+          <Button type={'delete'} className={style.delete} />
+        </Navigation>
+      </Container>
       <Container className={style.address}>
         <p className={style.point}>Boxberry, ул. Коллонтай, 17к2</p>
         <button className={style.button}>Изменить</button>

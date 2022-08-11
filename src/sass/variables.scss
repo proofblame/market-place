@@ -77,6 +77,10 @@ $reasonsListSize: 1479px;
   align-items: center;
 }
 
+%padding {
+  @include adaptive(padding-bottom, 96, 56);
+}
+
 %pseudo {
   content: '';
   position: absolute;

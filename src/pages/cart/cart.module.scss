@@ -1,4 +1,11 @@
 @import '../../sass/';
+.page {
+  @include adaptive(padding-bottom, 154, 96);
+}
+
+.navigation {
+  overflow: initial !important;
+}
 
 .address {
   @extend %flex;

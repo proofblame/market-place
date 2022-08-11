@@ -1,0 +1,17 @@
+.filter {
+  color: #ffffff;
+  font-weight: 400;
+  @extend %fz-24;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px 0;
+
+  .select {
+  }
+  .options {
+    list-style-type: none;
+    display: none;
+    .option {
+    }
+  }
+}

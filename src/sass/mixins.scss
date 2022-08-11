@@ -33,6 +33,6 @@
     #{$value}: calc(#{$widthMB + px} + #{$addSizeWidth} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
   }
 }
-$maxWidth: 550;
+$maxWidth: 554;
 $minWidth: 320;
 $breakPoint: $maxWidth;
