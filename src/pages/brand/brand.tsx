@@ -9,6 +9,7 @@ import {
   AddToCart,
 } from '../../components';
 import banner from './images/brand-banner.png';
+import { Link } from 'react-router-dom';
 
 export const Brand = () => {
   const [show, setShow] = useState({
@@ -31,12 +32,15 @@ export const Brand = () => {
           противоречивое сочетание натуралистических образ...
         </p>
 
-        <Category title={'Новинки'} />
+        <Category title={'Новинки'} to={'/category'} />
         <ProductCards />
-        <Category title={'Скидки'} />
+
+        <Category title={'Скидки'} to={'/category'} />
         <ProductCards />
-        <Category title={'Товары'} />
+
+        <Category title={'Товары'} to={'/category'} />
         <ProductCards />
+
         {/* <MainButton /> */}
         <AddToCart />
       </Container>

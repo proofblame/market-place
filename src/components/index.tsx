@@ -20,6 +20,7 @@ import { SvgSprite } from './svg-sprite/svg-sprite';
 import { HorizontalCard } from './horizontal-card/horizontal-card';
 import { EmptyPage } from './empty-page/empty-page';
 import { AddToCart } from './add-to-cart/add-to-cart';
+import { Sort } from './sort/sort';
 
 export {
   App,
@@ -44,4 +45,5 @@ export {
   HorizontalCard,
   EmptyPage,
   AddToCart,
+  Sort,
 };

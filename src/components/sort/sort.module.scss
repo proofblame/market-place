@@ -1,17 +1,64 @@
+@import '../../sass/';
 .filter {
   color: #ffffff;
-  font-weight: 400;
-  @extend %fz-24;
+
   margin: 0 auto;
   text-align: center;
   padding: 4px 0;
 
   .select {
+    font-weight: 400;
+    @extend %fz-24;
+    position: relative;
+    height: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      @extend %pseudo;
+      background-image: url('./images/arrow-icon.svg');
+      @include adaptive(width, 40, 24);
+      @include adaptive(height, 40, 24);
+      @include adaptive(right, -40, -24);
+      @include adaptiveSize(background-size, 16, 8, 10, 5);
+      transition: all 0.3s ease-in-out;
+      right: 0;
+      &.active {
+        transition: all 0.3s ease-in-out;
+        transform: scale(1, -1);
+      }
+    }
   }
-  .options {
-    list-style-type: none;
-    display: none;
-    .option {
+}
+.options {
+  font-weight: 500;
+  @extend %fz-20;
+  list-style-type: none;
+  @include adaptivePadding(padding, 32, 16, 16, 6);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 8, 4);
+
+  .option {
+    width: 100%;
+    @include adaptivePadding(padding, 24, 0, 12, 0);
+    @include adaptive(width, 320, 186);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &.active,
+    &:active {
+      background: #1c1c1e;
+      @include adaptive(border-radius, 16, 8);
+    }
+    input {
+      display: none;
+    }
+    label {
     }
   }
 }

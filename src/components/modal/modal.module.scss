@@ -20,9 +20,7 @@
   &Body {
     background-color: $background;
     box-shadow: 0px 3.31111px 16.5556px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    // width: 100%;
-    // max-width: 320px;
+    @include adaptive(border-radius, 16, 8);
     min-height: 100px;
   }
 }
