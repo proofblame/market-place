@@ -167,3 +167,60 @@
     }
   }
 }
+.footer {
+  box-shadow: 0px 7.94062px 39.7031px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  @include adaptive(row-gap, 16, 8);
+  @include adaptive(padding-top, 16, 8);
+  @include adaptive(padding-bottom, 16, 8);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: $background;
+  .select {
+    padding: 4px 0;
+    @extend %flex;
+    justify-content: flex-start;
+
+    @include adaptive(column-gap, 16, 8);
+    @include adaptive(padding-left, 8, 5);
+    .pseudo {
+      background: transparent;
+      border: 1px solid $mainColor;
+      @include adaptive(border-radius, 7, 4);
+      @include adaptive(width, 24, 14);
+      @include adaptive(height, 24, 14);
+      display: block;
+      box-sizing: border-box;
+      &.active {
+        background-color: $themeColor;
+        border-color: $themeColor;
+        background-image: url('./images/tick.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .label {
+      font-weight: 500;
+      @extend %fz-20;
+      color: $mainColor;
+      opacity: 0.8;
+      @extend %flex;
+      align-items: center;
+    }
+    input {
+      display: none;
+    }
+  }
+  .price {
+    font-weight: 600;
+    @extend %fz-24;
+  }
+  .button {
+    @include adaptive(height, 68, 40);
+  }
+}

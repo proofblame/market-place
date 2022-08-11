@@ -199,6 +199,7 @@
       &.active {
         position: relative;
         background-color: #1c1c1e;
+        color: $mainColor;
         &::before {
           content: '';
           position: absolute;

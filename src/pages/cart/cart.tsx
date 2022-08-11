@@ -80,6 +80,30 @@ export const Cart = () => {
         <Category title={'История просмотров'} />
         <ProductCards />
       </Container>
+      <Container className={style.footer}>
+        <div className={style.flex}>
+          <section className={style.select}>
+            <input
+              type='checkbox'
+              id='cartSelect'
+              checked={checked}
+              onChange={handleChangeInput}
+            />
+            <span
+              className={`${style.pseudo} ${checked && style.active}`}
+              onClick={handleChangeInput}></span>
+            <label className={style.label} htmlFor='cartSelect'>
+              Выделить всё
+            </label>
+          </section>
+          <p className={style.price}>540 083 &#x20bd;</p>
+        </div>
+        <Button
+          type={'mainButton'}
+          className={style.button}
+          text={'Перейти к оформлению'}
+        />
+      </Container>
     </section>
   );
 };
