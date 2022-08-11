@@ -7,6 +7,7 @@ import { Account } from './account/account';
 import { Cart } from './cart/cart';
 import { Orderlist } from './orderlist/orderlist';
 import { Category } from './category/category';
+import { Categories } from './categories/categories';
 
 export {
   Card,
@@ -18,4 +19,5 @@ export {
   Cart,
   Orderlist,
   Category,
+  Categories,
 };

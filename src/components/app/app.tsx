@@ -13,6 +13,7 @@ import {
   Cart,
   Orderlist,
   Category,
+  Categories,
 } from '../../pages';
 // Ипорт компонентов
 import { ScrollToTop, Breadcrumbs, Menu } from '../index';
@@ -34,6 +35,7 @@ export const App: FC = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/orderlist' element={<Orderlist />} />
           <Route path='/category' element={<Category />} />
+          <Route path='/categories' element={<Categories />} />
         </Routes>
       </div>
     </section>

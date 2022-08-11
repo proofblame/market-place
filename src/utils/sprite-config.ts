@@ -4,16 +4,12 @@ export const spriteConfig = [
     img: 'AllCategories',
   },
   {
-    name: 'Акции',
-    img: 'Promotions',
-  },
-  {
     name: 'Товары для животных',
     img: 'AnimalSupplies',
   },
   {
-    name: 'Бытовая техника',
-    img: 'Appliances',
+    name: 'Автотовары',
+    img: 'Automobile',
   },
   {
     name: 'Красота и здоровье',
@@ -22,10 +18,6 @@ export const spriteConfig = [
   {
     name: 'Книги',
     img: 'Books',
-  },
-  {
-    name: 'Автотовары',
-    img: 'Cars',
   },
   {
     name: 'Детские товары',
@@ -42,10 +34,6 @@ export const spriteConfig = [
   {
     name: 'Цифровые товары',
     img: 'Digital',
-  },
-  {
-    name: 'Аптека',
-    img: 'Drugstore',
   },
   {
     name: 'Электроника',
@@ -72,6 +60,10 @@ export const spriteConfig = [
     img: 'Hobbies',
   },
   {
+    name: 'Бытовая техника',
+    img: 'Appliances',
+  },
+  {
     name: 'Ювелирные украшения',
     img: 'Jewelry',
   },
@@ -79,6 +71,11 @@ export const spriteConfig = [
     name: 'Музыка и видео',
     img: 'Music',
   },
+  {
+    name: 'Аптека',
+    img: 'Pharmacy',
+  },
+
   {
     name: 'Популярное',
     img: 'Popular',
@@ -90,6 +87,10 @@ export const spriteConfig = [
   {
     name: 'Винтаж',
     img: 'Retro',
+  },
+  {
+    name: 'Акции',
+    img: 'Promotions',
   },
   {
     name: 'Спорт и отдых',
@@ -139,6 +140,6 @@ export const shortSpriteConfig = [
   },
   {
     name: 'Аптека',
-    img: 'Drugstore',
+    img: 'Pharmacy',
   },
 ]

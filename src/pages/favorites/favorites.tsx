@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from './favorites.module.scss';
 import {
   Container,
-  Modal,
-  Category,
-  Button,
-  Navigation,
-  EmptyPage,
   ProductCards,
+  Navigation,
+  AddToCart,
+  Sort,
+  EmptyPage,
 } from '../../components';
 
 export const Favorites = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const toggleFilter = () => {
-    setOpenModal(!openModal);
-  };
   return (
-    <>
-      <section className={style.favorites}>
-        <Navigation title={'Избранное'} button={false} />
-        <Container>
-          <EmptyPage page={'избранном'} />
-        </Container>
-        <Container>
-          <Category title={'История просмотров'} />
-          <ProductCards />
-        </Container>
-      </section>
-    </>
+    <Container className={style.page}>
+      <Navigation title={'Избранное'} />
+      <Sort />
+      <ProductCards />
+      <ProductCards />
+      <ProductCards />
+      {/* <MainButton /> */}
+      <EmptyPage page={'избранном'} />
+      <AddToCart />
+    </Container>
   );
 };

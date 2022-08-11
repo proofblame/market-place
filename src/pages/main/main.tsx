@@ -8,8 +8,8 @@ import Phones from './images/phones.png';
 import promo from './images/promo-banner.png';
 import Watches from './images/watches.png';
 import style from './main.module.scss';
-import spriteMain from './images/sprite.svg';
-import { shortSpriteConfig } from './sprite-config';
+import spriteMain from '../../images/sprite.svg';
+import { shortSpriteConfig } from '../../utils/sprite-config';
 
 export const Main = () => {
   return (
@@ -44,14 +44,14 @@ export const Main = () => {
         <section className={style.categories}>
           {shortSpriteConfig.map((item, index) => (
             <div className={style.item} key={index}>
-              <Link to='/card'>
+              <Link to='/categories'>
                 <SvgSprite
                   sprite={spriteMain}
                   id={item.img}
                   className={style.img}
                 />
               </Link>
-              <p className={style.name}>{item.name}</p>
+              <p className={style.caption}>{item.name}</p>
             </div>
           ))}
         </section>

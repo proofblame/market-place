@@ -164,6 +164,7 @@
         position: relative;
         @include adaptive(padding-left, 53, 32);
         &::before {
+          left: 0;
           @extend %pseudo;
           background-image: url('./images/attention-icon.svg');
           @include adaptive(width, 40, 24);
