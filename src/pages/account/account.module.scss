@@ -78,6 +78,13 @@
           background-image: url("./images/location-icon.svg");
         }
       }
+      .address2 {
+        @extend %withIcon;
+        &::before {
+          left: 0;
+          background-image: url("./images/location.svg");
+        }
+      }
     }
   }
   .footer {

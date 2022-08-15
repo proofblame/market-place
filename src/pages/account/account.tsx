@@ -8,6 +8,7 @@ import classNames from "classnames";
 export const Account = () => {
   const favorite = classNames(style.withArrow, style.favorite);
   const address = classNames(style.withArrow, style.address);
+  const address2 = classNames(style.withArrow, style.address2);
   const support = classNames(style.withArrow, style.support);
   const orders = classNames(style.withArrow, style.orders);
   const gray = classNames(style.row, style.grayBg);
@@ -56,6 +57,7 @@ export const Account = () => {
           </li>
           <li className={gray}>
             <Container>
+              <p className={address2}>Москва ул. Горбачёва д.32 кв.43 </p>
               <p className={address}>Москва ул. Горбачёва д.32 кв.43 </p>
             </Container>
           </li>
