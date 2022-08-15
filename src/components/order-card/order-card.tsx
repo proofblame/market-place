@@ -7,6 +7,7 @@ import img3 from './images/soap.png';
 
 
 export const OrderCard = () => {
+  
   return (
     <Container className={style.order}>
       <header className={style.header}>
@@ -36,6 +37,10 @@ export const OrderCard = () => {
         </li>
         <li className={style.img}>
           <img src={img3} alt="img3" />
+        </li>
+        <li className={`${style.img} ${style.last}`}>
+          <img src={img3} alt="img3" />
+          <span>+4</span>
         </li>
       </ul>
     </Container>

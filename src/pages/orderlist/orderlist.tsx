@@ -9,11 +9,13 @@ import {
   Sort,
   Chips,
   OrderCard,
+  EmptyPage,
 } from "../../components";
 import { ordersSort } from "../../utils/category-sort";
 
 export const Orderlist = () => {
   return (
+    <>
     <section className={style.page}>
       <Container className={style.header}>
         <Navigation title={"Заказы"} />
@@ -23,5 +25,7 @@ export const Orderlist = () => {
       <OrderCard />
       <OrderCard />
     </section>
+    <EmptyPage page={'заказах'} />
+    </>
   );
 };
