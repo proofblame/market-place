@@ -9,7 +9,7 @@ const routes = [
   { path: '/cart', breadcrumb: 'Корзина' },
   {
     path: '/account',
-    breadcrumb: 'Профиль',
+    breadcrumb: 'Аккаунт',
   },
   {
     path: '/cart',

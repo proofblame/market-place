@@ -1,86 +1,104 @@
-@import '../../sass/';
-.account {
-  padding-top: 50px;
-  @extend %fonts;
-  color: $mainColor;
-  &Title {
-    padding: 15px 0;
-  }
-}
-.data {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  margin-bottom: 48px;
+@import "../../sass/";
 
-  &Img {
-    width: 50px;
-    height: 50px;
+.page {
+  .link {
+    color: $linkColor;
   }
-  &Info {
+  .list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive(row-gap, 32, 16);
   }
-  &Name {
-    font-weight: 500;
-    @extend %fz-28;
-    margin-bottom: 5px;
-  }
-  &Id {
-    font-weight: 500;
-    @extend %fz-18;
-    opacity: 0.5;
-  }
-}
-%itemIcon {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 30px;
-  height: 30px;
-}
-.nav {
-  &List {
-    font-weight: 500;
-    @extend %fz-28;
-    list-style-type: none;
-  }
-  &Item {
-    margin-bottom: 30px;
-    opacity: 0.5;
+  .withArrow {
     position: relative;
-    padding-left: 45px;
-    &::before {
-      @extend %itemIcon;
-    }
-    &.adress::before {
-      background-image: url('./images/adress-icon.svg');
-    }
-    &.favorites::before {
-      background-image: url('./images/favorite-icon.svg');
-    }
-    &.support::before {
-      background-image: url('./images/support-icon.svg');
-    }
-    &.historyView::before {
-      background-image: url('./images/history-view-icon.svg');
-    }
-    &.historyOrders::before {
-      background-image: url('./images/history-orders-icon.svg');
-    }
-    &.active {
-      opacity: 1;
-    }
-    &:hover {
-      opacity: 1;
-    }
-    &:last-of-type {
-      margin-bottom: 0;
+    font-weight: 500;
+    &::after {
+      @extend %pseudo;
+      @include adaptiveSize(background-size, 10, 20, 6, 12);
+      @include adaptive(width, 40, 24);
+      @include adaptive(height, 40, 24);
+      right: 0;
+      background-image: url("./images/arrow-icon.svg");
+      @include adaptive(padding-right, 48, 32);
     }
   }
-  &Link {
+  %withIcon {
+    position: relative;
+    @include adaptive(min-height, 40, 24);
+    display: flex;
+    align-items: center;
+    @include adaptive(padding-left, 48, 32);
+    &::before {
+      @extend %pseudo;
+      // @include adaptiveSize(background-size, 30, 30, 18, 18);
+      @include adaptive(width, 40, 24);
+      @include adaptive(height, 40, 24);
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include adaptive(column-gap, 16, 8);
+    .img {
+      width: 100%;
+      @include adaptive(max-width, 62, 36);
+    }
+    .info {
+      .name {
+        font-weight: 500;
+        @extend %fz-24;
+      }
+      .id {
+        font-weight: 500;
+        @extend %fz-20;
+      }
+    }
+  }
+  .body {
+    list-style-type: none;
+    .row {
+      @extend %fz-20;
+      @include adaptive(padding-top, 16, 8);
+      @include adaptive(padding-bottom, 16, 8);
+      &.grayBg {
+        background-color: #1c1c1e;
+      }
+      .favorite {
+        @extend %withIcon;
+        &::before {
+          left: 0;
+          background-image: url("./images/favorite-icon.svg");
+        }
+      }
+      .address {
+        @extend %withIcon;
+        &::before {
+          left: 0;
+          background-image: url("./images/location-icon.svg");
+        }
+      }
+    }
+  }
+  .footer {
+    @extend .body;
+    .support {
+      color: #C0C0C0;
+      @extend %withIcon;
+      &::before {
+        left: 0;
+      
+        background-image: url("./images/headphones-icon.svg");
+      }
+    }
+    .orders {
+      color: #C0C0C0;
+      @extend %withIcon;
+      &::before {
+        color: #C0C0C0;
+        left: 0;
+        background-image: url("./images/orders-icon.svg");
+      }
+    }
   }
 }
