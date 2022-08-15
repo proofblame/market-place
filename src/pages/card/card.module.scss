@@ -2,7 +2,6 @@
 
 .page {
   position: relative;
-  padding-top: 0;
   .title {
     @include adaptive(padding-bottom, 24, 8);
     font-weight: 500;

@@ -1,0 +1,53 @@
+@import "../../sass/";
+
+.order {
+  letter-spacing: 0.02em;
+  background: $background;
+  box-shadow: 0px 7.94063px 39.7031px rgba(0, 0, 0, 0.5);
+  @include adaptive(padding-top, 16, 8);
+  @include adaptive(padding-bottom, 16, 8);
+  .header {
+    @extend %flex;
+    border-bottom: 1px solid rgba(228, 224, 224, 0.2);
+    @include adaptivePadding(padding, 16, 0, 8, 0);
+    .title {
+      @extend %fz-20;
+      font-weight: 600;
+    }
+    .number {
+      @extend %fz-20;
+      font-weight: 500;
+      color: $themeColor;
+    }
+  }
+  .table {
+    @include adaptivePadding(padding, 16, 0, 8, 0);
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    @include adaptive(row-gap, 8, 4);
+    .row {
+      @extend %flex;
+      .name {
+        font-weight: 600;
+        @extend %fz-24;
+      }
+      .value {
+        @extend %fz-20;
+        font-weight: 500;
+      }
+    }
+  }
+  .footer {
+    @include adaptivePadding(padding, 16, 0, 8, 0);
+    list-style-type: none;
+    @extend %flex;
+    justify-content: flex-start;
+    @include adaptive(column-gap, 16, 8);
+    .img {
+      @include adaptive(border-radius, 16, 8);
+      width: 100%;
+      @include adaptive(max-width, 115, 67);
+    }
+  }
+}

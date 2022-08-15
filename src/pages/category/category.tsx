@@ -8,12 +8,13 @@ import {
   AddToCart,
   Sort,
 } from '../../components';
+import {categorySort} from '../../utils/category-sort'
 
 export const Category = () => {
   return (
     <Container className={style.page}>
       <Navigation title={'Surrealism Diamondsа'} />
-      <Sort />
+      <Sort arraySort={categorySort} />
       <CategoryComponent title={'Новинки'} />
       <ProductCards />
       <CategoryComponent title={'Скидки'} />

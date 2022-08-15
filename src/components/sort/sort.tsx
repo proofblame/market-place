@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import style from './sort.module.scss';
-import { Modal } from '../index';
-import classnames from 'classnames';
+import React, { useState } from "react";
+import style from "./sort.module.scss";
+import { Modal } from "../index";
 
-export const Sort = () => {
-  let classNames = classnames(style.option, style.active);
+export const Sort = ({arraySort}:any) => {
+
   const [openModal, setOpenModal] = useState(false);
   const [select, setSelect] = useState({
-    name: 'popular',
-    value: 'Популярные',
+    name: arraySort[0].name,
+    value: arraySort[0].value,
   });
+
   const handleClickModal = () => {
     if (openModal) {
       setOpenModal(false);
@@ -28,97 +28,31 @@ export const Sort = () => {
   return (
     <>
       <section className={style.filter}>
-        <div className={style.select} onClick={handleClickModal}>
+        <span className={style.select} onClick={handleClickModal}>
           {select.value}
-        </div>
+        </span>
       </section>
       {openModal && (
         <Modal toggleModal={handleClickModal} modal={openModal}>
           <ul className={style.options}>
-            <li
-              className={`${style.option} ${
-                select.name === 'popular' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'Популярные'}
-                id={'popular'}
-                name={'popular'}
-                onChange={handleSelect}
-                checked={select.name === 'popular'}
-              />
-              <label htmlFor={'popular'}>Популярные</label>
-            </li>
-            <li
-              className={`${style.option} ${
-                select.name === 'new' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'Новинки'}
-                id={'new'}
-                name={'new'}
-                onChange={handleSelect}
-                checked={select.name === 'new'}
-              />
-              <label htmlFor={'new'}>Новинки</label>
-            </li>
-            <li
-              className={`${style.option} ${
-                select.name === 'ascending' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'Цена по возрастанию'}
-                id={'ascending'}
-                name={'ascending'}
-                onChange={handleSelect}
-                checked={select.name === 'ascending'}
-              />
-              <label htmlFor={'ascending'}>Цена по возрастанию</label>
-            </li>
-            <li
-              className={`${style.option} ${
-                select.name === 'descending' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'Цена по убыванию'}
-                id={'descending'}
-                name={'descending'}
-                onChange={handleSelect}
-                checked={select.name === 'descending'}
-              />
-              <label htmlFor={'descending'}>Цена по убыванию</label>
-            </li>
-            <li
-              className={`${style.option} ${
-                select.name === 'amount' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'По размеру скидки'}
-                id={'amount'}
-                name={'amount'}
-                onChange={handleSelect}
-                checked={select.name === 'amount'}
-              />
-              <label htmlFor={'amount'}>По размеру скидки</label>
-            </li>
-            <li
-              className={`${style.option} ${
-                select.name === 'rating' && style.active
-              }`}>
-              <input
-                type={'radio'}
-                value={'Высокий рейтинг'}
-                id={'rating'}
-                name={'rating'}
-                onChange={handleSelect}
-                checked={select.name === 'rating'}
-              />
-              <label htmlFor={'rating'}>Высокий рейтинг</label>
-            </li>
+            {arraySort.map((item: any) => (
+              <li
+              key={item.name}
+                className={`${style.option} ${
+                  select.name === item.name && style.active
+                }`}
+              >
+                <input
+                  type={"radio"}
+                  value={item.value}
+                  id={item.name}
+                  name={item.name}
+                  onChange={handleSelect}
+                  checked={select.name === item.name}
+                />
+                <label htmlFor={item.name}>{item.value}</label>
+              </li>
+            ))}
           </ul>
         </Modal>
       )}

@@ -8,12 +8,13 @@ import {
   Sort,
   EmptyPage,
 } from '../../components';
+import {categorySort} from '../../utils/category-sort'
 
 export const Favorites = () => {
   return (
     <Container className={style.page}>
       <Navigation title={'Избранное'} />
-      <Sort />
+      <Sort arraySort={categorySort} />
       <ProductCards />
       <ProductCards />
       <ProductCards />

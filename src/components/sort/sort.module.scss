@@ -10,11 +10,6 @@
     font-weight: 400;
     @extend %fz-24;
     position: relative;
-    height: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     &::before {
       @extend %pseudo;
       background-image: url('./images/arrow-icon.svg');

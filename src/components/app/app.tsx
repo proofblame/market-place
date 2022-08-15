@@ -36,6 +36,7 @@ export const App: FC = () => {
           <Route path='/orderlist' element={<Orderlist />} />
           <Route path='/category' element={<Category />} />
           <Route path='/categories' element={<Categories />} />
+          <Route path='/orderlist' element={<Orderlist />} />
         </Routes>
       </div>
     </section>
