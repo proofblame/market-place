@@ -90,19 +90,15 @@
   .footer {
     @extend .body;
     .support {
-      color: #C0C0C0;
       @extend %withIcon;
       &::before {
         left: 0;
-      
         background-image: url("./images/headphones-icon.svg");
       }
     }
     .orders {
-      color: #C0C0C0;
       @extend %withIcon;
       &::before {
-        color: #C0C0C0;
         left: 0;
         background-image: url("./images/orders-icon.svg");
       }
