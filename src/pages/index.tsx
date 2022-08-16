@@ -8,6 +8,7 @@ import { Cart } from './cart/cart';
 import { Orderlist } from './orderlist/orderlist';
 import { Category } from './category/category';
 import { Categories } from './categories/categories';
+import { Support } from './support/support';
 
 export {
   Card,
@@ -20,4 +21,5 @@ export {
   Orderlist,
   Category,
   Categories,
+  Support,
 };

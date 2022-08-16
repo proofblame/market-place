@@ -1,0 +1,101 @@
+@import '../../sass/';
+
+.page {
+  .link {
+    color: $linkColor;
+    @extend %fz-20;
+  }
+  .question {
+    font-weight: 400;
+    @extend %fz-20;
+    color: #c0c0c0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    @include adaptive(row-gap, 32, 16);
+
+    .fieldset {
+      margin: 0;
+      padding: 0;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 16, 8);
+      .input {
+        background-color: #1c1c1e;
+        @include adaptive(border-radius, 8, 4);
+        font-weight: 500;
+        @extend %fz-20;
+        border: none;
+        @include adaptive(min-height, 68, 40);
+        @include adaptive(padding-left, 33, 16);
+        @include adaptive(padding-right, 84, 50);
+        color: #c0c0c0;
+      }
+      .textarea {
+        color: #c0c0c0;
+        @extend %fz-20;
+        font-weight: 500;
+        background-color: #1c1c1e;
+        @include adaptive(border-radius, 8, 4);
+        border: none;
+        @include adaptive(padding-left, 33, 16);
+        @include adaptive(padding-right, 84, 50);
+        @include adaptivePadding(padding, 22, 33, 12, 16);
+        resize: none;
+        &:active,
+        &:focus {
+          outline: none;
+        }
+      }
+      .file {
+        input {
+          // display: none;
+        }
+        label {
+          @extend %flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 500;
+          @extend %fz-24;
+          @include adaptive(border-radius, 16, 8);
+          background: #1c1c1e;
+          span {
+            position: relative;
+            @include adaptive(min-height, 68, 40);
+            @include adaptive(padding-left, 48, 28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::before {
+              @extend %pseudo;
+              background: url('./images/clip-icon.svg');
+              left: 0;
+              @include adaptive(height, 40, 24);
+              @include adaptive(width, 40, 24);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    @include adaptive(padding-top, 16, 8);
+    @include adaptive(padding-bottom, 16, 8);
+    .button {
+      @include adaptive(height, 68, 40);
+      @extend %fz-24;
+    }
+  }
+}

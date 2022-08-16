@@ -14,6 +14,7 @@ import {
   Orderlist,
   Category,
   Categories,
+  Support,
 } from '../../pages';
 // Ипорт компонентов
 import { ScrollToTop, Breadcrumbs, Menu } from '../index';
@@ -37,6 +38,7 @@ export const App: FC = () => {
           <Route path='/category' element={<Category />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/orderlist' element={<Orderlist />} />
+          <Route path='/support' element={<Support />} />
         </Routes>
       </div>
     </section>
