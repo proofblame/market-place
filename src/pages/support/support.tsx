@@ -54,8 +54,8 @@ export const Support = () => {
 
   const handleClickModal = () => {
     if (openModal) {
-      setOpenModal(false);
       setFilesError(false);
+      // setOpenModal(false);
       ref.current.value = null;
     } else {
       setOpenModal(true);
@@ -176,7 +176,7 @@ export const Support = () => {
         </Container>
       </section>
       {filesError && (
-        <Modal toggleModal={handleClickModal} modal={openModal}>
+        <Modal toggleModal={handleClickModal}>
           <section className={style.error}>
             <p className={style.title}>
               <span>Ошибка</span>
