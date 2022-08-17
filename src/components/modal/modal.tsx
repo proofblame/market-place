@@ -7,12 +7,13 @@ const modalRoot = document.getElementById('modals') as HTMLElement;
 export const Modal = ({ modal, children, toggleModal }: any) => {
   useEffect(() => {
     const body = document.querySelector('body');
-    body!.style.overflow = modal ? 'hidden' : 'auto';
+    // body!.style.overflow = modal ? 'hidden' : 'auto';
     const handleEscapePress = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         toggleModal();
       }
     };
+    body!.style.overflow = 'hidden';
     document.addEventListener('keydown', handleEscapePress);
     return () => {
       document.removeEventListener('keydown', handleEscapePress);
