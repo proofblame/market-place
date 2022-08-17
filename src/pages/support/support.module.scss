@@ -1,14 +1,110 @@
-@import '../../sass/';
+@import "../../sass/";
 
 .page {
+  @include adaptive(padding-bottom, 154, 96);
+  .filter {
+    margin: 0 auto;
+    text-align: center;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    @include adaptive(row-gap, 16, 8);
+    width: 100%;
+
+    input {
+      display: none;
+    }
+    input:checked + .select::before {
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-50%) scale(1, -1);
+    }
+    .select {
+      text-align: center;
+      margin: 0 auto;
+      font-weight: 400;
+      @extend %fz-24;
+      position: relative;
+      max-width: $maxWidth + px;
+      @include adaptive(min-height, 40, 24);
+      &::before {
+        @extend %pseudo;
+        background-image: url("./images/arrow-icon.svg");
+        @include adaptive(width, 40, 24);
+        @include adaptive(height, 40, 24);
+        @include adaptive(right, -40, -24);
+        @include adaptiveSize(background-size, 16, 8, 10, 5);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    input:checked ~ .questions {
+      display: flex;
+    }
+    .questions {
+      list-style-type: none;
+      text-align: left;
+      // display: flex;
+      display: none;
+      flex-direction: column;
+      row-gap: 8px;
+      .question {
+        @include adaptive(padding-top, 16, 8);
+        @include adaptive(padding-bottom, 16, 8);
+        width: 100%;
+        &.active {
+          background-color: #1c1c1e;
+        }
+        input {
+          display: none;
+        }
+        .container {
+          @include adaptive(row-gap, 8, 4);
+          display: flex;
+          flex-direction: column;
+        }
+
+        .title {
+          font-weight: 500;
+          @extend %fz-24;
+          color: #f4f4f4;
+          position: relative;
+          @include adaptive(padding-left, 48, 28);
+          display: block;
+
+          &::before {
+            @extend %pseudo;
+            background-image: url("./images/plus-icon.svg");
+            @include adaptiveSize(background-size, 10, 10, 5, 5);
+            @include adaptive(height, 40, 24);
+            @include adaptive(width, 40, 24);
+            left: 0;
+   
+          }
+        }
+        .answer {
+          font-weight: 500;
+          @extend %fz-20;
+          color: #c0c0c0;
+          @include adaptive(padding-left, 48, 28);
+          display: none;
+        }
+        input:checked + .title::before {
+          background-image: url("./images/minus-icon.svg");
+        }
+        input:checked ~ .answer {
+          display: block;
+        }
+      }
+    }
+  }
   .link {
     color: $linkColor;
     @extend %fz-20;
   }
-  .question {
+  .formTitle {
     font-weight: 400;
     @extend %fz-20;
     color: #c0c0c0;
+    @include adaptive(margin-bottom, 16, 8);
   }
   .form {
     display: flex;
@@ -32,6 +128,10 @@
         @include adaptive(padding-left, 33, 16);
         @include adaptive(padding-right, 84, 50);
         color: #c0c0c0;
+        &:focus,
+        &:active {
+          outline: none;
+        }
       }
       .textarea {
         color: #c0c0c0;
@@ -49,9 +149,9 @@
           outline: none;
         }
       }
-      .file {
+      .attach {
         input {
-          // display: none;
+          display: none;
         }
         label {
           @extend %flex;
@@ -70,7 +170,7 @@
             justify-content: center;
             &::before {
               @extend %pseudo;
-              background: url('./images/clip-icon.svg');
+              background: url("./images/clip-icon.svg");
               left: 0;
               @include adaptive(height, 40, 24);
               @include adaptive(width, 40, 24);
@@ -79,6 +179,31 @@
               background-size: contain;
             }
           }
+        }
+      }
+    }
+    .files {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      @include adaptive(row-gap, 16, 8);
+
+      .file {
+        @extend %flex;
+        background: #1a1a1c;
+        @include adaptive(border-radius, 16, 8);
+        @include adaptive(height, 68, 40);
+        @include adaptivePadding(padding, 0, 90, 0, 52);
+        @include adaptive(column-gap, 24, 16);
+        .name {
+          font-weight: 400;
+          @extend %fz-24;
+          color: #e4e0e0;
+          opacity: 0.5;
+          @include adaptive(max-width, 280, 160);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
         }
       }
     }

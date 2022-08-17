@@ -88,7 +88,7 @@ export const Button = ({ type, className, text, onClick, active }: any) => {
         </button>
       )}
       {type === 'delete' && (
-        <button onClick={onClick} className={`${style.delete} ${className}`}>
+        <button onClick={onClick} className={`${style.delete} ${className}`} type={'button'}>
           {text}
         </button>
       )}
