@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // Импорт стилей
 import style from './app.module.scss';
@@ -19,7 +19,26 @@ import {
 // Ипорт компонентов
 import { ScrollToTop, Breadcrumbs, Menu } from '../index';
 
+
+declare global {
+  interface Window {
+    Telegram:any;
+  }
+}
+let tg = window.Telegram.WebApp;
+
 export const App: FC = () => {
+  useEffect(
+    () => {
+      tg.expand()
+      if(!tg.isExpanded) {
+        tg.expand()
+        tg.enableClosingConfirmation()
+      }
+      tg.ready()
+      tg.enableClosingConfirmation()
+    }, []
+  )
   return (
     <section className={style.app}>
       <ScrollToTop />

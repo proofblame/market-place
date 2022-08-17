@@ -7,7 +7,7 @@
   .body {
     @extend %flex;
     flex-wrap: wrap;
-    @include adaptive(gap, 16, 8);
+    @include adaptive(row-gap, 16, 8);
     img {
       @include adaptive(max-width, 247, 143);
     }

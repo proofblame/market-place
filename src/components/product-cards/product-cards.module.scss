@@ -3,6 +3,6 @@
   list-style-type: none;
   @extend %flex;
   flex-wrap: wrap;
-  @include adaptive(column-gap, 16, 8);
+  // @include adaptive(column-gap, 16, 8);
   @include adaptive(row-gap, 16, 8);
 }
