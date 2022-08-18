@@ -17,7 +17,7 @@ export const Menu = () => {
     setActive(false);
   };
   return (
-    <section className={style.section}>
+    <section className={`${style.section} ${active && style.active}`}>
       <nav className={`${style.nav} ${active && style.active}`}>
         <Button type={'basket'} onClick={closeMenu} />
         <Button type={'share'} onClick={closeMenu} />

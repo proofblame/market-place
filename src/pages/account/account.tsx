@@ -24,13 +24,17 @@ export const Account = () => {
           </div>
           <div className={style.info}>
             <h2 className={style.name}>Slavskaya Ida</h2>
-            <p className={style.id}>Id: 12385768594</p>
+            <p className={style.id}>{window.screen.width}</p>
+            <p className={style.id}>{window.outerWidth}</p>
           </div>
+
         </Container>
         <ul className={style.body}>
           <li className={gray}>
             <Container>
+            <Link to={"/favorites"} >
               <p className={favorite}>Избранное: 39</p>
+              </Link>
             </Container>
           </li>
           <li className={style.row}>
@@ -63,16 +67,44 @@ export const Account = () => {
         <ul className={style.footer}>
           <li className={gray}>
             <Container>
-              <p className={support}>Помощь</p>
+              <Link to={"/support"} >
+                <p className={support}>Помощь</p>
+              </Link>
             </Container>
           </li>
           <li className={gray}>
             <Container>
+            <Link to={"/orderlist"} >
               <p className={orders}>Заказы</p>
+              </Link>
             </Container>
           </li>
         </ul>
       </div>
+      <Container className={style.header}>
+            <p className={style.id}>Размер экрана</p>
+            <p className={style.id}>{window.screen.width} х {window.screen.height}</p>
+        </Container>
+        <Container className={style.header}>
+            <p className={style.id}>Доступный размер экрана</p>
+            <p className={style.id}>{window.outerWidth} x {window.screen.availHeight}</p>
+        </Container>
+        <Container className={style.header}>
+            <p className={style.id}>Внешний размер окна</p>
+            <p className={style.id}>{window.outerWidth} x {window.outerHeight}</p>
+        </Container>
+        <Container className={style.header}>
+            <p className={style.id}>Внутренний размер окна</p>
+            <p className={style.id}>{window.innerWidth} x {window.innerHeight}</p>
+        </Container>
+        <Container className={style.header}>
+            <p className={style.id}>Внутренний размер окна без полос прокрутки</p>
+            <p className={style.id}>{document.documentElement.clientWidth} x {document.documentElement.clientHeight}</p>
+        </Container>
+        <Container className={style.header}>
+            <p className={style.id}> Размер веб-страницы</p>
+            <p className={style.id}>{document.documentElement.scrollWidth} x {document.documentElement.scrollHeight}</p>
+        </Container>
     </section>
   );
 };

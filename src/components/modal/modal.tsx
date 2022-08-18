@@ -13,6 +13,7 @@ export const Modal = ({ modal, children, toggleModal }: any) => {
         toggleModal();
       }
     };
+    body!.style.overflow = 'hidden';
     document.addEventListener('keydown', handleEscapePress);
     return () => {
       document.removeEventListener('keydown', handleEscapePress);

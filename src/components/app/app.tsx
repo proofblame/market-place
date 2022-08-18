@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // Импорт стилей
 import style from './app.module.scss';
