@@ -9,9 +9,9 @@
   max-width: $maxWidth + px;
   margin: 0 auto;
   @include adaptive(top, 50, 30);
-  @include adaptive(padding-top, 16, 8);
 }
 .search {
+  @include adaptive(padding-top, 16, 8);
   background: #131313;
 
   .form {

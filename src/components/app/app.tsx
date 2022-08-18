@@ -19,8 +19,23 @@ import {
 // Ипорт компонентов
 import { ScrollToTop, Breadcrumbs, Menu, Search } from '../index';
 import { useSelector } from '../../services/hooks';
+declare global {
+  interface Window {
+    Telegram: any;
+  }
+}
+let tg = window.Telegram.WebApp;
 
 export const App: FC = () => {
+  useEffect(() => {
+    tg.ready();
+    tg.expand();
+    // if (!tg.isExpanded) {
+    //   tg.expand();
+    //   tg.enableClosingConfirmation();
+    // }
+    tg.enableClosingConfirmation();
+  }, []);
   const { isShow } = useSelector((store) => store.search);
   return (
     <section className={style.app}>
