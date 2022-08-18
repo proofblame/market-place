@@ -1,10 +1,6 @@
-import { combineReducers } from 'redux'
-import cardReducer from './card'
-import commonReducer from './common'
-import categoryReducer from './category'
+import { combineReducers } from 'redux';
+import searchReducer from './search';
 
 export const rootReducer = combineReducers({
-  common: commonReducer,
-  card: cardReducer,
-  category: categoryReducer,
-})
+  search: searchReducer,
+});

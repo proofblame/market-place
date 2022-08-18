@@ -17,13 +17,16 @@ import {
   Support,
 } from '../../pages';
 // Ипорт компонентов
-import { ScrollToTop, Breadcrumbs, Menu } from '../index';
+import { ScrollToTop, Breadcrumbs, Menu, Search } from '../index';
+import { useSelector } from '../../services/hooks';
 
 export const App: FC = () => {
+  const { isShow } = useSelector((store) => store.search);
   return (
     <section className={style.app}>
       <ScrollToTop />
       <Breadcrumbs />
+      {isShow && <Search />}
       <div className={style.wrapper}>
         <Menu />
         <Routes>

@@ -6,7 +6,7 @@
   @include adaptive(bottom, 175, 100);
   width: 100%;
   max-width: 0;
-  z-index: 2000;
+  z-index: 10000;
   margin: 0 auto;
   @include adaptive(padding-right, 20, 13);
   display: flex;
