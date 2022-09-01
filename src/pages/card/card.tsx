@@ -18,6 +18,7 @@ import cardImg from './images/product.svg';
 export const Card = () => {
   const [checked, setChecked] = useState('1');
   const navigate = useNavigate();
+  
   const changeRadioInput = (e: any) => {
     const { value } = e.target;
     setChecked(value);
